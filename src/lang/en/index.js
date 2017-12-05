@@ -13,5 +13,6 @@ export default {
   accueilsection: 'Home',
   experience: 'Professional experience',
   competences: 'Personal Competencies',
-  cursus: 'School Curriculum'
+  cursus: 'School Curriculum',
+  unfinished: 'The translation is not complete'
 }

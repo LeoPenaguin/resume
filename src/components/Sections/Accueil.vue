@@ -26,13 +26,25 @@
       </a>
     </div>
     <div class="grid-item item-linkedin">
-      <a target="_blank" href="https://fr.linkedin.com/pub/l%C3%A9o-penaguin/a6/7a/b14"></a>
+      <a target="_blank" href="https://fr.linkedin.com/pub/l%C3%A9o-penaguin/a6/7a/b14">
+          <span>
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+          </span>
+      </a>
     </div>
     <div class="grid-item item-github">
-      <a target="_blank" href="https://github.com/LeoPenaguin"></a>
+      <a target="_blank" href="https://github.com/LeoPenaguin">
+          <span>
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </span>
+      </a>
     </div>
     <div class="grid-item item-twitter">
-      <a target="_blank" href="https://twitter.com/leo_png"></a>
+      <a target="_blank" href="https://twitter.com/leo_png">
+          <span>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </span>
+      </a>
     </div>
   </div>
 </div>
@@ -179,27 +191,32 @@ export default {
 
             &.item-linkedin {
                 background-color: #0177B5;
-                background-image: url("../../img/logo_linkedin.png");
                 &:hover {
                     background-color: darken(#0177B5, 10%);
-                    background-size: 30%;
+                }
+                a {
+                  font-size: 6em;
                 }
             }
 
             &.item-github {
                 background-color: #323131;
-                background-image: url("../../img/logo_github.png");
                 &:hover {
                     background-color: lighten(#323131, 10%);
-                    background-size: 30%;
+                }
+                a {
+                  font-size: 6em;
                 }
             }
 
             &.item-twitter {
                 background-color: #fff;
-                background-image: url("../../img/logo_twitter.png");
+                color: #1DA1F2;
                 &:hover {
-                    background-size: 30%;
+                  background-color: darken(white, 20%);
+                }
+                a {
+                  font-size: 6em;
                 }
             }
 
@@ -220,17 +237,21 @@ export default {
 }
 
 @media screen and (max-width: 1100px) {
-    #section-1 .nom-prenom h1 {
-      font-size: 12vw;
+  #section-1 {
+    .nom-prenom h1 {
+        font-size: 12vw;
     }
-    .grid-item {
-      .item-text {
-        display: none;
-      }
-      a {
-        font-size: 8vw;
+    .grid {
+      .grid-item {
+        a {
+          font-size: 50px;
+          .item-text {
+            display: none;
+          }
+        }
       }
     }
+  }
 }
 
 @media screen and (max-width: 640px) {

@@ -9,9 +9,9 @@ export default {
   experienceProfessionnelle,
   accueil,
   title: '... - Léo PENAGUIN',
-  // lol
   accueilsection: '...',
   experience: '...',
   competences: '...',
-  cursus: '...'
+  cursus: '...',
+  unfinished: 'Die Übersetzung ist nicht vollständig'
 }

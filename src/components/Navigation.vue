@@ -9,6 +9,7 @@
     <li><a href="#section-4"><i class="fa fa-eye" aria-hidden="true"></i><span v-lang.cursus></span></a></li>
   </ul>
   <footer>
+    <span class="unfinished" v-lang.unfinished></span>
     <div class="language">
       <button v-bind:class="[language == 'en' ? 'active' : '']"
               class="language-eng"
@@ -117,14 +118,23 @@ nav {
     background: #153744;
     margin: 10px;
     border-radius: 5px;
+    flex: 1;
+    .unfinished {
+      color: red;
+      background: white;
+      border-radius: 5px;
+      display: block;
+      padding: 10px;
+      text-align: center;
+      font-weight: bolder;
+    }
     .language {
       display: flex;
       align-items: center;
       justify-content: center;
       align-items: center;
       flex-direction: row;
-      height: 0;
-      // flex-wrap: wrap;
+      height: 70px;
       .language-eng,.language-fra,.language-ger {
         margin: 5px;
         padding: 5px;
