@@ -82,4 +82,14 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 640px) {
+  .sections {
+    padding-left: 0;
+  }
+  .smartphone-hide {
+    display: none;
+  }
+}
+
 </style>

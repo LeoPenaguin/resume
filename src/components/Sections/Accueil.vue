@@ -50,6 +50,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@keyframes backgroundmove {
+  0% {background-position: 0px 1805px;}
+  100% {background-position: 0px 0px;}
+}
+
 #section-1 {
     height: 100%;
     text-align: center;
@@ -60,6 +65,10 @@ export default {
     align-items: center;
     justify-content: center;
     background-image: url("../../img/background.png");
+    animation-name: backgroundmove;
+    animation-duration: 180s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     background-size: 700px;
     .nom-prenom {
         height: 50vh;
@@ -223,4 +232,13 @@ export default {
       }
     }
 }
+
+@media screen and (max-width: 640px) {
+  #section-1 .coord .coord-item a span {
+    text-align: left;
+    padding: 10px 20px;
+    display: none;
+  }
+}
+
 </style>

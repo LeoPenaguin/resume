@@ -214,4 +214,42 @@ nav {
     }
   }
 }
+
+@media screen and (max-width: 640px) {
+  nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 60%;
+    -ms-transform: translate(-100%, 0);
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+    .profilimg {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navigation {
+    margin-top: 40px;
+    li {
+      &:nth-child(odd) {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      a {
+        padding: 20px;
+        margin: 0;
+        width: 100%;
+        float: left;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
 </style>

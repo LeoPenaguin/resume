@@ -56,4 +56,10 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 640px) {
+  .nav-button {
+    left: 10px;
+  }
+}
 </style>
