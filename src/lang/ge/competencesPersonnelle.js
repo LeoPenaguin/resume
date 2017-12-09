@@ -1,5 +1,5 @@
 export default {
-  '...': {
+  'Entwicklung': {
     'competencesList': [{
       titre: 'HTML / CSS',
       pourcent: '90'
@@ -35,7 +35,7 @@ export default {
       pourcent: '65'
     }]
   },
-  '... / Design': {
+  'Grafikdesign': {
     'competencesList': [{
       titre: 'Photoshop',
       pourcent: '70'
@@ -47,15 +47,15 @@ export default {
       pourcent: '65'
     }]
   },
-  '... ...': {
+  'Sprachliche Kenntnisse': {
     'competencesList': [{
-      titre: '...',
+      titre: 'Englisch',
       pourcent: '80'
     }, {
-      titre: '...',
+      titre: 'Deutsch',
       pourcent: '90'
     }, {
-      titre: '...',
+      titre: 'Französisch',
       pourcent: '100'
     }]
   }

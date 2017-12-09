@@ -12,7 +12,7 @@ export default {
     url: 'http://hmclause.com',
     type: 'Alternance',
     description: 'Développement d’application lourdes pour windows (C#)',
-    location: 'Grenoble'
+    location: 'Valence'
   }, {
     date: 'Mars - Juillet 2015',
     entreprise: 'Mediacraft',

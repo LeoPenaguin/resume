@@ -71,14 +71,11 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-top: 100px;
     .bigimg {
-      width: 100%;
-      height: 100%;
-      padding: 0%;
       border-radius: 100%;
-      background-position: center;
-      background-size: cover;
-      background-image: url('../img/education.jpg');
+      max-width: 450px;
+      height: auto;
     }
   }
 }

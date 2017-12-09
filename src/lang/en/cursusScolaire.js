@@ -1,6 +1,7 @@
 export default {
   'list': [{
     date: '2015-Nowadays',
+    type: 'Bachelor',
     description: 'Bachelor\'s degree in computer science and development, alternately',
     location: 'EPSI Grenoble'
   }, {
@@ -17,11 +18,13 @@ export default {
   }, {
     date: '2013',
     type: 'CCNA',
-    description: 'Cisco Chapter 2'
+    description: 'Cisco Chapter 2',
+    location: 'Web'
   }, {
     date: '2012',
     type: 'CCNA',
-    description: 'Cisco Chapter 1'
+    description: 'Cisco Chapter 1',
+    location: 'Web'
   }, {
     date: '2011',
     type: 'BAC STG',

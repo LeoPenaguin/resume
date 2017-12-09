@@ -6,17 +6,31 @@
       <li v-for="cursus in translatedData.list" ng-switch="!!cur.url">
         <a target="_blank" v-bind:href="cursus.url" v-if="cursus.url">
           <h2><i class='fa fa-external-link'></i> {{cursus.date}}</h2>
-          <b>{{cursus.type}}</b> {{cursus.description}} <i>{{cursus.location}}</i>
+          {{cursus.description}}
+          <br/>
+          <span class="type">
+            <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{cursus.type}}</p>
+          </span>
+          <span class="location">
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{cursus.location}}</p>
+          </span>
         </a>
         <span v-else>
             <h2>{{cursus.date}}</h2>
-            <b>{{cursus.type}}</b> {{cursus.description}} <i>{{cursus.location}}</i>
+            {{cursus.description}}
+            <br/>
+            <span class="type">
+              <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{cursus.type}}</p>
+            </span>
+            <span class="location">
+              <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{cursus.location}}</p>
+            </span>
         </span>
       </li>
     </ul>
   </div>
   <div class="smartphone-hide bit-2">
-    <div class="bigimg"></div>
+    <img class="bigimg" src="../../img/education.jpg" alt="">
   </div>
 </div>
 </template>
@@ -76,11 +90,11 @@ export default {
         color: #00A2E0;
       }
     }
-  }
-  .smartphone-hide {
-    padding-left: 70px;
-    .bigimg {
-      background-image: url('../../img/education.jpg');
+    .location,.type {
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 5px;
+      font-weight: bold;
     }
   }
 }

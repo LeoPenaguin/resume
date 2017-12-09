@@ -1,64 +1,64 @@
 export default {
   'list': [{
-    date: '... 2017',
-    entreprise: 'Crédit Agricole',
+    date: 'September 2016 - Juli 2018',
+    entreprise: 'Crédit Agricole (Bank)',
     url: 'https://www.credit-agricole.fr',
-    type: '...',
-    description: '...',
-    location: 'Grenoble'
+    type: 'duales Studium',
+    description: 'Entwicklung von Webservice',
+    location: 'Grenoble, Frankreich'
   }, {
-    date: '... 2016',
+    date: 'September 2015 - Juli 2016',
     entreprise: 'HM Clause',
     url: 'http://hmclause.com',
-    type: '...',
-    description: '...',
-    location: 'Grenoble'
+    type: 'duales Studium',
+    description: 'Entwicklung von Applikationen für Windows (C#)',
+    location: 'Valence, Frankreich'
   }, {
-    date: '... 2015',
+    date: 'März - Juli 2015',
     entreprise: 'Mediacraft',
     url: 'http://mediacraft.fr',
-    type: '...',
-    description: '...',
-    location: 'Grenoble'
+    type: 'Praktikum',
+    description: 'Entwicklung und Creation von Webseiten frontend-orientiert',
+    location: 'Grenoble, Frankreich'
   }, {
-    date: '... 2014',
+    date: 'März - September 2014',
     entreprise: 'Smart Mobile Factory',
     url: 'http://smartmobilefactory.com/',
-    type: '...',
-    description: '...',
-    location: 'Berlin, ...'
+    type: 'Praktikum',
+    description: 'Entwicklung und Web-Applikationen (Backend) für mobile Applikationen',
+    location: 'Berlin, Deutschland'
   }, {
-    date: '... 2013',
+    date: 'Juli 2013',
     entreprise: 'Crédit Agricole',
-    type: '...',
-    description: '...',
-    location: 'Valence'
+    type: 'Ferienjob',
+    description: 'Telefonplattform vom Crédit Agricole (Bank)',
+    location: 'Valence, Frankreich'
   }, {
-    date: '... 2013',
+    date: 'Januar 2013',
     entreprise: 'Crédit Agricole',
-    type: '...',
-    description: '...',
-    location: 'Valence'
+    type: 'Praktikum',
+    description: 'IT-Reperatur und -Wartung vom Crédit Agricole',
+    location: 'Valence, Frankreich'
   }, {
-    date: '... 2012',
+    date: 'Mai - Juni 2012',
     entreprise: 'Agentur Webfox',
     url: 'https://www.agentur-webfox.de',
-    type: '...',
-    description: '...',
-    location: 'Berlin, ...'
+    type: 'Praktikum',
+    description: 'Entwicklung und Webdesign in einer Werbeagentur',
+    location: 'Berlin, Deutschland'
   }, {
-    date: '... 2007',
+    date: 'Dezember 2007',
     entreprise: 'SVD Studio',
     url: 'http://www.svd-studio.fr/',
-    type: '...',
-    description: '...',
-    location: 'Valence'
+    type: 'Praktikum',
+    description: 'Design in einer Werbeagentur, Web-Creationen',
+    location: 'Valence, Frankreich'
   }, {
-    date: '... 2006',
+    date: 'Dezember 2006',
     entreprise: 'By Micro',
     url: 'http://www.bymicro.com',
-    type: '...',
-    description: '...',
-    location: 'Romans'
+    type: 'Praktikum',
+    description: 'IT-Reperatur und -Wartung in einer spezialisierten Firma',
+    location: 'Romans, Frankreich'
   }]
 }

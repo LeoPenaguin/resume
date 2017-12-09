@@ -8,10 +8,10 @@ export default {
   cursusScolaire,
   experienceProfessionnelle,
   accueil,
-  title: '... - Léo PENAGUIN',
-  accueilsection: '...',
-  experience: '...',
-  competences: '...',
-  cursus: '...',
+  title: 'CV - Léo PENAGUIN',
+  accueilsection: 'Homepage',
+  experience: 'Berufserfahrung',
+  competences: 'Persönliche Kompetenzen',
+  cursus: 'Schulcurriculum',
   unfinished: 'Die Übersetzung ist nicht vollständig'
 }

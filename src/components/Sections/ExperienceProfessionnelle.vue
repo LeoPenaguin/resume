@@ -2,20 +2,30 @@
 <div class="section" id="section-2">
   <h1><i class="fa fa-building-o" aria-hidden="true"></i><br /><span v-lang.experience></span></h1>
   <div class="smartphone-hide bit-2">
-      <div class="bigimg"></div>
+      <img class="bigimg" src="../../img/programmer.jpg" alt="">
   </div>
   <div class="bit-2">
     <ul>
       <li v-for="experience in translatedData.list" ng-switch="!!experience.url">
         <a target="_blank" v-bind:href="experience.url" v-if="experience.url">
           <h2><i class='fa fa-external-link'></i> {{experience.date}}</h2>
-          <i class="entreprise">{{experience.entreprise}}</i> -
-          <b>{{experience.type}}</b><br/> {{experience.description}} (<i>{{experience.location}})</i>
+          <span class="entreprise">
+            <p><i class="fa fa-building-o" aria-hidden="true"></i> {{experience.entreprise}}</p>
+          </span>
+          <p><b>{{experience.type}}</b> : {{experience.description}}<br/></p>
+          <span class="location">
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{experience.location}}</p>
+          </span>
         </a>
         <span ng-switch-when="false" v-else>
-            <h2>{{experience.date}}</h2>
-            <i class="entreprise">{{experience.entreprise}}</i> -
-            <b>{{experience.type}}</b><br/> {{experience.description}} (<i>{{experience.location}})</i>
+          <h2>{{experience.date}}</h2>
+          <span class="entreprise">
+            <p><i class="fa fa-building-o" aria-hidden="true"></i> {{experience.entreprise}}</p>
+          </span>
+          <p><b>{{experience.type}}</b> : {{experience.description}}<br/></p>
+          <span class="location">
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{experience.location}}</p>
+          </span>
         </span>
       </li>
     </ul>
@@ -75,12 +85,20 @@ export default {
         color: #00A2E0;
       }
     }
+    .entreprise {
+      display: inline-block;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
+    .location {
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 5px;
+      width: auto;
+      i {
+        display: inline;
+      }
+    }
   }
-  .smartphone-hide {
-      padding-right: 70px;
-     .bigimg {
-       background-image: url('../../img/programmer.jpg');
-     }
-   }
 }
 </style>
