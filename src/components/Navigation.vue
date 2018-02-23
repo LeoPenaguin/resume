@@ -113,7 +113,7 @@ nav {
   footer {
     position: absolute;
     bottom: 0;
-    padding: 5%;
+    padding: 5px;
     width: 180px;
     background: #153744;
     margin: 10px;
@@ -124,7 +124,7 @@ nav {
       background: white;
       border-radius: 5px;
       display: block;
-      padding: 10px;
+      padding: 5px;
       text-align: center;
       font-weight: bolder;
     }
@@ -137,7 +137,6 @@ nav {
       height: 70px;
       .language-eng,.language-fra,.language-ger {
         margin: 5px;
-        padding: 5px;
         border: none;
         width: 40px;
         height: 40px;
