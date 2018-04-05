@@ -112,11 +112,17 @@ nav {
   footer {
     position: absolute;
     bottom: 0;
+<<<<<<< HEAD
     width: 190px;
+=======
+>>>>>>> 17c9b4226a20f3488f6e990f29650a83dbe6c639
     background: #153744;
     margin: 5px;
     border-radius: 5px;
     flex: 1;
+<<<<<<< HEAD
+=======
+>>>>>>> 17c9b4226a20f3488f6e990f29650a83dbe6c639
     .language {
       display: flex;
       align-items: center;
@@ -125,8 +131,11 @@ nav {
       flex-direction: row;
       height: 70px;
       .language-eng,.language-fra,.language-ger {
+<<<<<<< HEAD
         margin: 0 5px;
         padding: 5px;
+=======
+>>>>>>> 17c9b4226a20f3488f6e990f29650a83dbe6c639
         border: none;
         width: 40px;
         height: 40px;
