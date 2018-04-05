@@ -9,7 +9,6 @@
     <li><a href="#section-4"><i class="fa fa-eye" aria-hidden="true"></i><span v-lang.cursus></span></a></li>
   </ul>
   <footer>
-    <span class="unfinished" v-lang.unfinished></span>
     <div class="language">
       <button v-bind:class="[language == 'en' ? 'active' : '']"
               class="language-eng"
@@ -96,13 +95,13 @@ nav {
   .profilimg {
     float: left;
     transition: all 0.3s;
-    width: 180px;
-    height: 180px;
-    margin: 10px;
+    width: 190px;
+    height: 190px;
+    margin: 5px;
     border-radius: 5px;
     background-image: url("../img/moi.jpg");
     background-size: cover;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-top: 0;
   }
 
@@ -113,21 +112,11 @@ nav {
   footer {
     position: absolute;
     bottom: 0;
-    padding: 5%;
-    width: 180px;
+    width: 190px;
     background: #153744;
-    margin: 10px;
+    margin: 5px;
     border-radius: 5px;
     flex: 1;
-    .unfinished {
-      color: red;
-      background: white;
-      border-radius: 5px;
-      display: block;
-      padding: 10px;
-      text-align: center;
-      font-weight: bolder;
-    }
     .language {
       display: flex;
       align-items: center;
@@ -136,7 +125,7 @@ nav {
       flex-direction: row;
       height: 70px;
       .language-eng,.language-fra,.language-ger {
-        margin: 5px;
+        margin: 0 5px;
         padding: 5px;
         border: none;
         width: 40px;
@@ -199,9 +188,9 @@ nav {
     width: 100%;
     a {
       text-decoration: none;
-      padding: 15px;
-      margin: 0 10px;
-      width: 180px;
+      padding: 10px;
+      margin: 0 5px;
+      width: 190px;
       float: left;
       transition: color 0.3s;
       border-radius: 5px;
