@@ -1,0 +1,38 @@
+
+@function v($var, $fallback: null) {
+  @if($fallback) {
+      @return var(--#{$var}, #{$fallback});
+  }
+  @else {
+      @return var(--#{$var});
+  }
+}
+
+:root {
+  // base
+  --color-mode: 'light';
+  --text-color : #000000;
+  --background-color: #ffffff;
+  --border-radius: 10px;
+  --green: #2fcc70;
+  --yellow: #ffe500;
+  --blue: #00A1FF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --color-mode: 'dark';
+  }
+
+  :root:not([data-user-color-scheme]) {
+    --text-color : #ffffff;
+    --background-color: #15202B;
+    --blue: #1DA1F2;
+  }
+}
+
+[data-user-color-scheme='dark'] {
+  --text-color : #ffffff;
+  --background-color: #15202B;
+  --blue: #1DA1F2;
+}

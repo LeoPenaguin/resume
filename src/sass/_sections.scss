@@ -1,0 +1,42 @@
+.sections {
+    flex-direction: column;
+    align-items: flex-start;
+    grid-area: content;
+    height: 100vh;
+    overflow: auto;
+    font-size: 1.3em;
+    padding-top: 60px;
+
+    .section {
+      display: block;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-size: cover;
+      h1 {
+        margin: 1em 0;
+        font-weight: bold;
+        color: v(text-color);
+        font-size: 1.4em;
+        margin-left: 0px;
+        text-align: left;
+        max-width: 1000px;
+        width: 100%;
+        i {
+          margin-right: 10px;
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  @import "section1";
+  @import "section2";
+  @import "section3";
+

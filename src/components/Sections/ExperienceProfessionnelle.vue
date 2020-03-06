@@ -1,32 +1,20 @@
 <template>
 <div class="section" id="section-2">
-  <h1><i class="fa fa-building-o" aria-hidden="true"></i><br /><span v-lang.experience></span></h1>
-  <div class="smartphone-hide bit-2">
-      <img class="bigimg" src="../../img/programmer.jpg" alt="">
-  </div>
-  <div class="bit-2">
+  <h1><i class="fa fa-building-o" aria-hidden="true"></i>Professional experience</h1>
+  <div class="section-center">
     <ul>
-      <li v-for="experience in translatedData.list" ng-switch="!!experience.url">
-        <a target="_blank" v-bind:href="experience.url" v-if="experience.url">
-          <h2><i class='fa fa-external-link'></i> {{experience.date}}</h2>
+      <li v-for="experience in experiences" v-bind:key="experience._id" ng-switch="!!experience.link">
+        <a class="exp-item" target="_blank" v-bind:href="experience.link" v-if="experience.link">
+          <h2>{{experience.date_beginning | moment("MMMM YYYY")}} <span>{{experience.period}}</span></h2>
           <span class="entreprise">
-            <p><i class="fa fa-building-o" aria-hidden="true"></i> {{experience.entreprise}}</p>
+            <p><i class="fa fa-building-o" aria-hidden="true"></i> {{experience.company}}</p>
           </span>
           <p><b>{{experience.type}}</b> : {{experience.description}}<br/></p>
           <span class="location">
-            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{experience.location}}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11.5" cy="8.5" r="5.5"/><path d="M11.5 14v7"/></svg>
+            {{experience.location}}
           </span>
         </a>
-        <span ng-switch-when="false" v-else>
-          <h2>{{experience.date}}</h2>
-          <span class="entreprise">
-            <p><i class="fa fa-building-o" aria-hidden="true"></i> {{experience.entreprise}}</p>
-          </span>
-          <p><b>{{experience.type}}</b> : {{experience.description}}<br/></p>
-          <span class="location">
-            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{experience.location}}</p>
-          </span>
-        </span>
       </li>
     </ul>
   </div>
@@ -37,68 +25,9 @@
 export default {
   name: 'ExperienceProfessionnelle',
   computed: {
-    translatedData () {
-      return this.translate('experienceProfessionnelle')
+    experiences () {
+      return this.$store.state.experiences
     }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-#section-2 {
-  padding: 0 10% 4em;
-  background-color: #153744;
-  color: white;
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    border-left: 2px solid #fff;
-    padding-left: 24px;
-  }
-  li {
-    font-weight: thin;
-    margin: 30px 0;
-    h2 {
-      margin: 0;
-      padding: 0;
-      font-weight: normal;
-      position: relative;
-      &:before {
-        content: '';
-        width: 10px;
-        height: 10px;
-        background: #fff;
-        -webkit-border-radius: 1em;
-        -moz-border-radius: 1em;
-        border-radius: 1em;
-        position: absolute;
-        left: -30px;
-        top: 50%;
-      }
-    }
-    &:hover a {
-      color: #00A2E0;
-
-      h2 {
-        color: #00A2E0;
-      }
-    }
-    .entreprise {
-      display: inline-block;
-      margin: 5px 0;
-      border-radius: 5px;
-    }
-    .location {
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 5px;
-      width: auto;
-      i {
-        display: inline;
-      }
-    }
-  }
-}
-</style>

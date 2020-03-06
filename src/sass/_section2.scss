@@ -1,0 +1,126 @@
+#section-2 {
+  .section-center {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      padding: 20px 0px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+      li {
+        font-weight: 100;
+        overflow: visible;
+        display: inline-block;
+
+        a.exp-item,
+        span.exp-item {
+          margin: 0;
+          overflow: hidden;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          border: 1px solid v(text-color);
+          border-radius: 10px;
+
+          h2 {
+            margin: 0;
+            font-weight: bold;
+            position: relative;
+            padding: 10px 0 0 10px;
+            width: 100%;
+            span {
+              color: v(green);
+              font-size: 0.6em;
+            }
+          }
+
+          p {
+            margin: 0 10px;
+            flex: 1;
+          }
+
+          &:hover a {
+            color: v(blue);
+
+            h2 {
+              color: v(blue);
+            }
+          }
+
+          svg {
+            height: 20px;
+            width: 20px;
+          }
+
+          .entreprise {
+            color: v(green);
+            padding: 0;
+            margin: 10px 0;
+            display: inline-block;
+            font-weight: bold;
+
+            i {
+              margin-right: 5px;
+            }
+          }
+
+          .location {
+            background: v(yellow);
+            border-radius: 10px;
+            padding: 5px 10px 5px 5px;
+            margin: 10px;
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-weight: 400;
+            font-size: 0.7em;
+            svg {
+              stroke: #000000;
+            }
+          }
+        }
+
+        a.exp-item {
+          transition: transform 0.2s;
+          border-color: v(green);
+
+          &:hover {
+            background: v(green);
+            color: v(text-color);
+
+            h2 {
+              span {
+                color: v(text-color);
+              }
+            }
+
+            .entreprise p {
+              color: v(text-color);
+            }
+
+            .location {
+              background: v(text-color);
+              color: v(green);
+              svg {
+                stroke: v(green);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,36 +1,22 @@
 <template>
-<div class="section" id="section-4">
-  <h1><i class="fa fa-eye" aria-hidden="true"></i><br /><span v-lang.cursus></span></h1>
-  <div class="bit-2">
+<div class="section" id="section-3">
+  <h1><i class="fa fa-eye" aria-hidden="true"></i>Academic background</h1>
+  <div class="section-center">
     <ul>
-      <li v-for="cursus in translatedData.list" ng-switch="!!cur.url">
-        <a target="_blank" v-bind:href="cursus.url" v-if="cursus.url">
-          <h2><i class='fa fa-external-link'></i> {{cursus.date}}</h2>
-          {{cursus.description}}
-          <br/>
-          <span class="type">
-            <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{cursus.type}}</p>
-          </span>
-          <span class="location">
-            <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{cursus.location}}</p>
-          </span>
-        </a>
-        <span v-else>
-            <h2>{{cursus.date}}</h2>
-            {{cursus.description}}
-            <br/>
+      <li v-for="degree in degrees" v-bind:key="degree._id" ng-switch="!!cur.url">
+        <span class="cursus-item">
+            <h2>{{degree.date_beginning | moment("MMMM YYYY")}} <span>{{degree.period}}</span></h2>
             <span class="type">
-              <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{cursus.type}}</p>
+              <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{degree.degree}}</p>
             </span>
+            <p>{{degree.description}}</p>
             <span class="location">
-              <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{cursus.location}}</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11.5" cy="8.5" r="5.5"/><path d="M11.5 14v7"/></svg>
+              <span>{{degree.location}}</span>
             </span>
         </span>
       </li>
     </ul>
-  </div>
-  <div class="smartphone-hide bit-2">
-    <img class="bigimg" src="../../img/education.jpg" alt="">
   </div>
 </div>
 </template>
@@ -39,63 +25,9 @@
 export default {
   name: 'CursusScolaire',
   computed: {
-    translatedData () {
-      return this.translate('cursusScolaire')
+    degrees () {
+      return this.$store.state.degrees
     }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-#section-4 {
-  padding: 0 10% 4em;
-  background-color: #153744;
-  color: white;
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    border-left: 2px solid #fff;
-    padding-left: 24px;
-    padding-right: 24px;
-    border-right: 2px solid #fff;
-    border-left: 0;
-  }
-  li {
-    font-weight: thin;
-    margin: 30px 0;
-    text-align: right;
-    h2 {
-      margin: 0;
-      padding: 0;
-      font-weight: normal;
-      position: relative;
-      &:before {
-        content: '';
-        width: 10px;
-        height: 10px;
-        background: #fff;
-        -webkit-border-radius: 1em;
-        -moz-border-radius: 1em;
-        border-radius: 1em;
-        position: absolute;
-        right: -30px;
-        top: 50%;
-      }
-    }
-    &:hover a {
-      color: #00A2E0;
-      h2 {
-        color: #00A2E0;
-      }
-    }
-    .location,.type {
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 5px;
-      font-weight: bold;
-    }
-  }
-}
-</style>

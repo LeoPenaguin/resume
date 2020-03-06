@@ -1,17 +1,15 @@
 <template>
   <div class='sections'>
-    <Accueil v-bind:user="user" />
+    <Description />
     <ExperienceProfessionnelle />
-    <CompetencesPersonnelle />
     <CursusScolaire  />
   </div>
 </template>
 
 <script>
-import Accueil from '@/components/Sections/Accueil'
-import CompetencesPersonnelle from '@/components/Sections/CompetencesPersonnelle'
 import CursusScolaire from '@/components/Sections/CursusScolaire'
 import ExperienceProfessionnelle from '@/components/Sections/ExperienceProfessionnelle'
+import Description from '@/components/Sections/Description'
 
 export default {
   name: 'Sections',
@@ -19,74 +17,19 @@ export default {
     return {
       user: {
         nom: 'PENAGUIN',
-        prenom: 'Léo'
+        prenom: 'Léo',
+        description: null,
+        scrollPos: 0
       }
     }
   },
-  computed: {
-    translatedData () {
-      return this.translate('cursusScolaire')
-    }
+  mounted () {
+    this.$store.dispatch('fetchData')
   },
   components: {
-    Accueil,
-    CompetencesPersonnelle,
     CursusScolaire,
-    ExperienceProfessionnelle
+    ExperienceProfessionnelle,
+    Description
   }
 }
 </script>
-
-<style lang="scss">
-.sections {
-  height: 100%;
-  padding-left: 200px;
-  position: absolute;
-  overflow-y: scroll;
-  .section {
-    position: relative;
-    width: 100%;
-    float: left;
-    display: block;
-    background-attachment: fixed;
-    -moz-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    color: #FFBE00;
-    h1 {
-      margin: 3em 0;
-      text-align: center;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    img {
-      max-width: 100%;
-    }
-  }
-
-  .smartphone-hide {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 100px;
-    .bigimg {
-      border-radius: 100%;
-      max-width: 450px;
-      height: auto;
-    }
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .sections {
-    padding-left: 0;
-  }
-  .smartphone-hide {
-    display: none;
-  }
-}
-
-</style>

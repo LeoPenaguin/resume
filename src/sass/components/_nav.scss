@@ -1,0 +1,132 @@
+nav.site-navigation {
+  width: 100%;
+  grid-area: nav;
+  transition: top 0.3s;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  &.is-hidden {
+    top: -70px;
+  }
+
+  .nav-content {
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+
+    .nomprenom {
+      text-align: left;
+      font-size: 1.3em;
+      font-weight: 600;
+      color: v(blue);
+      display: flex;
+      align-items: center;
+      flex: 1;
+      margin: 10px 10px 10px 10px;
+      .name {
+        font-weight: 900;
+        color: v(text-color);
+      }
+    }
+
+    .nav-cache {
+      display: none;
+      position: fixed;
+      left: 70%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 800;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
+      cursor: pointer;
+    }
+
+    .profilimg {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background-image: url("http://cockpit.leopng.com/storage/uploads/2019/06/29/5d177397d693449454788_10218293073702621_4573272350623006720_n.jpg");
+      background-size: cover;
+      margin: 5px;
+      font-weight: bolder;
+    }
+
+    .social-grid {
+      display: flex;
+      align-items: stretch;
+
+      .grid-item {
+        font-size: 1em;
+        text-decoration: none;
+        padding: 0;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        transition: width 0.3s;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin: 5px;
+
+        span {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          svg {
+            width: 25px;
+            height: 25px;
+          }
+          span {
+            margin: 5px 0;
+          }
+        }
+
+        &:hover {
+          width: 70px;
+        }
+
+        &.item-darkmode {
+          background-color: rgb(107, 107, 107);
+          margin-right: 15px;
+          width: auto;
+          padding: 0 15px;
+          cursor: pointer;
+          &.is-dark {
+            background-color: v(text-color);
+            color: v(blue);
+          }
+          &.is-light {
+            background-color: v(text-color);
+            color: v(background-color);
+          }
+        }
+
+        &.item-mail {
+          background-color: #2ECC71;
+        }
+
+        &.item-linkedin {
+          background-color: #0177B5;
+        }
+
+        &.item-github {
+          background-color: #323131;
+        }
+
+        &.item-twitter {
+          background-color: #1DA1F2;
+        }
+      }
+    }
+  }
+}

@@ -1,263 +1,139 @@
 <template>
-<nav>
-  <div class="nomprenom">{{user.prenom}} {{user.nom}}</div>
-  <div class="profilimg"></div>
-  <ul class="navigation">
-    <li><a href="#section-1" class="current"><i class="fa fa-home" aria-hidden="true"></i><span v-lang.accueilsection></span></a></li>
-    <li><a href="#section-2"><i class="fa fa-building-o" aria-hidden="true"></i><span v-lang.experience></span></a></li>
-    <li><a href="#section-3"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span v-lang.competences></span></a></li>
-    <li><a href="#section-4"><i class="fa fa-eye" aria-hidden="true"></i><span v-lang.cursus></span></a></li>
-  </ul>
-  <footer>
-    <div class="language">
-      <button v-bind:class="[language == 'en' ? 'active' : '']"
-              class="language-eng"
-              @click="language = 'en'">
-      </button>
-      <button v-bind:class="[language == 'ge' ? 'active' : '']"
-              class="language-ger"
-              @click="language = 'ge'">
-      </button>
-      <button
-              v-bind:class="[language == 'fr' ? 'active' : '']"
-              class="language-fra"
-              @click="language = 'fr'">
-      </button>
+<nav class="site-navigation">
+  <div class="nav-content">
+    <div class="profilimg"></div>
+    <div class="nomprenom">
+      <span>
+        {{user.prenom}} <span class="name">{{user.nom}}</span>
+      </span>
     </div>
-  </footer>
+
+    <div class="social-grid">
+      <a class="grid-item item-darkmode" v-bind:class="darkmode" v-on:click="clickDarkMode">
+        <span v-if="darkmode === 'is-light'" >Dark</span>
+        <span v-if="darkmode === 'is-dark'" >Light</span>
+      </a>
+      <a class="grid-item item-mail" target="_blank" href="mailto:PenaguinLeo@gmail.com">
+        <span>
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+            <rect x="64" y="64" style="fill:#ECEFF1;" width="384" height="384"/>
+            <polygon style="fill:#CFD8DC;" points="256,296.384 448,448 448,148.672 "/>
+            <path style="fill:#F44336;" d="M464,64h-16L256,215.616L64,64H48C21.504,64,0,85.504,0,112v288c0,26.496,21.504,48,48,48h16V148.672
+              l192,147.68L448,148.64V448h16c26.496,0,48-21.504,48-48V112C512,85.504,490.496,64,464,64z"/>
+            <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+          </svg>
+        </span>
+      </a>
+      <a class="grid-item item-linkedin" target="_blank" href="https://fr.linkedin.com/pub/l%C3%A9o-penaguin/a6/7a/b14">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+            <path fill=#ffffff d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"/>
+          </svg>
+        </span>
+      </a>
+      <a class="grid-item item-github" target="_blank" href="https://github.com/LeoPenaguin">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+            <path fill=#ffffff d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.6,5,2.5,9.3,6.9,10.7v-2.3c0,0-0.4,0.1-0.9,0.1c-1.4,0-2-1.2-2.1-1.9 c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1c0.4,0,0.7-0.1,0.9-0.2 c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6C7,7.2,7,6.6,7.3,6c0,0,1.4,0,2.8,1.3 C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3C15.3,6,16.8,6,16.8,6C17,6.6,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4c0.7,0.8,1.2,1.8,1.2,3 c0,2.2-1.7,3.5-4,4c0.6,0.5,1,1.4,1,2.3v3.3c4.1-1.3,7-5.1,7-9.5C22,6.1,16.9,1.4,10.9,2.1z"/>
+          </svg>
+        </span>
+      </a>
+      <a class="grid-item item-twitter" target="_blank" href="https://twitter.com/leo_png">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" version="1.1" width="50px" height="50px">
+            <g id="surface1">
+              <path fill=#ffffff d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z "/>
+            </g>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <footer>
+      <!-- <div class="language">
+        <button v-bind:class="[language == 'en' ? 'active' : '']"
+                class="language-eng"
+                @click="language = 'en'">
+                English
+        </button>
+        <button v-bind:class="[language == 'ge' ? 'active' : '']"
+                class="language-ger"
+                @click="language = 'ge'">
+                Deutsch
+        </button>
+        <button
+                v-bind:class="[language == 'fr' ? 'active' : '']"
+                class="language-fra"
+                @click="language = 'fr'">
+                Français
+        </button>
+      </div> -->
+    </footer>
+  </div>
 </nav>
 </template>
 
 <script>
+const STORAGE_KEY = 'user-color-scheme'
+const COLOR_MODE_KEY = '--color-mode'
+
 export default {
   name: 'Navigation',
-  props: ['user']
+  props: ['user'],
+  data: function () {
+    return {
+      darkmode: null
+    }
+  },
+  mounted () {
+    this.applySetting()
+  },
+  methods: {
+    applySetting (passedSetting) {
+      let currentSetting = passedSetting || localStorage.getItem(STORAGE_KEY)
+
+      if (currentSetting !== 'null' || currentSetting !== null) {
+        document.documentElement.setAttribute('data-user-color-scheme', currentSetting)
+        this.setButtonLabelAndStatus(currentSetting)
+      } else {
+        this.setButtonLabelAndStatus(this.getCSSCustomProp(COLOR_MODE_KEY))
+      }
+    },
+    clickDarkMode () {
+      this.applySetting(this.toggleSetting())
+    },
+    toggleSetting () {
+      let currentSetting = localStorage.getItem(STORAGE_KEY)
+
+      if (currentSetting === 'null' || !currentSetting) {
+        currentSetting = this.getCSSCustomProp(COLOR_MODE_KEY) === 'dark' ? 'light' : 'dark'
+      } else if (currentSetting === 'light') {
+        currentSetting = 'dark'
+      } else if (currentSetting === 'dark') {
+        currentSetting = 'light'
+      }
+
+      localStorage.setItem(STORAGE_KEY, currentSetting)
+
+      return currentSetting
+    },
+    getCSSCustomProp (propKey) {
+      let response = getComputedStyle(document.documentElement).getPropertyValue(propKey)
+
+      if (response.length) {
+        response = response.replace(/'|"/g, '').trim()
+      }
+
+      return response
+    },
+    setButtonLabelAndStatus (currentSetting) {
+      if (currentSetting === 'dark') {
+        this.darkmode = 'is-dark'
+      } else {
+        this.darkmode = 'is-light'
+      }
+    }
+  }
 }
-
-// Agrandir le menu (smartphone)
-$(function () {
-  $('.nav-button').click(function (e) {
-    e.preventDefault()
-    $('body').toggleClass('navbar-on')
-  })
-
-  $('.navigation>li').click(function (e) {
-    e.preventDefault()
-    $('body').toggleClass('navbar-on')
-  })
-})
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 200px;
-  color: #FFBE00;
-  overflow: hidden;
-  background: #102a33;
-  z-index: 900;
-  display: flex;
-  flex-direction: column;
-
-  .icon {
-    float: left;
-    margin-right: 0.5em;
-    height: 1.3em;
-  }
-
-  .nomprenom {
-    width: 100%;
-    text-align: center;
-    color: white;
-    height: 50px;
-    line-height: 50px;
-  }
-
-  .nav-cache {
-    display: none;
-    position: fixed;
-    left: 70%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 800;
-    background: rgba(0, 0, 0, 0.6);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60%;
-    cursor: pointer;
-  }
-
-  .profilimg {
-    float: left;
-    transition: all 0.3s;
-    width: 190px;
-    height: 190px;
-    margin: 5px;
-    border-radius: 5px;
-    background-image: url("../img/moi.jpg");
-    background-size: cover;
-    margin-bottom: 5px;
-    margin-top: 0;
-  }
-
-  &:hover .nomprenom {
-    color: white;
-  }
-
-  footer {
-    position: absolute;
-    bottom: 0;
-<<<<<<< HEAD
-    width: 190px;
-=======
->>>>>>> 17c9b4226a20f3488f6e990f29650a83dbe6c639
-    background: #153744;
-    margin: 5px;
-    border-radius: 5px;
-    flex: 1;
-<<<<<<< HEAD
-=======
->>>>>>> 17c9b4226a20f3488f6e990f29650a83dbe6c639
-    .language {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-      height: 70px;
-      .language-eng,.language-fra,.language-ger {
-<<<<<<< HEAD
-        margin: 0 5px;
-        padding: 5px;
-=======
->>>>>>> 17c9b4226a20f3488f6e990f29650a83dbe6c639
-        border: none;
-        width: 40px;
-        height: 40px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        border-radius: 50%;
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        &.active {
-          &::before {
-            content: "";
-            background-image: url("../img/check.png");
-            position: absolute;
-            background-size: cover;
-            left: 10px;
-            top: 10px;
-            right: 10px;
-            bottom: 10px;
-            z-index: 2;
-          }
-          &::after {
-            content: "";
-            background-image: url("../img/check.png");
-            background: linear-gradient(135deg, rgba(0, 230, 255, 0.5) 0%, rgba(0, 96, 167, 0.8) 100%);
-            position: absolute;
-            background-size: cover;
-            left: 3px;
-            top: 3px;
-            right: 3px;
-            bottom: 3px;
-            border-radius: 50%;
-            border: 3px solid white;
-          }
-        }
-      }
-      .language-eng {
-        background-image: url("../img/flags/eng.png");
-      }
-      .language-fra {
-        background-image: url("../img/flags/fra.png");
-      }
-      .language-ger {
-        background-image: url("../img/flags/ger.png");
-      }
-    }
-  }
-}
-.navigation {
-  list-style: none;
-  padding: 0;
-  float: left;
-  margin: 0;
-
-  li {
-    float: left;
-    line-height: 30px;
-    width: 100%;
-    a {
-      text-decoration: none;
-      padding: 10px;
-      margin: 0 5px;
-      width: 190px;
-      float: left;
-      transition: color 0.3s;
-      border-radius: 5px;
-      color: white;
-      display: flex;
-      align-items: center;
-
-      &:hover {
-          color: #00A2E0;
-      }
-
-      &.current {
-          background-color: #153744;
-          color: #FFBE00;
-      }
-
-      i {
-          margin-right: 10px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 640px) {
-  nav {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    width: 60%;
-    -ms-transform: translate(-100%, 0);
-    -webkit-transform: translate(-100%, 0);
-    transform: translate(-100%, 0);
-    .profilimg {
-      display: none;
-    }
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .navigation {
-    margin-top: 40px;
-    li {
-      &:nth-child(odd) {
-        background: rgba(0, 0, 0, 0.05);
-      }
-      a {
-        padding: 20px;
-        margin: 0;
-        width: 100%;
-        float: left;
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        border-radius: 0;
-      }
-    }
-  }
-}
-
-</style>
