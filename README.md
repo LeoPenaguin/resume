@@ -1,4 +1,4 @@
-# resume-v2
+# curriculum-vitae
 
 ## Project setup
 ```
