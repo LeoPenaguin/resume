@@ -51,24 +51,6 @@
     </div>
 
     <footer>
-      <!-- <div class="language">
-        <button v-bind:class="[language == 'en' ? 'active' : '']"
-                class="language-eng"
-                @click="language = 'en'">
-                English
-        </button>
-        <button v-bind:class="[language == 'ge' ? 'active' : '']"
-                class="language-ger"
-                @click="language = 'ge'">
-                Deutsch
-        </button>
-        <button
-                v-bind:class="[language == 'fr' ? 'active' : '']"
-                class="language-fra"
-                @click="language = 'fr'">
-                Français
-        </button>
-      </div> -->
     </footer>
   </div>
 </nav>
