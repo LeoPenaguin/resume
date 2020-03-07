@@ -4,8 +4,10 @@
 
   <ul class="interrests">
     <li v-for="interest in interests" v-bind:key="interest._id">
-        <img v-bind:src="'https://cockpit.leopng.com/' + interest.icon.path" alt="">
-        <span>{{interest.label}}</span>
+        <span class="label">{{interest.label}}</span>
+        <span class="note-container">
+          <span class="note-value" :style="{width: interest.note * 10 + '%'}"></span>
+        </span>
     </li>
   </ul>
 </div>

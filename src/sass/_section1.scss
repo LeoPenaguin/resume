@@ -33,33 +33,32 @@
     border-radius: 10px;
     li {
       position: relative;
-      padding: 10px;
-      border-radius: 100%;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
       background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      margin: 10px;
-      img {
-        width: 30px;
-        height: 30px;
-        object-fit: contain;
-      }
-      span {
-        position: absolute;
-        background: v(text-color);
-        color: v(background-color);
-        bottom: -25px;
-        padding: 5px 10px;
-        display: none;
+      margin: 3px;
+      flex-direction: column;
+      span.label {
         font-size: 0.7em;
+        color: v(blue);
         border-radius: 4px;
-        z-index: 10;
+        font-weight: bold;
       }
-      &:hover {
-        span {
+      span.note-container {
+        width: 100px;
+        height: 5px;
+        background: rgb(218, 218, 218);
+        border-radius: 10px;
+        margin: 0.5rem 0 0 0;
+        display: block;
+        .note-value {
+          height: 5px;
+          background: v(blue);
           display: block;
+          border-radius: 10px;
         }
       }
     }
