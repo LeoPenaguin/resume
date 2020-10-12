@@ -1,33 +1,71 @@
 <template>
-<div class="section" id="section-3">
-  <h1><i class="fa fa-eye" aria-hidden="true"></i>Academic background</h1>
-  <div class="section-center">
-    <ul>
-      <li v-for="degree in degrees" v-bind:key="degree._id" ng-switch="!!cur.url">
-        <span class="cursus-item">
-            <h2>{{degree.date_beginning | moment("MMMM YYYY")}} <span>{{degree.period}}</span></h2>
-            <span class="type">
-              <p><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{degree.degree}}</p>
-            </span>
-            <p>{{degree.description}}</p>
-            <span class="location">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11.5" cy="8.5" r="5.5"/><path d="M11.5 14v7"/></svg>
-              <span>{{degree.location}}</span>
-            </span>
-        </span>
-      </li>
-    </ul>
+  <div class="section" id="section-3">
+    <h1>Academic background</h1>
+    <div class="section-center">
+      <ul class="exp-item-list">
+        <li ng-switch="!!cur.url"><span class="cursus-item">
+            <div class="icon-box">
+              <EducationIcon/>
+              <StarIcon/>
+            </div>
+            <h2>January 2019 <span>2 years</span></h2>
+            <p><b>Master in Computer Science</b> - "Expert in Computer Science and Information Systems"</p><span
+              class="location"><span>EPSI Grenoble, France</span></span>
+          </span></li>
+        <li ng-switch="!!cur.url"><span class="cursus-item">
+            <div class="icon-box">
+              <EducationIcon/>
+            </div>
+            <h2>October 2018</h2>
+            <p><b>TOEIC</b> - Test of English for International Communication : 895 points</p><span
+              class="location"><span>EPSI Grenoble, France</span></span>
+          </span></li>
+        <li ng-switch="!!cur.url"><span class="cursus-item">
+            <div class="icon-box">
+              <EducationIcon/>
+            </div>
+            <h2>January 2016 <span>3 years</span></h2>
+            <p><b>Bachelor</b> - Bachelor's degree in computer science and development</p><span
+              class="location"><span>EPSI Grenoble, France</span></span>
+          </span></li>
+        <li ng-switch="!!cur.url"><span class="cursus-item">
+            <div class="icon-box">
+              <EducationIcon/>
+            </div>
+            <h2>October 2013 <span>2 years</span></h2>
+            <p><b>DEUST</b> - "Webmaster and Internet professions"</p><span class="location"><span>Limoges,
+                France</span></span>
+          </span></li>
+        <li ng-switch="!!cur.url"><span class="cursus-item">
+            <div class="icon-box">
+              <EducationIcon/>
+            </div>
+            <h2>January 2013 <span>2 years</span></h2>
+            <p><b>BTS SIO</b> - BTS Service Informatique aux Organisations Option réseaux et télécommunications</p><span
+              class="location"><span>Valence, France</span></span>
+          </span></li>
+        <li ng-switch="!!cur.url"><span class="cursus-item">
+            <div class="icon-box">
+              <EducationIcon/>
+            </div>
+            <h2>January 2011</h2>
+            <p><b>Bachelor degree</b> - Computer science bachelor degree</p><span class="location"><span>Valence,
+                France</span></span>
+          </span></li>
+      </ul>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
-export default {
-  name: 'CursusScolaire',
-  computed: {
-    degrees () {
-      return this.$store.state.degrees
+  import EducationIcon from '@/components/icons/Education'
+  import StarIcon from '@/components/icons/Star'
+
+  export default {
+    name: 'CursusScolaire',
+    components: {
+      EducationIcon,
+      StarIcon
     }
   }
-}
 </script>

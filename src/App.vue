@@ -1,12 +1,10 @@
 <template>
   <div class='content' id='app'>
-    <Navigation v-bind:user="user" />
     <Sections />
   </div>
 </template>
 
 <script>
-  import Navigation from '@/components/Navigation'
   import Sections from '@/components/Sections'
 
   export default {
@@ -20,7 +18,6 @@
       }
     },
     components: {
-      Navigation,
       Sections
     }
   }

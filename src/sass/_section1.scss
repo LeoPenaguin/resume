@@ -1,64 +1,114 @@
-#description {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0;
-  background: v(blue);
-  margin-top: 20px;
-  padding: 0px 20px 10px 20px;
-  border-radius: 10px;
-  font-size: 0.9em;
-  color: white;
-  p {
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-  }
-  a {
-    color: v(blue);
-    background:white;
-    padding: 1px 5px;
-    border-radius: 4px;
-    font-size: 0.9em;
-  }
-  ul.interrests {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: left;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0;
-    border-radius: 10px;
-    li {
-      position: relative;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      background: #ffffff;
+#description {
+  .section-center {
+    .description-me {
+      border-radius: 2rem;
+      height: 20rem;
+      margin: 0 auto;
+      display: block;
+    }
+    .social-grid {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 3px;
-      flex-direction: column;
-      span.label {
-        font-size: 0.7em;
-        color: v(blue);
-        border-radius: 4px;
-        font-weight: bold;
-      }
-      span.note-container {
-        width: 100px;
-        height: 5px;
-        background: rgb(218, 218, 218);
+      align-items: stretch;
+      margin: 0 auto;
+      width: fit-content;
+
+      .grid-item {
+        font-size: 1em;
+        text-decoration: none;
+        padding: 1rem 3rem;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        align-items: center;
+        justify-content: center;
         border-radius: 10px;
-        margin: 0.5rem 0 0 0;
-        display: block;
-        .note-value {
-          height: 5px;
-          background: v(blue);
-          display: block;
-          border-radius: 10px;
+        margin: 5px;
+
+        span {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          svg {
+            width: 25px;
+            height: 25px;
+          }
+          span {
+            margin: 5px 0;
+          }
+        }
+
+        &.item-darkmode {
+          background-color: rgb(107, 107, 107);
+          margin-right: 15px;
+          width: auto;
+          padding: 0 15px;
+          cursor: pointer;
+          &.is-dark {
+            background-color: v(text-color);
+            color: v(blue);
+          }
+          &.is-light {
+            background-color: v(text-color);
+            color: v(background-color);
+          }
+        }
+
+        &.item-mail {
+          background-color: #2ECC71;
+        }
+
+        &.item-linkedin {
+          background-color: #0177B5;
+        }
+
+        &.item-github {
+          background-color: #323131;
+        }
+
+        &.item-twitter {
+          background-color: #1DA1F2;
+        }
+      }
+    }
+    .description-text {
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .description-container {
+      display: flex;
+      justify-content: stretch;
+      margin-bottom: 20px;
+      gap: 20px;
+      .description-item {
+        border-radius: 20px;
+        overflow: hidden;
+        background: #2c3049;
+        padding: 2rem;
+        flex: 2;
+        h2 {
+          margin: 0;
+        }
+        ul {
+          padding: 0;
+          list-style: none;
+          li {
+            line-height: 2rem;
+            padding-left: 1.3rem;
+            position: relative;
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0.1rem;
+              top: 0.63rem;
+              width: 0.7rem;
+              height: 0.7rem;
+              background: #5770ff;
+              border-radius: 50%;
+            }
+          }
         }
       }
     }

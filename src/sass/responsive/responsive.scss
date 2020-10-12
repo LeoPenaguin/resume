@@ -1,122 +1,26 @@
-@media screen and (max-width: 1000px) {
-  nav.site-navigation {
-    padding: 5px;
+@media screen and (max-width: 1230px) {
+  .section {
+    padding: 2rem;
 
-    &.is-hidden {
-      top: -100px;
+    .section-center {
+        width: 100% !important;
     }
 
-    .nav-content {
-      .nomprenom {
-        font-size: 1.2em;
-        padding: 5px 0;
-        color: v(text-color);
-        .name {
-          font-weight: 900;
-          color: v(text-color);
-          background: v(background-color);
-          padding: 2px 5px;
-          border-radius: 3px;
-        }
-      }
-
-      .profilimg {
-        display: none;
-      }
-
-      .social-grid {
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-
-        .grid-item {
-          width: 50px;
-          margin-left: 5px;
-          border-radius: 10px;
-
-          span {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-
-            .fa {
-              font-size: 1.6em;
-            }
-
-            svg {
-              width: 25px;
-              height: 25px;
-            }
-
-            span {
-              margin: 5px 0;
-            }
-          }
-
-          &:hover {
-            width: 50px;
-          }
-        }
-      }
-    }
-  }
-
-  .sections {
-    #description {
-      border-radius: 0;
-      margin-top: 20px;
+    .description-container {
+      flex-direction: column;
     }
 
-    #section-2, #section-3{
-      h1 {
-        padding: 0 20px;
-      }
-
-      .section-center {
-
-        ul {
-          padding: 0 10px;
-        }
-      }
+    .exp-item-large {
+      width: 100%;
     }
   }
 }
 
-@media screen and (max-width: 560px) {
-  nav.site-navigation {
-    padding: 0 0 5px 0;
-    .nav-content {
+@media screen and (max-width: 750px) {
+  .section {
+    ul.exp-item-list {
+      display: flex !important;
       flex-direction: column;
-      .nomprenom {
-        font-size: 1.2em;
-        padding: 10px 0;
-        color: v(text-color);
-        justify-content: center;
-        margin: 0;
-        .name {
-          font-weight: 900;
-          color: v(text-color);
-          background: v(background-color);
-          padding: 2px 5px;
-          border-radius: 3px;
-        }
-      }
-
-      .social-grid {
-        justify-content: center;
-
-        .grid-item {
-          width: 40px;
-          margin: 0 3px;
-          border-radius: 10px;
-          padding: 7px 14px;
-
-          &.item-darkmode {
-            margin: 0 3px;
-          }
-        }
-      }
     }
   }
 }

@@ -23,9 +23,6 @@ export default {
       }
     }
   },
-  mounted () {
-    this.$store.dispatch('fetchData')
-  },
   components: {
     CursusScolaire,
     ExperienceProfessionnelle,

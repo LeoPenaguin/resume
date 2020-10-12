@@ -1,61 +1,115 @@
 #section-2 {
   .section-center {
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
+    .exp-item-large {
+      margin: 0;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 20px;
+      background: #2c3049;
+      margin-top: 20px;
+      padding: 2rem;
+      position: relative;
 
-    ul {
-      max-width: 1000px;
-      width: 100%;
+      .icon-box {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0.7rem;
+        svg {
+          width: 1.6rem;
+          height: 1.6rem;
+          margin-left: 0.5rem;
+        }
+      }
+      
+      h2 {
+        margin: 0;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          line-height: 2rem;
+          padding-left: 1.3rem;
+          position: relative;
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0.1rem;
+            top: 0.63rem;
+            width: 0.7rem;
+            height: 0.7rem;
+            background: #5770ff;
+            border-radius: 50%;
+          }
+          .icon-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0.7rem;
+            svg {
+              width: 1.6rem;
+              height: 1.6rem;
+              margin-left: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    ul.exp-item-list {
       margin: 0;
       list-style: none;
       display: flex;
       padding: 20px 0px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 10px;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
 
       li {
-        font-weight: 100;
         overflow: visible;
-        display: inline-block;
 
         a.exp-item,
         span.exp-item {
+          padding: 2rem;
           margin: 0;
           overflow: hidden;
           height: 100%;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          border: 1px solid v(text-color);
-          border-radius: 10px;
+          border-radius: 20px;
+          background: #2c3049;
+          position: relative;
 
-          h2 {
-            margin: 0;
-            font-weight: bold;
-            position: relative;
-            padding: 10px 0 0 10px;
-            width: 100%;
-            span {
-              color: v(green);
-              font-size: 0.6em;
+          .icon-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0.7rem;
+            svg {
+              width: 1.6rem;
+              height: 1.6rem;
+              margin-left: 0.5rem;
             }
           }
 
           p {
-            margin: 0 10px;
-            flex: 1;
-          }
-
-          &:hover a {
-            color: v(blue);
-
-            h2 {
-              color: v(blue);
-            }
+            margin: 0;
           }
 
           svg {
@@ -63,61 +117,20 @@
             width: 20px;
           }
 
-          .entreprise {
-            color: v(green);
-            padding: 0;
+          h2 {
             margin: 10px 0;
-            display: inline-block;
-            font-weight: bold;
-
-            i {
-              margin-right: 5px;
-            }
           }
 
           .location {
-            background: var(--yellow);
-            border-radius: 10px;
-            padding: 5px 10px 5px 5px;
-            margin: 10px;
+            background: #5770ff;
+            border-radius: 2rem;
+            padding: 10px 20px;
+            margin: 20px 0 0 0;
             display: inline-block;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: black;
-            font-weight: 400;
-            font-size: 0.7em;
-            svg {
-              stroke: #000000;
-            }
-          }
-        }
-
-        a.exp-item {
-          transition: transform 0.2s;
-          border-color: v(green);
-
-          &:hover {
-            background: v(green);
-            color: v(text-color);
-
-            h2 {
-              span {
-                color: v(text-color);
-              }
-            }
-
-            .entreprise p {
-              color: v(text-color);
-            }
-
-            .location {
-              background: v(text-color);
-              color: v(green);
-              svg {
-                stroke: v(green);
-              }
-            }
+            color: rgb(255, 255, 255);
           }
         }
       }
