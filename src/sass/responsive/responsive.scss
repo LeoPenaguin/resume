@@ -22,5 +22,18 @@
       display: flex !important;
       flex-direction: column;
     }
+    
   }
+  #description {
+    .section-center {
+      .social-grid {
+        width: 100%;
+        .grid-item {
+          width: auto;
+          flex: 1;
+          padding: 1rem;
+        }
+      }
+    }
+  } 
 }

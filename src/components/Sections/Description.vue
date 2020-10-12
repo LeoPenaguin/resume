@@ -65,13 +65,13 @@
 
       <div class="description-text">
       <p>
-        Hi there ! 😃This very simple website is an overview of my professional experience and academic background.My
-        name is Léo Penaguin, I am 27 I have been living in Berlin for 2 years now. I am currently a Web developer at
-        Smart Mobile Factory GmbH. We are mainly developing iOS and Android apps for diverse clients. My job is to
-        create and deploy secure and documented PHP REST APIs for the apps. We also get to develop web apps, so I have
-        experience with VueJS and CSS. My current work allowed me to learn a lot about team working and agile. I gained
-        a lot of knowledge about security, clean code, good practices and overall programming.A little list of
-        technologies I work with. 👇
+        Hi there! 😃This website is an overview of my professional experience and academic background. My name is Léo Penaguin, I am 27 and have been living in Berlin for 2 years now. I am currently a Web developer at Smart Mobile Factory GmbH. 
+        <br>
+        <br>
+        We are mainly developing iOS and Android apps for diverse clients. My job is to create and deploy secure and documented PHP REST APIs for the apps. We also get to develop web apps, so I have experience with VueJS and CSS. My current work allowed me to learn a lot about team work and agile. 
+        <br>
+        <br>
+        I gained a lot of knowledge about security, clean code, good practices and overall programming.
       </p>
       </div>
 
