@@ -85,7 +85,7 @@
       .description-item {
         border-radius: 20px;
         overflow: hidden;
-        background: #2c3049;
+        background: v(items-background-color);
         padding: 2rem;
         flex: 2;
         h2 {

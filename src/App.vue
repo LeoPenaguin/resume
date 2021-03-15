@@ -1,29 +1,35 @@
 <template>
-  <div class='content' id='app'>
-    <Sections />
-  </div>
+    <div id="app" class="content">
+        <Sections />
+    </div>
 </template>
 
 <script>
-  import Sections from '@/components/Sections'
+import Sections from '@/components/Sections'
 
-  export default {
-    name: 'app',
-    data: function () {
-      return {
-        user: {
-          nom: 'PENAGUIN',
-          prenom: 'Léo'
-        }
-      }
-    },
+export default {
+    name: 'App',
     components: {
-      Sections
-    }
-  }
+        Sections,
+    },
+    data: function () {
+        return {
+            user: {
+                nom: 'PENAGUIN',
+                prenom: 'Léo',
+            },
+        }
+    },
+    mounted: () => {
+        if (localStorage.colorScheme) {
+            document.documentElement.dataset.userColorScheme =
+                localStorage.colorScheme
+        }
+    },
+}
 </script>
 
 <style lang="scss">
-  @import './sass/variables/variables.scss';
-  @import './sass/style.scss';
+@import './sass/variables/variables.scss';
+@import './sass/style.scss';
 </style>

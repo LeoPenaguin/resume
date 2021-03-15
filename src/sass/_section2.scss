@@ -9,7 +9,7 @@
       flex-direction: column;
       align-items: flex-start;
       border-radius: 20px;
-      background: #2c3049;
+      background: v(items-background-color);
       margin-top: 20px;
       padding: 2rem;
       position: relative;
@@ -90,7 +90,7 @@
           flex-direction: column;
           align-items: flex-start;
           border-radius: 20px;
-          background: #2c3049;
+          background: v(items-background-color);
           position: relative;
 
           .icon-box {

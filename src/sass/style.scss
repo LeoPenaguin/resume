@@ -11,13 +11,14 @@ body {
     font-size: 15px;
     background: v(background-color);
     color: v(text-color);
+    transition: background 0.5s, color 0.5s;
 }
 
 h1 {
     font-size: 50px;
     text-align: center;
     background: linear-gradient(45deg,#5770ff,#c644fd);
-    color: #2c3049;
+    color: v(items-background-color);
     display: block;
     -webkit-background-clip: text;
     -moz-background-clip: text;
