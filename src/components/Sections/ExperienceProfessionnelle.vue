@@ -7,7 +7,32 @@
                     <WorkIcon />
                     <StarIcon />
                 </div>
-                <h2>Fullstack developer 2018 - Now</h2>
+                <h2>Frontend developer 2021 - Now</h2>
+                <p>
+                    <b>Ubitransport - Lyon, France</b><br />
+                    Context: Complete digital solutions to manage your urban,
+                    school and intercity transport for transport actors:
+                    geolocation, operating assistance assistance, ridership
+                    monitoring, ticket management ticket management, passenger
+                    information and other services.
+                </p>
+                <ul>
+                    <li>Developing web applications with VueJS</li>
+                    <li>Working as a team with Git and Gitlab.</li>
+                    <li>Continuous development with Jenkins and Gitlab</li>
+                    <li>
+                        Agile: Sprint, Daily stand up, Grooming, Scrum with Jira
+                    </li>
+                    <li>Tests with Jest</li>
+                </ul>
+            </div>
+
+            <div class="exp-item-large">
+                <div class="icon-box">
+                    <WorkIcon />
+                    <StarIcon />
+                </div>
+                <h2>Fullstack developer 2018 - 2021</h2>
                 <p>
                     <b>Smart Mobile Factory GmBH - Berlin, Germany</b><br />
                     Context: Fullstack developer within an agency developing
