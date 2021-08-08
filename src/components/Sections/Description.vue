@@ -122,21 +122,26 @@
 
             <div class="description-text">
                 <p>
-                    Hello there! 😃 This website is an overview of my professional
-                    experience and academic background. I am 28 and have been living in Berlin for 2 years now. 
-                    I am currently a frontend web developer at Ubitransport, working on b2b solutions in the transport industry.
+                    Hello there! 😃 This website is an overview of my
+                    professional experience and academic background. I am 28 and
+                    have been living in Berlin for 2 years now. I am currently a
+                    frontend web developer at Ubitransport, working on b2b
+                    solutions in the transport industry.
                     <br />
                     <br />
-                    My mission is to redesign and to "modernize" a tool that has been on the market for a few years now, so matches to the modern industry standards :
-                    <ul>
-                        <li>The use of Javascript ES6</li>
-                        <li>A single application with Vuejs</li>
-                        <li>Optimised API calls</li>
-                        <li>Strict code syntax rules</li>
-                        <li>Modern testing tools</li>
-                        <li>Modern CSS and frameworks</li>
-                    </ul>
+                    My mission is to redesign and to "modernize" a tool that has
+                    been on the market for a few years now, so matches to the
+                    modern industry standards :
                 </p>
+
+                <ul>
+                    <li>The use of Javascript ES6</li>
+                    <li>A single application with Vuejs</li>
+                    <li>Optimised API calls</li>
+                    <li>Strict code syntax rules</li>
+                    <li>Modern testing tools</li>
+                    <li>Modern CSS and frameworks</li>
+                </ul>
             </div>
 
             <div class="description-container">
