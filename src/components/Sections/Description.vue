@@ -122,22 +122,20 @@
 
             <div class="description-text">
                 <p>
-                    Hi there! 😃This website is an overview of my professional
-                    experience and academic background. My name is Léo Penaguin,
-                    I am 27 and have been living in Berlin for 2 years now. I am
-                    currently a Web developer at Smart Mobile Factory GmbH.
+                    Hello there! 😃 This website is an overview of my professional
+                    experience and academic background. I am 28 and have been living in Berlin for 2 years now. 
+                    I am currently a frontend web developer at Ubitransport, working on b2b solutions in the transport industry.
                     <br />
                     <br />
-                    We are mainly developing iOS and Android apps for diverse
-                    clients. My job is to create and deploy secure and
-                    documented PHP REST APIs for the apps. We also get to
-                    develop web apps, so I have experience with VueJS and CSS.
-                    My current work allowed me to learn a lot about team work
-                    and agile.
-                    <br />
-                    <br />
-                    I gained a lot of knowledge about security, clean code, good
-                    practices and overall programming.
+                    My mission is to redesign and to "modernize" a tool that has been on the market for a few years now, so matches to the modern industry standards :
+                    <ul>
+                        <li>The use of Javascript ES6
+                        <li>A single application with Vuejs</li>
+                        <li>Optimised API calls
+                        <li>Strict code syntax rules
+                        <li>Modern testing tools
+                        <li>Modern CSS and frameworks
+                    </ul>
                 </p>
             </div>
 
