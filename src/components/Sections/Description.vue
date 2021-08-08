@@ -129,12 +129,12 @@
                     <br />
                     My mission is to redesign and to "modernize" a tool that has been on the market for a few years now, so matches to the modern industry standards :
                     <ul>
-                        <li>The use of Javascript ES6
+                        <li>The use of Javascript ES6</li>
                         <li>A single application with Vuejs</li>
-                        <li>Optimised API calls
-                        <li>Strict code syntax rules
-                        <li>Modern testing tools
-                        <li>Modern CSS and frameworks
+                        <li>Optimised API calls</li>
+                        <li>Strict code syntax rules</li>
+                        <li>Modern testing tools</li>
+                        <li>Modern CSS and frameworks</li>
                     </ul>
                 </p>
             </div>
