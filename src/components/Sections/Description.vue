@@ -130,7 +130,7 @@
                     <br />
                     <br />
                     My mission is to redesign and to "modernize" a tool that has
-                    been on the market for a few years now, so matches to the
+                    been on the market for a few years now, so it matches to the
                     modern industry standards :
                 </p>
 
