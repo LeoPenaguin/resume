@@ -38,7 +38,7 @@ export default {
 .experience-item {
     margin: 0;
     overflow: hidden;
-    height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
