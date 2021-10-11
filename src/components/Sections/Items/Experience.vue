@@ -44,7 +44,6 @@ export default {
     align-items: flex-start;
     border-radius: 20px;
     background: v(items-background-color);
-    margin-top: 20px;
     padding: 2rem;
     position: relative;
 

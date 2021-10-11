@@ -3,7 +3,7 @@ export default [
         primary: true,
         title: 'Frontend developer 2021 - Now',
         company: 'Ubitransport',
-        location: 'Lyon, France',
+        location: '🦁 Lyon, France',
         context:
             'Complete digital solutions to manage your urban, school and intercity transport for transport actors: geolocation, operating assistance assistance, ridership monitoring, ticket management ticket management, passenger information and other services.',
         skills: [
@@ -18,7 +18,7 @@ export default [
         primary: true,
         title: 'Fullstack developer 2018 - 2021',
         company: 'Smart Mobile Factory GmBH',
-        location: 'Berlin, Germany',
+        location: '🐻 Berlin, Germany',
         context:
             'Fullstack developer within an agency developing mobile applications. (iOS, Android, MacOS).',
         skills: [
@@ -44,7 +44,7 @@ export default [
         primary: true,
         title: 'JAVA developer 2016 - 2018',
         company: 'Crédit Agricole',
-        location: 'Grenoble, France',
+        location: '🌹 Grenoble, France',
         context: 'JAVA developer in the IT department of a major French bank.',
         skills: ['SOAP API development in Java', 'Teamwork', 'Using Redis'],
     },
@@ -52,7 +52,7 @@ export default [
         primary: true,
         title: 'C# developer 2015 - 2016',
         company: 'HM Clause',
-        location: 'Valence, France',
+        location: '🏰 Valence, France',
         context:
             'C# developer within a French company specialised in field seeds.',
         skills: ['Windows form application with C#', 'Postgres'],
@@ -65,7 +65,7 @@ export default [
         company: 'Mediacraft',
         type: 'Internship',
         context: 'Front-end web development',
-        location: 'Grenoble, France',
+        location: '🌹 Grenoble, France',
     },
     {
         primary: false,
@@ -75,7 +75,7 @@ export default [
         company: 'Smart Mobile Factory',
         type: 'Internship',
         context: 'Symfony API development for mobile applications',
-        location: 'Berlin, Germany',
+        location: '🐻 Berlin, Germany',
     },
     {
         primary: false,
@@ -85,7 +85,7 @@ export default [
         company: 'Crédit Agricole',
         type: 'Internship',
         context: 'Crédit Agricole IT maintenance',
-        location: 'Valence, France',
+        location: '🏰 Valence, France',
     },
     {
         primary: false,
@@ -95,7 +95,7 @@ export default [
         company: 'Agentur Webfox',
         type: 'Internship',
         context: 'Web front-end development and web design',
-        location: 'Berlin, Germany',
+        location: '🐻 Berlin, Germany',
     },
     {
         primary: false,
@@ -105,7 +105,7 @@ export default [
         company: 'SVD Studio',
         type: 'Internship',
         context: 'Design in an advertising agency / web design agency',
-        location: 'Valence, France',
+        location: '🏰 Valence, France',
     },
     {
         primary: false,
@@ -115,6 +115,6 @@ export default [
         company: 'By Micro',
         type: 'Internship',
         context: 'IT maintenance in a specialized company',
-        location: 'Romans, France',
+        location: '👟 Romans, France',
     },
 ]
