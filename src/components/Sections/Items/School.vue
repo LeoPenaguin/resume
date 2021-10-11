@@ -35,6 +35,7 @@ export default {
     border-radius: 20px;
     background: v(items-background-color);
     position: relative;
+    height: fit-content;
 
     p {
         margin: 0;
