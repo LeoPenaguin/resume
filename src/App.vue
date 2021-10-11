@@ -28,8 +28,3 @@ export default {
     },
 }
 </script>
-
-<style lang="scss">
-@import './sass/variables/variables.scss';
-@import './sass/style.scss';
-</style>

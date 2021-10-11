@@ -1,4 +1,23 @@
-export default [
+export const social = [
+    {
+        name: 'mail',
+        link: 'mailto:PenaguinLeo@gmail.com',
+    },
+    {
+        name: 'linkedin',
+        link: 'https://fr.linkedin.com/pub/l%C3%A9o-penaguin/a6/7a/b14',
+    },
+    {
+        name: 'github',
+        link: 'https://github.com/LeoPenaguin',
+    },
+    {
+        name: 'twitter',
+        link: 'https://twitter.com/leo_png',
+    },
+]
+
+export const skills = [
     {
         title: 'Backend',
         items: [

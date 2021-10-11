@@ -2,22 +2,22 @@
     <div class="sections">
         <ColorSwitch />
         <Description />
-        <ExperienceProfessionnelle />
-        <CursusScolaire />
+        <Experience />
+        <School />
     </div>
 </template>
 
 <script>
-import CursusScolaire from '@/components/Sections/CursusScolaire'
-import ExperienceProfessionnelle from '@/components/Sections/ExperienceProfessionnelle'
+import School from '@/components/Sections/School'
+import Experience from '@/components/Sections/Experience'
 import Description from '@/components/Sections/Description'
 import ColorSwitch from '@/components/ColorSwitch'
 
 export default {
     name: 'Sections',
     components: {
-        CursusScolaire,
-        ExperienceProfessionnelle,
+        School,
+        Experience,
         Description,
         ColorSwitch,
     },
@@ -33,3 +33,29 @@ export default {
     },
 }
 </script>
+
+<style lang="scss">
+.sections {
+    flex-direction: column;
+    align-items: flex-start;
+    grid-area: content;
+    font-size: 1.3em;
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-size: cover;
+        padding-top: 80px;
+        .section-center {
+            width: 1200px;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}
+</style>
