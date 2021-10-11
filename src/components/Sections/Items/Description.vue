@@ -24,12 +24,14 @@ export default {
 <style lang="scss" scoped>
 .description-item {
     border-radius: 20px;
-    overflow: hidden;
     background: v(items-background-color);
-    padding: 2rem;
+    padding: 1rem 1.5rem;
     flex: 2;
+    position: relative;
     h2 {
         margin: 0;
+        position: absolute;
+        top: -1rem;
     }
     ul {
         padding: 0;

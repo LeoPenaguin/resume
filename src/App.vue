@@ -49,6 +49,7 @@ body {
 h1 {
     font-size: 50px;
     text-align: center;
+    width: fit-content;
     background: linear-gradient(45deg, #5770ff, #c644fd);
     color: v(items-background-color);
     display: block;

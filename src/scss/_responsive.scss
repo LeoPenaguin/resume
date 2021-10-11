@@ -6,12 +6,14 @@
         width: 100% !important;
     }
 
-    .description-container {
-      flex-direction: column;
+    .description-item, .experience-item, .school-item {
+      grid-column-start: 1;
+      grid-column-end: 3;
     }
 
-    .exp-item-large {
-      width: 100%;
+    .description-item {
+      grid-column-start: 1;
+      grid-column-end: 4;
     }
   }
 }

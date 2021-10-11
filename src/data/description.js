@@ -30,9 +30,13 @@ export const skills = [
     {
         title: 'Frontend',
         items: [
-            'CSS 3, SASS',
-            'Javascript ES6, TypeScript, React, Vuejs, PWA',
+            'Vuejs',
+            'Javascript ES6',
+            'React',
+            'TypeScript',
             'HTML5',
+            'PWA',
+            'CSS 3, SASS, SCSS',
         ],
     },
     {

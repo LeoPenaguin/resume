@@ -122,9 +122,8 @@ svg {
 }
 
 .skills {
-    display: flex;
-    justify-content: stretch;
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 
