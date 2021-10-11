@@ -42,16 +42,11 @@
             </div>
 
             <div class="description-container">
-                <description-item v-for="item in skills" :key="item.title">
-                    <template #title>{{ item.title }}</template>
-                    <template #list>
-                        <ul>
-                            <li v-for="point in item.items" :key="point">
-                                {{ point }}
-                            </li>
-                        </ul>
-                    </template>
-                </description-item>
+                <description-item
+                    v-for="skill in skills"
+                    :key="skill.title"
+                    :skill="skill"
+                />
             </div>
         </div>
     </div>
@@ -85,6 +80,13 @@ export default {
     },
 }
 </script>
+
+<style lang="scss">
+svg {
+    width: 25px;
+    height: 25px;
+}
+</style>
 
 <style lang="scss" scoped>
 .description-me {
@@ -150,10 +152,6 @@ export default {
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            svg {
-                width: 25px;
-                height: 25px;
-            }
             span {
                 margin: 5px 0;
             }

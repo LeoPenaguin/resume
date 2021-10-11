@@ -1,13 +1,23 @@
 <template>
     <div class="description-item">
-        <h2><slot name="title"></slot></h2>
-        <slot name="list"></slot>
+        <h2>{{ skill.title }}</h2>
+        <ul>
+            <li v-for="skillItem in skill.items" :key="skillItem">
+                {{ skillItem }}
+            </li>
+        </ul>
     </div>
 </template>
 
 <script>
 export default {
     name: 'DescriptionItem',
+    props: {
+        skill: {
+            type: Object,
+            required: true,
+        },
+    },
 }
 </script>
 
