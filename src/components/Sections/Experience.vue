@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section-center.experience-grid {
+.experience-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;

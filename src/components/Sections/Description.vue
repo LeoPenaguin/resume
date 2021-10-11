@@ -1,7 +1,7 @@
 <template>
     <div id="description" class="section">
         <div class="section-center">
-            <img class="description-me" src="@/assets/me.jpg" alt="" />
+            <img class="photo" src="@/assets/me.jpg" alt="" />
 
             <h1>Léo PENAGUIN</h1>
 
@@ -17,7 +17,7 @@
                 </a>
             </div>
 
-            <div class="description-text">
+            <div class="text">
                 <p>
                     Hello there! 😃 This website is an overview of my
                     professional experience and academic background. I am 28 and
@@ -41,7 +41,7 @@
                 </ul>
             </div>
 
-            <div class="description-container">
+            <div class="skills">
                 <description-item
                     v-for="skill in skills"
                     :key="skill.title"
@@ -89,14 +89,14 @@ svg {
 </style>
 
 <style lang="scss" scoped>
-.description-me {
+.photo {
     border-radius: 2rem;
     height: 20rem;
     margin: 0 auto;
     display: block;
 }
 
-.description-text {
+.text {
     padding: 2rem 0;
     text-align: center;
     ul {
@@ -121,7 +121,7 @@ svg {
     }
 }
 
-.description-container {
+.skills {
     display: flex;
     justify-content: stretch;
     margin-bottom: 20px;
@@ -135,9 +135,7 @@ svg {
     width: fit-content;
 
     .grid-item {
-        font-size: 1em;
-        text-decoration: none;
-        padding: 1rem 3rem;
+        padding: 0.7rem 3rem;
         width: 60px;
         display: flex;
         align-items: center;
@@ -148,29 +146,7 @@ svg {
         transition: transform 0.1s ease-in-out;
 
         span {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            span {
-                margin: 5px 0;
-            }
-        }
-
-        &.item-darkmode {
-            background-color: rgb(107, 107, 107);
-            margin-right: 15px;
-            width: auto;
-            padding: 0 15px;
-            cursor: pointer;
-            &.is-dark {
-                background-color: v(text-color);
-                color: v(blue);
-            }
-            &.is-light {
-                background-color: v(text-color);
-                color: v(background-color);
-            }
+            line-height: 0;
         }
 
         &.item-mail {
