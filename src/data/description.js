@@ -21,8 +21,8 @@ export const skills = [
     {
         title: 'Backend',
         items: [
-            'PHP, Symfony',
-            'Go',
+            '🐘 PHP, Symfony',
+            '🦫 Go',
             'SQL, MySQL, Postgres',
             'REST API / GRAPHQL API',
         ],
@@ -30,21 +30,21 @@ export const skills = [
     {
         title: 'Frontend',
         items: [
-            'Vuejs',
+            '✨ Vuejs',
             'Javascript ES6',
             'React',
             'TypeScript',
             'HTML5',
-            'PWA',
+            '📱 PWA',
             'CSS 3, SASS, SCSS',
         ],
     },
     {
         title: 'Global',
         items: [
-            'Unit tests',
+            '🔎 Unit tests',
             'Software architecture : MVC (Model–view–controller), OOP (Object-oriented programming)',
-            'Continuous integration : Jenkins, Github actions',
+            '🐙 Continuous integration : Jenkins, Github actions',
             'Team work',
             'Experience with Agile methodology',
             'Technical and professional English',
