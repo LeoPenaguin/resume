@@ -25,6 +25,7 @@
         justify-content: center;
         border-radius: 10px;
         margin: 5px;
+        transition: transform 0.1s ease-in-out;
 
         span {
           display: flex;
@@ -70,6 +71,10 @@
 
         &.item-twitter {
           background-color: #1DA1F2;
+        }
+
+        &:hover {
+          transform: scale(1.1);
         }
       }
     }

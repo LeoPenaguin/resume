@@ -145,49 +145,36 @@
             </div>
 
             <div class="description-container">
-                <div class="description-item">
-                    <h2>Backend</h2>
-                    <ul>
-                        <li>PHP, Symfony</li>
-                        <li>Go</li>
-                        <li>SQL, MySQL, Postgres</li>
-                        <li>REST API / GRAPHQL API</li>
-                    </ul>
-                </div>
-
-                <div class="description-item">
-                    <h2>Frontend</h2>
-                    <ul>
-                        <li>CSS 3, SASS</li>
-                        <li>Javascript ES6, TypeScript, React, Vuejs, PWA</li>
-                        <li>HTML5</li>
-                    </ul>
-                </div>
-
-                <div class="description-item">
-                    <h2>Global</h2>
-                    <ul>
-                        <li>Unit tests</li>
-                        <li>
-                            Software architecture : MVC (Model–view–controller),
-                            OOP (Object-oriented programming)
-                        </li>
-                        <li>
-                            Continuous integration : Jenkins, Github actions
-                        </li>
-                        <li>Team work</li>
-                        <li>Experience with Agile methodology</li>
-                        <li>Technical and professional English</li>
-                    </ul>
-                </div>
+                <description-item
+                    v-for="item in descriptionData"
+                    :key="item.title"
+                >
+                    <template #title>{{ item.title }}</template>
+                    <template #list>
+                        <ul>
+                            <li v-for="point in item.items" :key="point">
+                                {{ point }}
+                            </li>
+                        </ul>
+                    </template>
+                </description-item>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import descriptionData from '@/data/description.js'
+import descriptionItem from './Items/DescriptionItem.vue'
+
 export default {
     name: 'Description',
+    components: { descriptionItem },
+    data() {
+        return {
+            descriptionData,
+        }
+    },
 }
 </script>
 
