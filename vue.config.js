@@ -4,6 +4,7 @@ module.exports = {
         loaderOptions: {
             sass: {
                 additionalData: `
+              @import "@/scss/_responsive.scss";
               @import "@/scss/_variables.scss";
             `,
             },
