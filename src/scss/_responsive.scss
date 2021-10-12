@@ -9,6 +9,7 @@
     .description-item, .experience-item, .school-item {
       grid-column-start: 1;
       grid-column-end: 3;
+      padding: 1rem;
     }
 
     .description-item {
@@ -20,6 +21,8 @@
 
 @media screen and (max-width: 750px) {
   .section {
+    padding: 0.5rem;
+
     ul.exp-item-list {
       display: flex !important;
       flex-direction: column;
