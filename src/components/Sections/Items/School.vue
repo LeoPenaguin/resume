@@ -1,7 +1,7 @@
 <template>
     <div class="school-item">
         <h2>
-            {{ school.date }} <span>{{ school.duration }}</span>
+            📅 {{ school.date }} <span>{{ school.duration }}</span>
         </h2>
         <p>
             <b>{{ school.degree }}</b> -
@@ -46,15 +46,8 @@ export default {
     }
 
     .location {
-        background: #5770ff;
-        border-radius: 2rem;
-        padding: 10px 20px;
         margin: 20px 0 0 0;
-        display: inline-block;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: rgb(255, 255, 255);
+        color: #5770ff;
     }
 }
 </style>

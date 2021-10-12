@@ -1,6 +1,7 @@
 export default [
     {
         primary: true,
+        image: 'ubitransport.jpg',
         title: 'Frontend developer 2021 - Now',
         company: 'Ubitransport',
         location: '🦁 Lyon, France',
@@ -16,6 +17,7 @@ export default [
     },
     {
         primary: true,
+        image: 'smf.png',
         title: 'Fullstack developer 2018 - 2021',
         company: 'Smart Mobile Factory GmBH',
         location: '🐻 Berlin, Germany',
@@ -42,6 +44,7 @@ export default [
     },
     {
         primary: true,
+        image: 'cats.jpg',
         title: 'JAVA developer 2016 - 2018',
         company: 'Crédit Agricole',
         location: '🌹 Grenoble, France',
@@ -50,6 +53,7 @@ export default [
     },
     {
         primary: true,
+        image: 'hmclause.jpg',
         title: 'C# developer 2015 - 2016',
         company: 'HM Clause',
         location: '🏰 Valence, France',

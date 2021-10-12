@@ -1,25 +1,41 @@
 <template>
     <div v-if="experience.primary" class="experience-item large">
-        <h2>{{ experience.title }}</h2>
-        <p>
-            <b>{{ experience.company }} - {{ experience.location }}</b
-            ><br />
-            {{ experience.context }}
-        </p>
-        <ul v-for="skill in experience.skills" :key="skill">
-            <li>{{ skill }}</li>
+        <div class="experience-header">
+            <div class="experience-header-image">
+                <img
+                    :src="require(`@/assets/experience/${experience.image}`)"
+                />
+            </div>
+
+            <div class="experience-header-details">
+                <h2>{{ experience.title }} 📅</h2>
+                <p>
+                    <b>{{ experience.company }} - {{ experience.location }}</b
+                    ><br />
+                    {{ experience.context }}
+                </p>
+            </div>
+        </div>
+
+        <ul class="skills">
+            <li v-for="skill in experience.skills" :key="skill">{{ skill }}</li>
         </ul>
     </div>
-    <a v-else class="experience-item" target="_blank" :href="experience.link">
+
+    <div v-else class="experience-item">
         <p>
-            <b>{{ experience.date }} ({{ experience.duration }})</b>
+            <b>📅 {{ experience.date }} ({{ experience.duration }})</b>
         </p>
         <h2 class="entreprise">{{ experience.company }}</h2>
         <p>
             <b>{{ experience.type }}</b> : {{ experience.context }}<br />
         </p>
-        <span class="location">{{ experience.location }}</span>
-    </a>
+
+        <div class="experience-footer">
+            <span class="location">{{ experience.location }}</span>
+            <a class="link" target="_blank" :href="experience.link">🌐</a>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -51,6 +67,55 @@ export default {
     h2 {
         margin: 0;
     }
+
+    p {
+        margin: 1rem 0;
+    }
+
+    .experience-header {
+        display: flex;
+        gap: 20px;
+        .experience-header-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .experience-header-details {
+            flex: 1;
+            p {
+                margin: 1rem 0 0 0;
+            }
+        }
+    }
+
+    .skills {
+        margin-top: 1rem;
+    }
+
+    .experience-footer {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        .location {
+            background: #23263a;
+            border-radius: 20px;
+            display: block;
+            padding: 1rem 2rem;
+            flex: 1;
+        }
+        .link {
+            background: #2ca332;
+            border-radius: 2rem;
+            display: block;
+            padding: 1rem;
+        }
+    }
+
     ul {
         list-style: none;
         padding: 0;
@@ -69,26 +134,18 @@ export default {
                 background: #5770ff;
                 border-radius: 50%;
             }
-            .icon-box {
-                position: absolute;
-                top: 0;
-                right: 0;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                padding: 0.7rem;
-                svg {
-                    width: 1.6rem;
-                    height: 1.6rem;
-                    margin-left: 0.5rem;
-                }
-            }
         }
     }
 
     &.large {
         grid-column-start: 1;
         grid-column-end: 3;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .experience-header {
+        flex-direction: column;
     }
 }
 </style>

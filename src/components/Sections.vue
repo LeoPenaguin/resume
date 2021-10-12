@@ -48,7 +48,7 @@ export default {
         background-size: cover;
         padding-top: 80px;
         .section-center {
-            width: 1200px;
+            width: 1000px;
         }
         a {
             text-decoration: none;
