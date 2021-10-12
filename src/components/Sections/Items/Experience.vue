@@ -12,7 +12,7 @@
                     <span class="date">📅 {{ experience.date }}</span>
                 </h2>
                 <p>
-                    <b>🏢 {{ experience.company }}</b>
+                    <span class="company">🏢 {{ experience.company }}</span>
                     <span class="location">{{ experience.location }}</span>
                     <span class="context">{{ experience.context }}</span>
                 </p>
@@ -96,6 +96,12 @@ export default {
         }
         .details {
             flex: 1;
+            .company {
+                font-weight: bold;
+            }
+            .location {
+                font-weight: bold;
+            }
             p {
                 margin: 1rem 0 0 0;
                 .context {
@@ -114,12 +120,6 @@ export default {
             flex: 1;
             color: v(blue);
         }
-        .link {
-            background: #2ca332;
-            border-radius: 2rem;
-            display: block;
-            padding: 1rem;
-        }
     }
 
     ul {
@@ -137,7 +137,7 @@ export default {
                 top: 0.63rem;
                 width: 0.7rem;
                 height: 0.7rem;
-                background: #5770ff;
+                background: v(purple);
                 border-radius: 50%;
             }
         }
@@ -154,7 +154,6 @@ export default {
             margin: 1rem 0 0 0;
         }
         .location {
-            color: v(blue);
             margin-left: 1rem;
         }
     }
@@ -173,9 +172,6 @@ export default {
                 margin-bottom: 0.5rem;
             }
             .company {
-                color: v(blue);
-            }
-            .location {
                 color: v(blue);
             }
         }

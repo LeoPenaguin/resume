@@ -3,11 +3,14 @@
         <h2>
             📅 {{ school.date }} <span>{{ school.duration }}</span>
         </h2>
-        <p>
+        <div class="description">
             <b>{{ school.degree }}</b> -
             {{ school.description }}
-        </p>
-        <span class="location">{{ school.location }}</span>
+        </div>
+        <div class="footer">
+            <img :src="require(`@/assets/logos/${school.image}`)" />
+            <span class="location">{{ school.location }}</span>
+        </div>
     </div>
 </template>
 
@@ -45,9 +48,28 @@ export default {
         margin: 0 0 10px 0;
     }
 
-    .location {
-        margin: 20px 0 0 0;
-        color: v(blue);
+    .description {
+        flex: 1;
+    }
+
+    .footer {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        margin-top: 1rem;
+        .location {
+            margin: 20px 0 0 0;
+            font-weight: bold;
+            display: block;
+            flex: 1;
+        }
+        img {
+            border-radius: 20px;
+            overflow: hidden;
+            width: 70px;
+            height: 70px;
+            border: 5px solid v(items-accent-color);
+        }
     }
 }
 </style>

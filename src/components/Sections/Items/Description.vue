@@ -47,7 +47,7 @@ export default {
                 top: 0.63rem;
                 width: 0.7rem;
                 height: 0.7rem;
-                background: #5770ff;
+                background: v(purple);
                 border-radius: 50%;
             }
         }

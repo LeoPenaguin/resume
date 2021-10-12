@@ -50,7 +50,7 @@ h1 {
     font-size: 50px;
     text-align: center;
     width: fit-content;
-    background: linear-gradient(45deg, #5770ff, #c644fd);
+    background: linear-gradient(45deg, v(blue), v(purple));
     color: v(items-background-color);
     display: block;
     -webkit-background-clip: text;
@@ -62,7 +62,7 @@ h1 {
 }
 
 h2 {
-    color: #5770ff;
+    color: v(blue);
     font-size: 2rem;
     line-height: 2.375rem;
     font-weight: 800;

@@ -1,10 +1,4 @@
-const LOCATIONS = {
-    BERLIN: '🐻 Berlin, Germany',
-    LYON: '🦁 Lyon, France',
-    GRENOBLE: '🌹 Grenoble, France',
-    VALENCE: '🏰 Valence, France',
-    ROMANS: '👟 Romans, France',
-}
+import locations from './locations'
 
 export default [
     {
@@ -13,7 +7,7 @@ export default [
         title: 'Frontend developer',
         date: '2021 - Now',
         company: 'Ubitransport',
-        location: LOCATIONS.LYON,
+        location: locations.LYON,
         context:
             'Complete digital solutions to manage your urban, school and intercity transport for transport actors: geolocation, operating assistance assistance, ridership monitoring, ticket management ticket management, passenger information and other services.',
         skills: [
@@ -30,7 +24,7 @@ export default [
         title: 'Fullstack developer',
         date: '2018 - 2021',
         company: 'Smart Mobile Factory GmBH',
-        location: LOCATIONS.BERLIN,
+        location: locations.BERLIN,
         context:
             'Fullstack developer within an agency developing mobile applications. (iOS, Android, MacOS).',
         skills: [
@@ -58,7 +52,7 @@ export default [
         title: 'JAVA developer',
         date: '2016 - 2018',
         company: 'Crédit Agricole',
-        location: LOCATIONS.GRENOBLE,
+        location: locations.GRENOBLE,
         context: 'JAVA developer in the IT department of a major French bank.',
         skills: ['SOAP API development in Java', 'Teamwork', 'Using Redis'],
     },
@@ -68,7 +62,7 @@ export default [
         title: 'C# developer',
         date: '2015 - 2016',
         company: 'HM Clause',
-        location: LOCATIONS.VALENCE,
+        location: locations.VALENCE,
         context:
             'C# developer within a French company specialised in field seeds.',
         skills: ['Windows form application with C#', 'Postgres'],
@@ -78,7 +72,7 @@ export default [
         image: 'mediacraft.png',
         date: 'March 2015 (6 months)',
         company: 'Mediacraft',
-        location: LOCATIONS.GRENOBLE,
+        location: locations.GRENOBLE,
         context: 'Front-end web development',
         type: 'Internship',
         link: 'http://mediacraft.fr',
@@ -89,7 +83,7 @@ export default [
         date: 'March 2014 (6 months)',
         company: 'Smart Mobile Factory',
         type: 'Internship',
-        location: LOCATIONS.BERLIN,
+        location: locations.BERLIN,
         context: 'Symfony API development for mobile applications',
         link: 'http://smartmobilefactory.com/',
     },
@@ -99,7 +93,7 @@ export default [
         date: 'January 2013 (1 months)',
         company: 'Crédit Agricole',
         type: 'Internship',
-        location: LOCATIONS.VALENCE,
+        location: locations.VALENCE,
         context: 'Crédit Agricole IT maintenance 🏦',
         link: 'https://www.credit-agricole.fr',
     },
@@ -109,7 +103,7 @@ export default [
         date: 'May 2012 (3 months)',
         company: 'Agentur Webfox',
         type: 'Internship',
-        location: LOCATIONS.BERLIN,
+        location: locations.BERLIN,
         context: 'Web front-end development and web design',
         link: 'https://www.agentur-webfox.de',
     },
@@ -119,7 +113,7 @@ export default [
         date: 'December 2007 (1 months)',
         company: 'SVD Studio',
         type: 'Internship',
-        location: LOCATIONS.VALENCE,
+        location: locations.VALENCE,
         context: 'Design in an advertising agency / web design agency',
         link: 'http://www.svd-studio.fr/',
     },
@@ -129,7 +123,7 @@ export default [
         date: 'December 2006 (1 month)',
         company: 'By Micro',
         type: 'Internship',
-        location: LOCATIONS.ROMANS,
+        location: locations.ROMANS,
         context: 'IT maintenance 🖥️ in a specialized company',
         link: 'http://www.bymicro.com',
     },
