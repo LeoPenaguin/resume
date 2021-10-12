@@ -14,34 +14,36 @@ export default {
     name: 'ColorSwitch',
     setup() {
         let checked = ref(true)
+        const LIGHT = 'light'
+        const DARK = 'dark'
 
         onMounted(() => {
             if (
-                localStorage.colorScheme === 'light' ||
-                document.documentElement.dataset.userColorScheme === 'light'
+                localStorage.colorScheme === LIGHT ||
+                document.documentElement.dataset.userColorScheme === LIGHT
             ) {
                 checked.value = false
-                localStorage.colorScheme = 'light'
-                document.documentElement.dataset.userColorScheme = 'light'
+                localStorage.colorScheme = LIGHT
+                document.documentElement.dataset.userColorScheme = LIGHT
             } else {
                 checked.value = true
-                localStorage.colorScheme = 'dark'
-                document.documentElement.dataset.userColorScheme = 'dark'
+                localStorage.colorScheme = DARK
+                document.documentElement.dataset.userColorScheme = DARK
             }
         })
 
         function switchScheme() {
             if (
-                localStorage.colorScheme === 'light' ||
-                document.documentElement.dataset.userColorScheme === 'light'
+                localStorage.colorScheme === LIGHT ||
+                document.documentElement.dataset.userColorScheme === LIGHT
             ) {
                 checked.value = true
-                localStorage.colorScheme = 'dark'
-                document.documentElement.dataset.userColorScheme = 'dark'
+                localStorage.colorScheme = DARK
+                document.documentElement.dataset.userColorScheme = DARK
             } else {
                 checked.value = false
-                localStorage.colorScheme = 'light'
-                document.documentElement.dataset.userColorScheme = 'light'
+                localStorage.colorScheme = LIGHT
+                document.documentElement.dataset.userColorScheme = LIGHT
             }
         }
 
