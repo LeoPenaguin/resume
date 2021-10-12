@@ -1,6 +1,6 @@
 @media screen and (max-width: 1040px) {
   .section {
-    padding: 2rem;
+    padding: 0.5rem;
 
     .section-center {
         width: 100% !important;
@@ -9,6 +9,7 @@
     .description-item, .experience-item, .school-item {
       grid-column-start: 1;
       grid-column-end: 3;
+      padding: 1rem;
     }
 
     .description-item {
