@@ -5,6 +5,44 @@
 
             <h1>Léo PENAGUIN</h1>
 
+            <!-- <Atropos>
+                <img
+                    class="atropos-banner-spacer"
+                    src="../../assets/atropos/atropos-bg.svg"
+                    alt=""
+                />
+                <img
+                    data-atropos-offset="-4.5"
+                    src="../../assets/atropos/atropos-bg.svg"
+                    alt=""
+                />
+                <img
+                    data-atropos-offset="-2.5"
+                    src="../../assets/atropos/atropos-mountains.svg"
+                    alt=""
+                />
+                <img
+                    data-atropos-offset="0"
+                    src="../../assets/atropos/atropos-forest-back.svg"
+                    alt=""
+                />
+                <img
+                    data-atropos-offset="2"
+                    src="../../assets/atropos/atropos-forest-mid.svg"
+                    alt=""
+                />
+                <img
+                    data-atropos-offset="4"
+                    src="../../assets/atropos/atropos-forest-front.svg"
+                    alt=""
+                />
+                <img
+                    data-atropos-offset="5"
+                    src="../../assets/atropos/atropos-logo-en.svg"
+                    alt=""
+                />
+            </Atropos> -->
+
             <div class="social-grid">
                 <a
                     v-for="item in social"
@@ -47,6 +85,7 @@
 import { social, skills } from '@/data/description.js'
 
 import descriptionItem from './Items/Description.vue'
+import Atropos from 'atropos/vue/atropos-vue.esm'
 
 // ICONS
 import LinkedinIcon from '@/components/icons/Linkedin.vue'
@@ -62,6 +101,7 @@ export default {
         GithubIcon,
         MailIcon,
         TwitterIcon,
+        Atropos,
     },
     data() {
         return {
