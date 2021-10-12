@@ -29,6 +29,7 @@ export default {
     margin: 0;
     overflow: hidden;
     height: fit-content;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
