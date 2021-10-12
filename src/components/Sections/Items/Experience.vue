@@ -1,18 +1,20 @@
 <template>
     <div v-if="experience.primary" class="experience-item large">
         <div class="experience-header">
-            <div class="experience-header-image">
-                <img
-                    :src="require(`@/assets/experience/${experience.image}`)"
-                />
-            </div>
+            <img
+                class="image"
+                :src="require(`@/assets/experience/${experience.image}`)"
+            />
 
-            <div class="experience-header-details">
-                <h2>{{ experience.title }} 📅</h2>
+            <div class="details">
+                <h2>
+                    {{ experience.title }}
+                    <span class="date">📅 {{ experience.date }}</span>
+                </h2>
                 <p>
-                    <b>{{ experience.company }} - {{ experience.location }}</b
-                    ><br />
-                    {{ experience.context }}
+                    <b>🏢 {{ experience.company }}</b>
+                    <span class="location">{{ experience.location }}</span>
+                    <span class="context">{{ experience.context }}</span>
                 </p>
             </div>
         </div>
@@ -23,18 +25,24 @@
     </div>
 
     <div v-else class="experience-item">
-        <p>
-            <b>📅 {{ experience.date }} ({{ experience.duration }})</b>
-        </p>
-        <h2 class="entreprise">{{ experience.company }}</h2>
-        <p>
-            <b>{{ experience.type }}</b> : {{ experience.context }}<br />
-        </p>
+        <div class="experience-header">
+            <img
+                class="image"
+                :src="require(`@/assets/logos/${experience.image}`)"
+            />
 
-        <div class="experience-footer">
-            <span class="location">{{ experience.location }}</span>
-            <a class="link" target="_blank" :href="experience.link">🌐</a>
+            <div class="details">
+                <span class="company"
+                    ><h2>{{ experience.company }}</h2></span
+                >
+                <span class="date">📅 {{ experience.date }}</span>
+                <span class="location">{{ experience.location }}</span>
+            </div>
         </div>
+
+        <span class="context"
+            ><b>{{ experience.type }}</b> {{ experience.context }}</span
+        >
     </div>
 </template>
 
@@ -66,6 +74,10 @@ export default {
 
     h2 {
         margin: 0;
+        .date {
+            color: v(text-color);
+            font-size: 0.7em;
+        }
     }
 
     p {
@@ -75,26 +87,22 @@ export default {
     .experience-header {
         display: flex;
         gap: 20px;
-        .experience-header-image {
+        img.image {
             width: 150px;
             height: 150px;
             border-radius: 20px;
             overflow: hidden;
-            img {
-                width: 100%;
-                height: 100%;
-            }
+            border: 5px solid v(items-accent-color);
         }
-        .experience-header-details {
+        .details {
             flex: 1;
             p {
                 margin: 1rem 0 0 0;
+                .context {
+                    display: block;
+                }
             }
         }
-    }
-
-    .skills {
-        margin-top: 2rem;
     }
 
     .experience-footer {
@@ -102,11 +110,9 @@ export default {
         width: 100%;
         gap: 1rem;
         .location {
-            background: #23263a;
-            border-radius: 20px;
             display: block;
-            padding: 1rem 2rem;
             flex: 1;
+            color: v(blue);
         }
         .link {
             background: #2ca332;
@@ -140,6 +146,47 @@ export default {
     &.large {
         grid-column-start: 1;
         grid-column-end: 3;
+        .skills {
+            background: v(items-accent-color);
+            width: 100%;
+            border-radius: 20px;
+            padding: 1rem;
+            margin: 1rem 0 0 0;
+        }
+        .location {
+            color: v(blue);
+            margin-left: 1rem;
+        }
+    }
+
+    &:not(.large) {
+        img.image {
+            width: 65px;
+            height: 65px;
+            border: 5px solid v(items-accent-color);
+        }
+        .details {
+            .company,
+            .date,
+            .location {
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+            .company {
+                color: v(blue);
+            }
+            .location {
+                color: v(blue);
+            }
+        }
+        .context {
+            background: v(items-accent-color);
+            width: 100%;
+            border-radius: 20px;
+            padding: 1rem;
+            margin: 1rem 0 0 0;
+            flex: 1;
+        }
     }
 }
 

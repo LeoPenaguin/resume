@@ -47,7 +47,7 @@ export default {
 
     .location {
         margin: 20px 0 0 0;
-        color: #5770ff;
+        color: v(blue);
     }
 }
 </style>
