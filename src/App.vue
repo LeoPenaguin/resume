@@ -6,25 +6,20 @@
 
 <script>
 import Sections from '@/components/Sections'
+import { onMounted } from 'vue'
 
 export default {
     name: 'App',
     components: {
         Sections,
     },
-    data: function () {
-        return {
-            user: {
-                nom: 'PENAGUIN',
-                prenom: 'Léo',
-            },
-        }
-    },
-    mounted: () => {
-        if (localStorage.colorScheme) {
-            document.documentElement.dataset.userColorScheme =
-                localStorage.colorScheme
-        }
+    setup() {
+        onMounted(() => {
+            if (localStorage.colorScheme) {
+                document.documentElement.dataset.userColorScheme =
+                    localStorage.colorScheme
+            }
+        })
     },
 }
 </script>

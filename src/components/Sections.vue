@@ -8,28 +8,18 @@
 </template>
 
 <script>
-import School from '@/components/Sections/School'
-import Experience from '@/components/Sections/Experience'
-import Description from '@/components/Sections/Description'
 import ColorSwitch from '@/components/ColorSwitch'
+import Description from '@/components/Sections/Description'
+import Experience from '@/components/Sections/Experience'
+import School from '@/components/Sections/School'
 
 export default {
     name: 'Sections',
     components: {
-        School,
-        Experience,
-        Description,
         ColorSwitch,
-    },
-    data: function () {
-        return {
-            user: {
-                nom: 'PENAGUIN',
-                prenom: 'Léo',
-                description: null,
-                scrollPos: 0,
-            },
-        }
+        Description,
+        Experience,
+        School,
     },
 }
 </script>

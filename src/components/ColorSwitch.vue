@@ -8,42 +8,47 @@
 </template>
 
 <script>
+import { onMounted, ref } from 'vue'
+
 export default {
     name: 'ColorSwitch',
-    data: function () {
-        return {
-            checked: false,
-        }
-    },
-    mounted: function () {
-        if (
-            localStorage.colorScheme === 'light' ||
-            document.documentElement.dataset.userColorScheme === 'light'
-        ) {
-            this.checked = false
-            localStorage.colorScheme = 'light'
-            document.documentElement.dataset.userColorScheme = 'light'
-        } else {
-            this.checked = true
-            localStorage.colorScheme = 'dark'
-            document.documentElement.dataset.userColorScheme = 'dark'
-        }
-    },
-    methods: {
-        switchScheme: function () {
+    setup() {
+        let checked = ref(true)
+
+        onMounted(() => {
             if (
                 localStorage.colorScheme === 'light' ||
                 document.documentElement.dataset.userColorScheme === 'light'
             ) {
-                this.checked = true
+                checked.value = false
+                localStorage.colorScheme = 'light'
+                document.documentElement.dataset.userColorScheme = 'light'
+            } else {
+                checked.value = true
+                localStorage.colorScheme = 'dark'
+                document.documentElement.dataset.userColorScheme = 'dark'
+            }
+        })
+
+        function switchScheme() {
+            if (
+                localStorage.colorScheme === 'light' ||
+                document.documentElement.dataset.userColorScheme === 'light'
+            ) {
+                checked.value = true
                 localStorage.colorScheme = 'dark'
                 document.documentElement.dataset.userColorScheme = 'dark'
             } else {
-                this.checked = false
+                checked.value = false
                 localStorage.colorScheme = 'light'
                 document.documentElement.dataset.userColorScheme = 'light'
             }
-        },
+        }
+
+        return {
+            checked,
+            switchScheme,
+        }
     },
 }
 </script>
