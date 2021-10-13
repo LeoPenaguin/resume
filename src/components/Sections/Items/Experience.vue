@@ -118,7 +118,7 @@ export default {
         .location {
             display: block;
             flex: 1;
-            color: v(blue);
+            color: v(primary);
         }
     }
 
@@ -137,7 +137,7 @@ export default {
                 top: 0.63rem;
                 width: 0.7rem;
                 height: 0.7rem;
-                background: v(purple);
+                background: v(secondary);
                 border-radius: 50%;
             }
         }
@@ -172,7 +172,7 @@ export default {
                 margin-bottom: 0.5rem;
             }
             .company {
-                color: v(blue);
+                color: v(primary);
             }
         }
         .context {
