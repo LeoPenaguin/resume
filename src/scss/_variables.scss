@@ -20,7 +20,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-user-color-scheme]) {
-    --text-color: #b1b1b1;
+    --text-color: #e3e3e3;
     --items-background-color: #001e30;
     --items-accent-color: #002840;
     --background-color: #00101a;
@@ -30,7 +30,7 @@
 }
 
 [data-user-color-scheme='darkblue'] {
-  --text-color: #b1b1b1;
+  --text-color: #e3e3e3;
   --items-background-color: #001e30;
   --items-accent-color: #002840;
   --background-color: #00101a;

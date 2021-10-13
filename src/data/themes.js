@@ -23,7 +23,7 @@ export default [
         name: 'darkblue',
         colors: {
             background: '#00101a',
-            text: '#b1b1b1',
+            text: '#e3e3e3',
             primary: '#09f',
             secondary: '#00ffbf',
             accent: '#002840',
