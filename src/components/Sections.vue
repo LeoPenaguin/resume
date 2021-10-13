@@ -36,7 +36,7 @@ export default {
         flex-direction: column;
         align-items: center;
         background-size: cover;
-        padding-top: 80px;
+        padding-top: 3rem;
         .section-center {
             width: 1000px;
         }
