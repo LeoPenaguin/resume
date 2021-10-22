@@ -56,17 +56,8 @@
             </div>
 
             <div class="text">
-                <p>
-                    Hello there! 😃 This website is an overview of my
-                    professional experience and academic background. I am 28 and
-                    have been living in Berlin for 2 years now. I am currently a
-                    frontend web developer at Ubitransport, working on b2b
-                    solutions in the transport industry.
-                    <br />
-                    <br />
-                    My mission is to redesign and to "modernize" a tool that has
-                    been on the market for a few years now, so it matches to the
-                    modern industry standards. 🚀
+                <p v-for="chapter in text" :key="chapter">
+                    {{ chapter }}
                 </p>
             </div>
 
@@ -82,7 +73,7 @@
 </template>
 
 <script>
-import { social, skills } from '@/data/description.js'
+import { social, skills, text } from '@/data/description.js'
 
 import descriptionItem from './Items/Description.vue'
 import Atropos from 'atropos/vue/atropos-vue.esm'
@@ -107,6 +98,7 @@ export default {
         return {
             social,
             skills,
+            text,
         }
     },
 }
