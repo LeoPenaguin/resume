@@ -45,7 +45,7 @@ export const skills = [
         ],
     },
     {
-        title: 'Global',
+        title: 'General',
         items: [
             '🔎 Unit tests',
             'Software architecture : MVC (Model–view–controller), OOP (Object-oriented programming)',
