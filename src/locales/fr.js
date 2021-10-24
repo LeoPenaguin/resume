@@ -9,6 +9,6 @@ export default {
     frontend: 'Frontend',
     general: 'Général',
     experience: 'Expérience',
-    academic: 'Formation universitaire',
+    academic: 'Formation scolaire',
     wip: 'En cours de développement',
 }
