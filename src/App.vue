@@ -1,5 +1,13 @@
 <template>
     <div id="app" class="content">
+        <div class="i18n">
+            <select v-model="$i18n.locale">
+                <option>en</option>
+                <option>fr</option>
+            </select>
+            (🛠️ {{ $t('wip') }})
+        </div>
+
         <Sections />
     </div>
 </template>
@@ -89,5 +97,11 @@ button {
 
 #app {
     font-family: 'Montserrat', sans-serif;
+}
+
+.i18n {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div id="school" class="section">
-        <h1>Academic background</h1>
+        <h1>{{ $t('academic') }}</h1>
         <div class="section-center school-grid">
             <school-item
                 v-for="item in schoolData"

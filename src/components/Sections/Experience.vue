@@ -1,6 +1,9 @@
 <template>
     <div id="experience" class="section">
-        <h1><i class="fa fa-building-o" aria-hidden="true"></i>Experience</h1>
+        <h1>
+            <i class="fa fa-building-o" aria-hidden="true"></i
+            >{{ $t('experience') }}
+        </h1>
         <div class="section-center experience-grid">
             <experience-item
                 v-for="item in experienceData"

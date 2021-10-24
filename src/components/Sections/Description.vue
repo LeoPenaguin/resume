@@ -5,44 +5,6 @@
 
             <h1>Léo PENAGUIN</h1>
 
-            <!-- <Atropos>
-                <img
-                    class="atropos-banner-spacer"
-                    src="../../assets/atropos/atropos-bg.svg"
-                    alt=""
-                />
-                <img
-                    data-atropos-offset="-4.5"
-                    src="../../assets/atropos/atropos-bg.svg"
-                    alt=""
-                />
-                <img
-                    data-atropos-offset="-2.5"
-                    src="../../assets/atropos/atropos-mountains.svg"
-                    alt=""
-                />
-                <img
-                    data-atropos-offset="0"
-                    src="../../assets/atropos/atropos-forest-back.svg"
-                    alt=""
-                />
-                <img
-                    data-atropos-offset="2"
-                    src="../../assets/atropos/atropos-forest-mid.svg"
-                    alt=""
-                />
-                <img
-                    data-atropos-offset="4"
-                    src="../../assets/atropos/atropos-forest-front.svg"
-                    alt=""
-                />
-                <img
-                    data-atropos-offset="5"
-                    src="../../assets/atropos/atropos-logo-en.svg"
-                    alt=""
-                />
-            </Atropos> -->
-
             <div class="social-grid">
                 <a
                     v-for="item in social"
