@@ -3,7 +3,7 @@ export default {
         introduction:
             "Bonjour ! Je suis un ingénieur logiciel et un développeur web. Ces dernières années, j'ai travaillé sur des APIs Symfony en tant que développeur backend 💻 et sur des applications web Vuejs en tant que développeur frontend 👩‍💻. J'apprécie d'avoir de l'expérience en back ET en frontend et j'espère pouvoir rester dans les deux mondes dans mes prochaines expériences professionnelles 😌",
         coding:
-            "Le développement est une passion pour moi depuis longtemps maintenant et j'adore la créativité et l'apprentissage constant que mon métier demande. J'ai fait cette version web de mon CV parce que ça m'amuse et j'espère que vous allez l'apprécier aussi ! 😁 N'hésitez surtout pas à m'envoyer un mail en cas de besoin 📮 : penaguinleo@gmail.com",
+            "Le développement est une passion pour moi depuis longtemps maintenant et j'adore la créativité et l'apprentissage constant que mon métier demande. J'ai fait cette version web de mon CV parce que ça m'amuse et j'espère que vous allez l'apprécier aussi ! 😁 N'hésitez surtout pas à m'envoyer un mail en cas de besoin 📮 : penaguinleo{'@'}gmail.com",
         php: '🐘 PHP, Symfony',
         go: '🦫 Go',
         sql: 'SQL, MySQL, Postgres',
