@@ -21,10 +21,8 @@ export default {
     components: {
         SchoolItem,
     },
-    data() {
-        return {
-            schoolData,
-        }
+    setup() {
+        return { schoolData }
     },
 }
 </script>

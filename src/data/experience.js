@@ -1,6 +1,7 @@
 import locations from './locations'
+import { ref } from 'vue'
 
-export default [
+export default ref([
     {
         primary: true,
         image: 'ubitransport.jpg',
@@ -127,4 +128,4 @@ export default [
         context: 'IT maintenance 🖥️ in a specialized company',
         link: 'http://www.bymicro.com',
     },
-]
+])

@@ -56,12 +56,8 @@ export default {
         TwitterIcon,
         Atropos,
     },
-    data() {
-        return {
-            social,
-            skills,
-            text,
-        }
+    setup() {
+        return { social, skills, text }
     },
 }
 </script>

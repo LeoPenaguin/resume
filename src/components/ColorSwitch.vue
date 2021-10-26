@@ -45,7 +45,7 @@ export default {
         let theme = ref(LIGHT_BLUE)
 
         onMounted(() => {
-            themes.forEach((themes) => {
+            themes.value.forEach((themes) => {
                 if (
                     localStorage.colorScheme === themes.name ||
                     document.documentElement.dataset.userColorScheme ===

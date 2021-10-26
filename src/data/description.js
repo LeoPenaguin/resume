@@ -1,7 +1,8 @@
+import { ref } from 'vue'
 import i18n from '../i18n.js'
 const { t } = i18n.global
 
-export const social = [
+export const social = ref([
     {
         name: 'mail',
         link: 'mailto:PenaguinLeo@gmail.com',
@@ -18,11 +19,14 @@ export const social = [
         name: 'twitter',
         link: 'https://twitter.com/leo_png',
     },
-]
+])
 
-export const text = [t('description.introduction'), t('description.coding')]
+export const text = ref([
+    t('description.introduction'),
+    t('description.coding'),
+])
 
-export const skills = [
+export const skills = ref([
     {
         title: t('backend'),
         items: [
@@ -55,4 +59,4 @@ export const skills = [
             'Technical and professional English',
         ],
     },
-]
+])

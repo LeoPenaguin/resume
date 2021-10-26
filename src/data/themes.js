@@ -1,4 +1,6 @@
-export default [
+import { ref } from 'vue'
+
+export default ref([
     {
         name: 'lightblue',
         colors: {
@@ -49,4 +51,4 @@ export default [
             accent: 'rgb(44 44 44)',
         },
     },
-]
+])

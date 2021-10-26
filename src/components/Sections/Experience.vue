@@ -21,10 +21,8 @@ import experienceItem from './Items/Experience.vue'
 export default {
     name: 'Experience',
     components: { experienceItem },
-    data() {
-        return {
-            experienceData,
-        }
+    setup() {
+        return { experienceData }
     },
 }
 </script>

@@ -5,6 +5,9 @@ export default {
         coding:
             'Coding is a hobby for a long time now and I absolutely love it because of all the creativity and learning it implies. I created this tiny web version of my resume with Vuejs because I thought it would be cool and I hope you will enjoy it too ! 😁 Please do not hesitate to send me a mail 📮 : penaguinleo@gmail.com',
     },
+    school: {
+        master: 'Master en science informatique',
+    },
     backend: 'Backend',
     frontend: 'Frontend',
     general: 'Général',
