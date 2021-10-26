@@ -9,16 +9,16 @@ export const social = computed(() => [
     },
     {
         name: 'linkedin',
-        link: 'https://fr.linkedin.com/pub/l%C3%A9o-penaguin/a6/7a/b14',
+        link: 'https://www.linkedin.com/in/leo-penaguin',
     },
     {
         name: 'github',
         link: 'https://github.com/LeoPenaguin',
     },
-    {
-        name: 'twitter',
-        link: 'https://twitter.com/leo_png',
-    },
+    // {
+    //     name: 'twitter',
+    //     link: 'https://twitter.com/leo_png',
+    // },
 ])
 
 export const text = computed(() => [
