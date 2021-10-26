@@ -1,7 +1,7 @@
 import locations from './locations'
-import { ref } from 'vue'
+import { computed } from 'vue'
 
-export default ref([
+export default computed(() => [
     {
         primary: true,
         image: 'ubitransport.jpg',

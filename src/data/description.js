@@ -1,8 +1,8 @@
-import { ref } from 'vue'
+import { computed } from 'vue'
 import i18n from '../i18n.js'
 const { t } = i18n.global
 
-export const social = ref([
+export const social = computed(() => [
     {
         name: 'mail',
         link: 'mailto:PenaguinLeo@gmail.com',
@@ -21,42 +21,42 @@ export const social = ref([
     },
 ])
 
-export const text = ref([
+export const text = computed(() => [
     t('description.introduction'),
     t('description.coding'),
 ])
 
-export const skills = ref([
+export const skills = computed(() => [
     {
         title: t('backend'),
         items: [
-            '🐘 PHP, Symfony',
-            '🦫 Go',
-            'SQL, MySQL, Postgres',
-            'REST API / GRAPHQL API',
+            t('description.php'),
+            t('description.go'),
+            t('description.sql'),
+            t('description.api'),
         ],
     },
     {
         title: t('frontend'),
         items: [
-            '✨ Vuejs',
-            'Javascript ES6',
-            'React',
-            'TypeScript',
-            'HTML5',
-            '📱 PWA',
-            'CSS 3, SASS, SCSS',
+            t('description.vue'),
+            t('description.javascript'),
+            t('description.react'),
+            t('description.typescript'),
+            t('description.html'),
+            t('description.pwa'),
+            t('description.css'),
         ],
     },
     {
         title: t('general'),
         items: [
-            '🔎 Unit tests',
-            'Software architecture : MVC (Model–view–controller), OOP (Object-oriented programming)',
-            '🐙 Continuous integration : Jenkins, Github actions',
-            'Team work',
-            'Experience with Agile methodology',
-            'Technical and professional English',
+            t('description.tests'),
+            t('description.architecture'),
+            t('description.continuous'),
+            t('description.team'),
+            t('description.agile'),
+            t('description.english'),
         ],
     },
 ])

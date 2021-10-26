@@ -2,7 +2,7 @@
     <div id="experience" class="section">
         <h1>
             <i class="fa fa-building-o" aria-hidden="true"></i
-            >{{ $t('experience') }}
+            >{{ $t('experience.title') }}
         </h1>
         <div class="section-center experience-grid">
             <experience-item
