@@ -3,7 +3,7 @@
         <div class="section-center">
             <img class="photo" src="@/assets/me.jpg" alt="" />
 
-            <h1>Léo PENAGUIN</h1>
+            <h1 class="text-3xl font-bold underline">Léo PENAGUIN</h1>
 
             <div class="social-grid">
                 <a
