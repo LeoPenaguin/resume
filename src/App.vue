@@ -8,18 +8,18 @@
             (🛠️ {{ $t('wip') }})
         </div>
 
-        <Sections />
+        <ResumeSections />
     </div>
 </template>
 
 <script>
-import Sections from '@/components/Sections'
+import ResumeSections from '@/components/ResumeSections.vue'
 import { onMounted } from 'vue'
 
 export default {
     name: 'App',
     components: {
-        Sections,
+        ResumeSections,
     },
     setup() {
         onMounted(() => {

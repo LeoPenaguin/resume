@@ -9,12 +9,12 @@
 
 <script>
 import ColorSwitch from '@/components/ColorSwitch'
-import Description from '@/components/Sections/Description'
-import Experience from '@/components/Sections/Experience'
-import School from '@/components/Sections/School'
+import Description from '@/components/Sections/DescriptionSection.vue'
+import Experience from '@/components/Sections/ExperienceSection.vue'
+import School from '@/components/Sections/SchoolSection.vue'
 
 export default {
-    name: 'Sections',
+    name: 'ResumeSections',
     components: {
         ColorSwitch,
         Description,

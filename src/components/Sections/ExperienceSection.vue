@@ -16,10 +16,10 @@
 
 <script>
 import experienceData from '@/data/experience.js'
-import experienceItem from './Items/Experience.vue'
+import experienceItem from './Items/ExperienceItem.vue'
 
 export default {
-    name: 'Experience',
+    name: 'ExperienceSection',
     components: { experienceItem },
     setup() {
         return { experienceData }

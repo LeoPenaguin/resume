@@ -8,7 +8,7 @@
             {{ school.description }}
         </div>
         <div class="footer">
-            <img :src="require(`@/assets/logos/${school.image}`)" />
+            <img :src="`src/assets/logos/${school.image}`" />
             <span class="location">{{ school.location }}</span>
         </div>
     </div>
@@ -22,7 +22,7 @@ export default {
             type: Object,
             required: true,
         },
-    },
+    }
 }
 </script>
 

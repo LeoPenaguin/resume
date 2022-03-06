@@ -1,7 +1,7 @@
 module.exports = {
     root: true,
     env: {
-        node: true,
+        es2021: true,
     },
     extends: [
         'plugin:vue/vue3-recommended',
@@ -13,10 +13,7 @@ module.exports = {
     rules: {
         'no-console': 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        'prettier/prettier': 'error',
-    },
-    parserOptions: {
-        parser: 'babel-eslint',
+        "prettier/prettier": ["error", { "endOfLine": "auto" }]
     },
     overrides: [
         {

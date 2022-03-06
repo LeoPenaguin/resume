@@ -14,10 +14,10 @@
 
 <script>
 import schoolData from '@/data/school.js'
-import SchoolItem from './Items/School.vue'
+import SchoolItem from './Items/SchoolItem.vue'
 
 export default {
-    name: 'School',
+    name: 'SchoolSection',
     components: {
         SchoolItem,
     },

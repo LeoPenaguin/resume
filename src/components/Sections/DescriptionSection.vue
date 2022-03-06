@@ -37,24 +37,22 @@
 <script>
 import { social, skills, text } from '@/data/description.js'
 
-import descriptionItem from './Items/Description.vue'
-import Atropos from 'atropos/vue/atropos-vue.esm'
+import descriptionItem from './Items/DescriptionItem.vue'
 
 // ICONS
-import LinkedinIcon from '@/components/icons/Linkedin.vue'
-import GithubIcon from '@/components/icons/Github.vue'
-import MailIcon from '@/components/icons/Mail.vue'
-import TwitterIcon from '@/components/icons/Twitter.vue'
+import LinkedinIcon from '@/components/icons/LinkedinIcon.vue'
+import GithubIcon from '@/components/icons/GithubIcon.vue'
+import MailIcon from '@/components/icons/MailIcon.vue'
+import TwitterIcon from '@/components/icons/TwitterIcon.vue'
 
 export default {
-    name: 'Description',
+    name: 'DescriptionSection',
     components: {
         descriptionItem,
         LinkedinIcon,
         GithubIcon,
         MailIcon,
         TwitterIcon,
-        Atropos,
     },
     setup() {
         return { social, skills, text }

@@ -1,10 +1,10 @@
 <template>
     <div v-if="experience.primary" class="experience-item large">
         <div class="experience-header">
-            <img
+            <!-- <img
                 class="image"
                 :src="require(`@/assets/experience/${experience.image}`)"
-            />
+            /> -->
 
             <div class="details">
                 <h2>
@@ -28,7 +28,7 @@
         <div class="experience-header">
             <img
                 class="image"
-                :src="require(`@/assets/logos/${experience.image}`)"
+                :src="`src/assets/logos/${experience.image}`"
             />
 
             <div class="details">
