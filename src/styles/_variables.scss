@@ -1,13 +1,4 @@
 
-@function v($var, $fallback: null) {
-  @if($fallback) {
-      @return var(--#{$var}, #{$fallback});
-  }
-  @else {
-      @return var(--#{$var});
-  }
-}
-
 :root {
   // base
   --text-color: #2e2e2e;
