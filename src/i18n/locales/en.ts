@@ -1,37 +1,112 @@
 export default {
   description: {
-    introduction:
-      "Hello ! I am an software engineer and a web developer. For the last few years I have been working on Symfony APIs as a backend developer 💻 and on Vuejs web applications as a fronted developer 👩‍💻. I really like having experience on both back and frontend and I hope my jobs will always allow me to have a foot on both sides 😌.",
-    coding:
-      "Coding is a hobby for a long time now and I absolutely love it because of all the creativity and learning it implies. I created this tiny web version of my resume with Vuejs because I thought it would be cool and I hope you will enjoy it too ! 😁 Please do not hesitate to send me a mail 📮 : penaguinleo{'@'}gmail.com",
-    php: "🐘 PHP, Symfony",
-    go: "🦫 Go",
-    sql: "SQL, MySQL, Postgres",
-    api: "REST API / GRAPHQL API",
-    vue: "✨ Vuejs",
-    javascript: "Javascript ES6",
-    react: "React",
-    typescript: "TypeScript",
-    html: "HTML5",
-    pwa: "📱 PWA",
-    css: "CSS 3, SASS, SCSS",
-    tests: "🔎 Unit tests",
-    architecture:
-      "Software architecture : MVC (Model–view–controller), OOP (Object-oriented programming)",
-    continuous: "🐙 Continuous integration : Jenkins, Github actions",
-    team: "Team work",
-    agile: "Experience with Agile methodology",
-    english: "Technical and professional English",
+    presentation: {
+      introduction:
+        "Hello ! I am a frontend web developer at Bedrock, a company that creates streaming platoforms for its customers. I specialized in Vuejs and Typescript after working a few years as a backend developer.",
+    },
   },
   school: {
-    master: "Master's degree in Computer Science",
+    title: "Academic background",
+    degrees: {
+      master: {
+        title: "Master's degree in Computer Science",
+        description: "Expert in Computer Science and IT"
+      },
+      toeic: {
+        title: "TOEIC",
+        description: "English for International Communication Test : 895 points / 990"
+      },
+      bachelor: {
+        title: "Bachelor",
+        description: "Bachelor's degree in computer science and coding"
+      },
+      deust: {
+        title: "French scientific and technical university diploma",
+        description: "Webmaster and Internet professions"
+      },
+      bts: {
+        title: "Advanced technician's certificate",
+        description: "BTS Service Informatique aux Organisations Option réseaux et télécommunications"
+      },
+      bac: {
+        title: "High school diploma",
+        description: "Computer science high school diploma"
+      },
+    },
   },
   experience: {
     title: "Experience",
+    type: {
+      internship: "Internship",
+      sandwichcourse: "Sandwich course",
+    },
+    context: {
+      bedrock: "Complete digital solutions to manage your urban, school and intercity transport for transport actors: geolocation, operating assistance assistance, ridership monitoring, ticket management ticket management, passenger information and other services.",
+      ubitransport: "Complete digital solutions to manage your urban, school and intercity transport for transport actors: geolocation, operating assistance assistance, ridership monitoring, ticket management ticket management, passenger information and other services.",
+      smf: "Fullstack developer within an agency developing mobile applications. (iOS, Android, MacOS).",
+      cats:  "JAVA developer in the IT department of a major French bank.",
+      hmclause:  "C# developer within a French company specialised in field seeds.",
+      mediacraft:  "Front-end web development",
+      smf2014: "Symfony API development for mobile applications",
+      cats2013:  "Crédit Agricole IT maintenance",
+      webfox: "Web front-end development and web design",
+      svd: "Design in an advertising agency / web design agency",
+      bymicro: "IT maintenance in a specialized company"
+    }
+  },
+  skill: {
+    title: "I use these daily",
+    mvc: "MVC architecture",
+    oop: "OOP architecture",
+    rest: "REST",
+    graphql: "GRAPHQL",
+    sql: "SQL",
+    vue: "Vue",
+    css: "CSS",
+    sass: "SASS",
+    git: "Git",
+    gitlab: "Gitlab",
+    github: "GitHub",
+    githubAction: "GitHub Action",
+    typescript: "TypeScript",
+    go: "Go",
+    jenkins: "Jenkins",
+    scrumEvents: "Scrum Events",
+    symfony: "Symfony",
+    angular: "Angular",
+    phpUnit: "PHPUnit",
+    unitTest: "Unit tests",
+    e2eTest: "End to end tests",
+    wordpress: "Wordpress",
+    design: "Design",
+    figma: "Figma",
+    java: "Java",
+    soap: "Soap",
+    redis: "Redis",
+    csharp: "C#",
+    windowsForm: "Windows form",
+    postgresql: "Postgresql",
+    mysql: "Mysql",
+    jest: "Jest",
+    cypress: "Cypress",
+    php: "PHP",
+    teamWork: "Team work",
+    english: "English",
+    german: "German",
+    french: "French",
+    tailwind: "Tailwind",
+    pinia: "Pinia",
+    gha: "GitHub Actions",
   },
   backend: "Backend",
   frontend: "Frontend",
   general: "General",
-  academic: "Academic background",
   wip: "Work in progress",
+  date: {
+    month: 'Month',
+    january: 'January',
+    march: 'March',
+    may: 'May',
+    december: 'December',
+  }
 };

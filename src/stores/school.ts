@@ -1,56 +1,53 @@
 import { defineStore } from "pinia";
-import { Locations } from "@/typings/locations";
-import type { School } from "@/typings/school";
+import { Locations } from "@/typings/enums/locations";
+import type { School } from "@/typings";
+import i18n from "../i18n/index.js";
+
+const { t } = i18n.global;
 
 export default defineStore({
   id: "school",
   state: () => ({
     schools: [
       {
-        date: "January 2019",
-        duration: "2 years",
-        degree: "Master's degree in Computer Science",
-        description: "Expert in Computer Science and IT",
+        date: {from: "January 2019", duration: '2 years'},
+        degree: t('school.degrees.master.title'),
+        description: t('school.degrees.master.description'),
         location: Locations.EPSI,
         image: "epsi.jpg",
       },
       {
-        date: "October 2018",
-        degree: "TOEIC",
-        description:
-          "English for International Communication Test : 895 points / 990",
+        date: {from: "October 2018"},
+        degree: t('school.degrees.toeic.title'),
+        description: t('school.degrees.toeic.description'),
         location: Locations.EPSI,
         image: "epsi.jpg",
       },
       {
-        date: "January 2016",
-        duration: "3 years",
-        degree: "Bachelor",
-        description: "Bachelor's degree in computer science and coding",
+        date: {from: "January 2016", duration: "3 years"},
+        degree: t('school.degrees.bachelor.title'),
+        description: t('school.degrees.bachelor.description'),
         location: Locations.EPSI,
         image: "epsi.jpg",
       },
       {
-        date: "October 2013",
-        duration: "2 years",
-        degree: "French scientific and technical university diploma",
-        description: "Webmaster and Internet professions",
+        date: {from: "October 2013", duration: "2 years"},
+        degree: t('school.degrees.deust.title'),
+        description: t('school.degrees.deust.description'),
         location: Locations.LIMOGES,
         image: "limoges.jpg",
       },
       {
-        date: "January 2013",
-        duration: "2 years",
-        degree: "Advanced technician's certificate",
-        description:
-          "BTS Service Informatique aux Organisations Option réseaux et télécommunications",
+        date: {from: "January 2013", duration: "2 years"},
+        degree: t('school.degrees.bts.title'),
+        description: t('school.degrees.bts.description'),
         location: Locations.VALENCE,
         image: "briffaut.jpeg",
       },
       {
-        date: "January 2011",
-        degree: "High school diploma",
-        description: "Computer science high school diploma",
+        date: {from: "January 2011"},
+        degree: t('school.degrees.bac.title'),
+        description: t('school.degrees.bac.description'),
         location: Locations.VALENCE,
         image: "briffaut.jpeg",
       },

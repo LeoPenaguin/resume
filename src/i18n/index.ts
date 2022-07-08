@@ -5,7 +5,7 @@ const i18n = createI18n({
   locale: "en",
   legacy: false,
   messages: locales,
-  globalInjection: true,
+  globalInjection: false,
 });
 
 export default i18n;

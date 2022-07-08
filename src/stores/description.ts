@@ -1,5 +1,7 @@
+import type { Social } from "@/typings/index.js";
 import { defineStore } from "pinia";
 import i18n from "../i18n/index.js";
+
 const { t } = i18n.global;
 
 export default defineStore({
@@ -18,41 +20,13 @@ export default defineStore({
         name: "github",
         link: "https://github.com/LeoPenaguin",
       },
-    ],
-    text: [t("description.introduction"), t("description.coding")],
-    skills: [
       {
-        title: t("backend"),
-        items: [
-          t("description.php"),
-          t("description.go"),
-          t("description.sql"),
-          t("description.api"),
-        ],
+        name: "malt",
+        link: "https://www.malt.fr/profile/leopenaguin",
       },
-      {
-        title: t("frontend"),
-        items: [
-          t("description.vue"),
-          t("description.javascript"),
-          t("description.react"),
-          t("description.typescript"),
-          t("description.html"),
-          t("description.pwa"),
-          t("description.css"),
-        ],
-      },
-      {
-        title: t("general"),
-        items: [
-          t("description.tests"),
-          t("description.architecture"),
-          t("description.continuous"),
-          t("description.team"),
-          t("description.agile"),
-          t("description.english"),
-        ],
-      },
-    ],
+    ] as Social[],
+    text: [
+      t("description.presentation.introduction")
+    ] as string[],
   }),
 });

@@ -1,129 +1,133 @@
-<template>
-  <div id="description" class="section">
-    <div class="section-center">
-      <img class="photo" src="@/assets/me.jpg" alt="" />
-
-      <h1 class="text-3xl font-bold underline">Léo PENAGUIN</h1>
-
-      <div class="social-grid">
-        <a v-for="item in descriptionStore.social" :key="item.name" :class="`grid-item item-${item.name}`"
-          target="_blank" :href="item.link">
-          <component :is="`${item.name}-icon`"></component>
-        </a>
-      </div>
-
-      <div class="text">
-        <p v-for="chapter in descriptionStore.text" :key="chapter">
-          {{ chapter }}
-        </p>
-      </div>
-
-      <div class="skills">
-        <description-item v-for="skill in descriptionStore.skills" :key="skill.title" :skill="skill" />
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import useDescriptionStore from "@/stores/description";
-import descriptionItem from "@/components/Sections/Items/DescriptionItem.vue";
+import SectionWrapper from "@/components/SectionWrapper.vue";
+import type { Component } from "vue";
+import { getIcon } from "@/components/icons";
+import Skills from "@/components/sections/SkillsSection.vue";
 
-import LinkedinIcon from "@/components/icons/LinkedinIcon.vue";
-import GithubIcon from "@/components/icons/GithubIcon.vue";
-import MailIcon from "@/components/icons/MailIcon.vue";
+const icons = {} as { [key: string]: Component };
+icons["linkedin-icon"] = getIcon('Linkedin');
+icons["github-icon"] = getIcon('Github');
+icons["mail-icon"] = getIcon('Mail');
+icons["malt-icon"] = getIcon('Malt');
 
 const descriptionStore = useDescriptionStore();
 </script>
 
-<style lang="scss">
-svg {
-  width: 25px;
-  height: 25px;
-}
-</style>
+<template>
+  <SectionWrapper>
+    <template #content>
+      <div id="presentation">
+        <h1>
+          Léo PENAGUIN
+        </h1>
+
+        <div id="presentation-content">
+          <div id="presentation-content-left">
+            <img
+              class="photo"
+              src="@/assets/me.jpg"
+              alt=""
+            >
+          </div>
+          <div id="presentation-content-right">
+            <div class="social-grid">
+              <a
+                v-for="item in descriptionStore.social"
+                :key="item.name"
+                :class="`grid-item item-${item.name}`"
+                target="_blank"
+                :href="item.link"
+              >
+                <component :is="icons[`${item.name}-icon`]" />
+              </a>
+            </div>
+
+            <p
+              v-for="chapter in descriptionStore.text"
+              :key="chapter"
+            >
+              {{ chapter }}
+            </p>
+            <Skills />
+          </div>
+        </div>
+      </div>
+    </template>
+  </SectionWrapper>
+</template>
 
 <style lang="scss" scoped>
-.photo {
-  border-radius: 2rem;
-  height: 20rem;
-  margin: 0 auto;
-  display: block;
-}
-
-.text {
-  padding: 2rem 0;
-  text-align: center;
-
-  ul {
+#presentation {
+  h1 {
     text-align: left;
-    list-style: none;
-    padding: 0;
-
-    li {
-      line-height: 2rem;
-      padding-left: 1.3rem;
-      position: relative;
-
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0.1rem;
-        top: 0.63rem;
-        width: 0.7rem;
-        height: 0.7rem;
-        background: #5770ff;
-        border-radius: 50%;
-      }
+  }
+  @media screen and (max-width: 1040px) {
+    padding: var(--space2);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+      text-align: center;
     }
   }
-}
-
-.skills {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-}
-
-.social-grid {
-  display: flex;
-  align-items: stretch;
-  margin: 0 auto;
-  width: fit-content;
-
-  .grid-item {
-    padding: 0.7rem 3rem;
-    width: 60px;
+  #presentation-content {
     display: flex;
-    align-items: center;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    margin: 5px;
-    transition: transform 0.1s ease-in-out;
-
-    span {
-      line-height: 0;
+    gap: var(--space3);
+    @media screen and (max-width: 1040px) {
+        flex-direction: column;
+        padding: var(--space2);
     }
-
-    &.item-mail {
-      background-color: #2ecc71;
+    &-left {
+      .photo {
+        border-radius: var(--border-radius-1);
+        margin: 0 auto;
+        display: block;
+        width: 250px;
+      }
     }
-
-    &.item-linkedin {
-      background-color: #0177b5;
-    }
-
-    &.item-github {
-      background-color: #323131;
-    }
-
-    &.item-twitter {
-      background-color: #1da1f2;
-    }
-
-    &:hover {
-      transform: scale(1.1);
+    &-right {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space3);
+      .social-grid {
+        @media screen and (max-width: 1040px) {
+          display: inline;
+          text-align: center;
+        }
+        .grid-item {
+          padding: var(--space1) 25px;
+          display: inline-block;
+          border-radius: var(--border-radius-1);
+          margin: 0 var(--space1) var(--space1) 0;
+          span {
+            line-height: 0;
+          }
+          &.item-mail {
+            background-color: #2ecc71;
+            color: #dfffed;
+          }
+          &.item-linkedin {
+            background-color: #0177b5;
+            color: #d9f2ff;
+          }
+          &.item-github {
+            background-color: #323131;
+            color: #76afec;
+          }
+          &.item-malt {
+            background-color: #FC5757;
+            color: #ffffff;
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+          ::v-deep(svg) {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
     }
   }
 }
