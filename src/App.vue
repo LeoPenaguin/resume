@@ -1,107 +1,57 @@
-<template>
-    <div id="app" class="content">
-        <div class="i18n">
-            <select v-model="$i18n.locale">
-                <option>en</option>
-                <option>fr</option>
-            </select>
-            (🛠️ {{ $t('wip') }})
-        </div>
+<script setup lang="ts">
+import ResumeSections from "@/components/ResumeSections.vue";
+import { onMounted } from "vue";
+import TopBar from "./components/TopBar.vue";
 
-        <ResumeSections />
-    </div>
-</template>
 
-<script>
-import ResumeSections from '@/components/ResumeSections.vue'
-import { onMounted } from 'vue'
-
-export default {
-    name: 'App',
-    components: {
-        ResumeSections,
-    },
-    setup() {
-        onMounted(() => {
-            if (localStorage.colorScheme) {
-                document.documentElement.dataset.userColorScheme =
-                    localStorage.colorScheme
-            }
-        })
-    },
-}
+onMounted(() => {
+  if (localStorage.colorScheme) {
+    document.documentElement.dataset.userColorScheme = localStorage.colorScheme;
+  }
+});
 </script>
 
+<template>
+  <TopBar />
+  <ResumeSections />
+</template>
+
 <style lang="scss">
+@import '../node_modules/typeface-roboto/index.css';
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "./styles/reset.css";
+@import "./styles/themes";
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    background: v(background-color);
-    color: v(text-color);
-    transition: background 0.5s, color 0.5s;
+  background: var(--background-color);
+  color: var(--text-color);
 }
 
 h1 {
-    font-size: 50px;
-    text-align: center;
-    width: fit-content;
-    background: linear-gradient(45deg, v(primary), v(secondary));
-    color: v(items-background-color);
-    display: block;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -o-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 2rem auto;
-    transition: background 0.5s, color 0.5s;
+  text-align: center;
+  width: fit-content;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
-    color: v(primary);
-    font-size: 2rem;
-    line-height: 2.375rem;
-    font-weight: 800;
-    text-align: left;
-}
-
-h3 {
-    color: #ff75b3;
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 1.75rem;
+  color: var(--primary);
+  margin: 0;
 }
 
 p {
-    font-size: 1.125rem;
-    line-height: 1.5em;
-}
-
-a {
-    color: v(text-color);
-}
-
-textarea,
-input,
-button {
-    outline: none;
+  margin: 0;
 }
 
 #app {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.i18n {
-    position: fixed;
-    left: 1rem;
-    top: 1rem;
+  font-family: Roboto;
 }
 </style>

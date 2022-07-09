@@ -1,30 +1,16 @@
+/* eslint-env node */
+require("@rushstack/eslint-patch/modern-module-resolution");
+
 module.exports = {
-    root: true,
-    env: {
-        es2021: true,
-    },
-    extends: [
-        'plugin:vue/vue3-recommended',
-        'eslint:recommended',
-        'prettier',
-        'plugin:prettier/recommended',
-    ],
-    plugins: ['prettier'],
-    rules: {
-        'no-console': 'off',
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        "prettier/prettier": ["error", { "endOfLine": "auto" }]
-    },
-    overrides: [
-        {
-            files: [
-                '**/__tests__/*.{j,t}s?(x)',
-                '**/tests/*.{test,spec}.{j,t}s?(x)',
-                '**/tests/**/*.{test,spec}.{j,t}s?(x)',
-            ],
-            env: {
-                jest: true,
-            },
-        },
-    ],
-}
+  root: true,
+  extends: [
+    "plugin:vue/vue3-essential",
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended",
+    "@vue/eslint-config-typescript/recommended",
+  ],
+  rules: {
+    "vue/component-name-in-template-casing": ["error", "kebab-case"],
+    "@typescript-eslint/no-unused-vars": ["error"],
+  },
+};
