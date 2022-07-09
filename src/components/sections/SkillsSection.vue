@@ -25,57 +25,59 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n'
+import { requireImage } from '@/script/images'
 
 const { t } = useI18n({ useScope: 'global' })
 
-const skills = [
+const skills = ref([
   {
     title: 'VUE JS',
     color: '#3FB984',
-    img: 'src/assets/skill-grid/vue-logo.png',
+    img: requireImage('skill-grid/vue-logo.png'),
     important: true
   },
   {
     title: 'GITHUB',
     background: "white",
     color: '#1B1F23',
-    img: 'src/assets/skill-grid/github-logo.svg',
+    img: requireImage('skill-grid/github-logo.svg'),
     important: true
   },
   {
     title: 'TYPESCRIPT',
     color: '#007ACC',
-    img: 'src/assets/skill-grid/typescript-logo.svg',
+    img: requireImage('skill-grid/typescript-logo.svg'),
     important: true
   },
   {
     title: 'VSCODE',
     color: '#40ADF3',
-    img: 'src/assets/skill-grid/vscode-logo.png',
+    img: requireImage('skill-grid/vscode-logo.png'),
     important: true
   },
   {
     title: 'JEST',
     background: "#99425B",
-    img: 'src/assets/skill-grid/jest-logo.png'
+    img: requireImage('skill-grid/jest-logo.png'),
   },
   {
     title: 'CYPRESS',
-    img: 'src/assets/skill-grid/cypress-logo.png'
+    img: requireImage('skill-grid/cypress-logo.png'),
   },
   {
     title: 'ESLINT',
     background: "white",
     color: '#3A33D1',
-    img: 'src/assets/skill-grid/eslint-logo.svg'
+    img: requireImage('skill-grid/eslint-logo.svg'),
   },
   {
     title: 'STORYBOOK',
     color: '#FE4685',
-    img: 'src/assets/skill-grid/storybook-logo.png'
+    img: requireImage('skill-grid/storybook-logo.png'),
   },
-]
+])
 </script>
 
 

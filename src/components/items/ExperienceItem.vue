@@ -24,7 +24,7 @@ defineProps({
       <div class="experience-header">
         <img
           class="experience-header-image"
-          :src="`src/assets/logos/${experience.image}`"
+          :src="experience.image"
         >
 
         <div class="experience-header-details">
@@ -58,7 +58,7 @@ defineProps({
       <div class="experience-header">
         <img
           class="experience-header-image"
-          :src="`src/assets/logos/${experience.image}`"
+          :src="experience.image"
         >
 
         <div class="experience-header-details">

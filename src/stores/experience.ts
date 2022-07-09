@@ -3,6 +3,7 @@ import { Locations } from "@/typings/enums/locations";
 import type { Experience } from "@/typings";
 import i18n from "../i18n/index.js";
 import Skill from "@/typings/skills"
+import { requireImage } from "@/script/images.js";
 
 const { t } = i18n.global;
 
@@ -21,7 +22,7 @@ export default defineStore({
     experiences: [
       {
         primary: true,
-        image: "bedrock.png",
+        image: requireImage("logos/bedrock.png"),
         title: "Frontend developer",
         date: {from: "2022", to: 'now'},
         company: "Bedrock Streaming",
@@ -43,7 +44,7 @@ export default defineStore({
       },
       {
         primary: true,
-        image: "ubitransport.png",
+        image: requireImage("logos/ubitransport.png"),
         title: "Frontend developer",
         date: {from: "2021", to: '2022'},
         company: "Ubitransport",
@@ -60,7 +61,7 @@ export default defineStore({
       },
       {
         primary: true,
-        image: "smf.png",
+        image: requireImage("logos/smf.png"),
         title: "Fullstack developer",
         date: {from: "2018", to: '2021'},
         company: "Smart Mobile Factory GmBH",
@@ -85,7 +86,7 @@ export default defineStore({
       },
       {
         primary: false,
-        image: "cats.jpg",
+        image: requireImage("logos/cats.jpg"),
         title: "JAVA developer",
         date: {from: "2016", to: '2018'},
         company: "Crédit Agricole",
@@ -100,7 +101,7 @@ export default defineStore({
       },
       {
         primary: false,
-        image: "hmclause.png",
+        image: requireImage("logos/hmclause.png"),
         title: "C# developer",
         date: {from: "2015", to: '2016'},
         company: "HM Clause",
@@ -116,7 +117,7 @@ export default defineStore({
       },
       {
         primary: false,
-        image: "mediacraft.png",
+        image: requireImage("logos/mediacraft.png"),
         date: {from: `${MARCH} 2015`, duration: SIXMONTH},
         company: "Mediacraft",
         location: Locations.GRENOBLE,
@@ -126,7 +127,7 @@ export default defineStore({
       },
       {
         primary: false,
-        image: "smf.png",
+        image: requireImage("logos/smf.png"),
         date: {from: `${MARCH} 2014`, duration: SIXMONTH},
         company: "Smart Mobile Factory",
         type: t('experience.type.internship'),
@@ -136,7 +137,7 @@ export default defineStore({
       },
       {
         primary: false,
-        image: "cats.jpg",
+        image: requireImage("logos/cats.jpg"),
         date: {from: `${JANUARY} 2013`, duration: ONEMONTH},
         company: "Crédit Agricole",
         type: t('experience.type.internship'),
@@ -146,7 +147,7 @@ export default defineStore({
       },
       {
         primary: false,
-        image: "webfox.png",
+        image: requireImage("logos/webfox.png"),
         date: {from: `${MAY} 2012`, duration: THREEMONTH},
         company: "Agentur Webfox",
         type: t('experience.type.internship'),
@@ -156,7 +157,7 @@ export default defineStore({
       },
       {
         primary: false,
-        image: "svd.png",
+        image: requireImage("logos/svd.png"),
         date: {from: `${DECEMBER} 2007`, duration: ONEMONTH},
         company: "SVD Studio",
         type: t('experience.type.internship'),
@@ -166,7 +167,7 @@ export default defineStore({
       },
       {
         primary: false,
-        image: "bymicro.png",
+        image: requireImage("logos/bymicro.png"),
         date: {from: `${DECEMBER} 2006`, duration: ONEMONTH},
         company: "By Micro",
         type: t('experience.type.internship'),

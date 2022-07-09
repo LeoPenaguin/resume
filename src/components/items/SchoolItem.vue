@@ -26,7 +26,7 @@ defineProps({
     </template>
     <template #footer>
       <div class="shoot-item-footer">
-        <img :src="`src/assets/logos/${school.image}`">
+        <img :src="school.image">
         <location-tag :location="school.location" />
       </div>
     </template>
