@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import useExperienceStore from "@/stores/experience";
 import experienceItem from "@/components/items/ExperienceItem.vue";
-import SectionWrapper from "@/components/SectionWrapper.vue";
+import SectionWrapper from "@/components/sections/SectionWrapper.vue";
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n({ useScope: 'global' })

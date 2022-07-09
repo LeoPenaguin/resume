@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import ResumeSections from "@/components/ResumeSections.vue";
 import { onMounted } from "vue";
-import { useI18n } from 'vue-i18n'
+import TopBar from "./components/TopBar.vue";
 
-const {t, locale, availableLocales} = useI18n({ useScope: 'global' })
 
 onMounted(() => {
   if (localStorage.colorScheme) {
@@ -13,22 +12,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="i18n">
-    <select v-model="locale">
-      <option
-        v-for="availableLocale in availableLocales"
-        :key="availableLocale"
-      >
-        {{ availableLocale }}
-      </option>
-    </select>
-    (🛠️ {{ t("wip") }})
-  </div>
-
+  <TopBar />
   <ResumeSections />
 </template>
 
 <style lang="scss">
+@import '../node_modules/typeface-roboto/index.css';
+
 * {
   box-sizing: border-box;
 }
@@ -43,6 +33,7 @@ body {
 
 h1 {
   text-align: center;
+  width: fit-content;
   background: linear-gradient(45deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -61,12 +52,6 @@ p {
 }
 
 #app {
-  font-family: sans-serif;
-}
-
-.i18n {
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
+  font-family: Roboto;
 }
 </style>

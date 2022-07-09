@@ -2,11 +2,11 @@ export default {
   description: {
     presentation: {
       introduction:
-        "Bonjour ! Je suis un ingénieur logiciel et un développeur web. Ces dernières années, j'ai travaillé sur des APIs Symfony en tant que développeur backend 💻 et sur des applications web Vuejs en tant que développeur frontend 👩‍💻. J'apprécie d'avoir de l'expérience en back ET en frontend et j'espère pouvoir rester dans les deux mondes dans mes prochaines expériences professionnelles 😌",
+        "Bonjour ! Je suis développeur web front Lyonnais. Je travaille à plein temps chez Bedrock, une entreprise qui développe des services de streaming pour des clients tel que M6, Salto et RTL. Je me suis spécialisé dans le framework VueJS et Typescript après avoir passé quelques années en tant que développeur PHP et Symphony",
     },
   },
   school: {
-    title: "Academic background",
+    title: "Écoles et formations",
     degrees: {
       master: {
         title: "Master's degree in Computer Science",
@@ -35,7 +35,7 @@ export default {
     },
   },
   experience: {
-    title: "Experience",
+    title: "Expérience",
     type: {
       internship: "Internship",
       sandwichcourse: "Sandwich course",
@@ -55,7 +55,7 @@ export default {
     }
   },
   skill: {
-    title: "I use these daily",
+    title: "J'utilise tout les jours",
     mvc: "MVC architecture",
     oop: "OOP architecture",
     rest: "REST",
@@ -101,7 +101,7 @@ export default {
   backend: "Backend",
   frontend: "Frontend",
   general: "General",
-  wip: "Work in progress",
+  wip: "En cours",
   date: {
     month: 'Mois',
     january: 'Janvier',

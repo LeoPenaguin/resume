@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SkillTag from "@/components/tags/SkillTag.vue";
-import ItemWrapper from "@/components/ItemWrapper.vue";
+import ItemWrapper from "@/components/items/ItemWrapper.vue";
 import type { PropType } from "vue";
 import { ColorVariants } from '@/typings/enums/colorVariants'
 import type { SkillGroup } from "@/typings";

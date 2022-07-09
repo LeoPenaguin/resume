@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import useDescriptionStore from "@/stores/description";
-import SectionWrapper from "@/components/SectionWrapper.vue";
+import SectionWrapper from "@/components/sections/SectionWrapper.vue";
 import type { Component } from "vue";
 import { getIcon } from "@/components/icons";
-import Skills from "@/components/sections/SkillsSection.vue";
+import SkillsSection from "@/components/sections/SkillsSection.vue";
+import type { Social } from "@/typings";
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n({ useScope: 'global' })
 
 const icons = {} as { [key: string]: Component };
 icons["linkedin-icon"] = getIcon('Linkedin');
@@ -11,7 +14,24 @@ icons["github-icon"] = getIcon('Github');
 icons["mail-icon"] = getIcon('Mail');
 icons["malt-icon"] = getIcon('Malt');
 
-const descriptionStore = useDescriptionStore();
+const networks = [
+  {
+    name: "mail",
+    link: "mailto:PenaguinLeo@gmail.com",
+  },
+  {
+    name: "linkedin",
+    link: "https://www.linkedin.com/in/leo-penaguin",
+  },
+  {
+    name: "github",
+    link: "https://github.com/LeoPenaguin",
+  },
+  {
+    name: "malt",
+    link: "https://www.malt.fr/profile/leopenaguin",
+  },
+] as Social[]
 </script>
 
 <template>
@@ -33,7 +53,7 @@ const descriptionStore = useDescriptionStore();
           <div id="presentation-content-right">
             <div class="social-grid">
               <a
-                v-for="item in descriptionStore.social"
+                v-for="item in networks"
                 :key="item.name"
                 :class="`grid-item item-${item.name}`"
                 target="_blank"
@@ -43,13 +63,10 @@ const descriptionStore = useDescriptionStore();
               </a>
             </div>
 
-            <p
-              v-for="chapter in descriptionStore.text"
-              :key="chapter"
-            >
-              {{ chapter }}
+            <p>
+              {{ t("description.presentation.introduction") }}
             </p>
-            <Skills />
+            <SkillsSection />
           </div>
         </div>
       </div>

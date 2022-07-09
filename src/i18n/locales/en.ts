@@ -2,7 +2,7 @@ export default {
   description: {
     presentation: {
       introduction:
-        "Hello ! I am a frontend web developer at Bedrock, a company that creates streaming platoforms for its customers. I specialized in Vuejs and Typescript after working a few years as a backend developer.",
+        "Hello there! I am a French front-end web developer. I work full time at Bedrock, a company that creates streaming platforms for companies like M6, Salto and RTL. I specialized myself in the VueJS framework and Typescript after working a few years as a back-end developer.",
     },
   },
   school: {
@@ -41,7 +41,7 @@ export default {
       sandwichcourse: "Sandwich course",
     },
     context: {
-      bedrock: "Complete digital solutions to manage your urban, school and intercity transport for transport actors: geolocation, operating assistance assistance, ridership monitoring, ticket management ticket management, passenger information and other services.",
+      bedrock: "Bedrock delivers cutting-edge video streaming platforms to broadcasters and media companies in Europe for more than 45 million users. Founded by M6 Group and formed as a joint venture with RTL Group (Bertelsmann) in 2020, Bedrock relies on more than 12 years' experience and 400+ team members.",
       ubitransport: "Complete digital solutions to manage your urban, school and intercity transport for transport actors: geolocation, operating assistance assistance, ridership monitoring, ticket management ticket management, passenger information and other services.",
       smf: "Fullstack developer within an agency developing mobile applications. (iOS, Android, MacOS).",
       cats:  "JAVA developer in the IT department of a major French bank.",

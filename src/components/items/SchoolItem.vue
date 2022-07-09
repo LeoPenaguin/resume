@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ItemWrapper from "@/components/ItemWrapper.vue";
+import ItemWrapper from "@/components/items/ItemWrapper.vue";
 import DateTag from "@/components/tags/DateTag.vue";
 import LocationTag from "@/components/tags/LocationTag.vue";
 import type { PropType } from "vue";

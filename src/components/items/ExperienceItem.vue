@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ItemWrapper from "@/components/ItemWrapper.vue";
+import ItemWrapper from "@/components/items/ItemWrapper.vue";
 import SkillTag from "@/components/tags/SkillTag.vue";
 import DateTag from "@/components/tags/DateTag.vue";
 import CompanyTag from "@/components/tags/CompanyTag.vue";

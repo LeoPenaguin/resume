@@ -1,29 +1,3 @@
-<template>
-  <h2>{{ t("skill.title") }}</h2>
-
-  <div class="skills">
-    <div
-      v-for="skill in skills"
-      :key="skill.title"
-      class="skill"
-      :style="{backgroundColor: skill.background}"
-    >
-      <img
-        :src="skill.img"
-        :alt="skill.title"
-      >
-      <p :style="{color: skill.color}">
-        {{ skill.title }}
-      </p>
-      <img
-        v-if="skill.important"
-        src="@/assets/skill-grid/heart-logo.svg"
-        alt=""
-      >
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n'
@@ -80,6 +54,31 @@ const skills = ref([
 ])
 </script>
 
+<template>
+  <h2>{{ t("skill.title") }}</h2>
+
+  <div class="skills">
+    <div
+      v-for="skill in skills"
+      :key="skill.title"
+      class="skill"
+      :style="{backgroundColor: skill.background}"
+    >
+      <img
+        :src="skill.img"
+        :alt="skill.title"
+      >
+      <p :style="{color: skill.color}">
+        {{ skill.title }}
+      </p>
+      <img
+        v-if="skill.important"
+        src="@/assets/skill-grid/heart-logo.svg"
+        alt=""
+      >
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .skills {
