@@ -18,7 +18,7 @@ defineProps({
 </script>
 
 <template>
-  <ItemWrapper>
+  <item-wrapper>
     <template #header>
       <h2>{{ skillGroup.title }}</h2>
     </template>
@@ -29,5 +29,5 @@ defineProps({
         :skill="skill"
       />
     </template>
-  </ItemWrapper>
+  </item-wrapper>
 </template>

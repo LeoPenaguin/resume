@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <BaseTag
+  <base-tag
     class="company-tag"
     :text="companyName"
     icon="Home"

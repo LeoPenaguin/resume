@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <BaseTag
+  <base-tag
     class="location-tag"
     :text="location"
     icon="MapPin"

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import ResumeSections from "@/components/ResumeSections.vue";
 import { onMounted } from "vue";
-import TopBar from "./components/TopBar.vue";
-
 
 onMounted(() => {
   if (localStorage.colorScheme) {
@@ -12,8 +10,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <TopBar />
-  <ResumeSections />
+  <resume-sections />
 </template>
 
 <style lang="scss">

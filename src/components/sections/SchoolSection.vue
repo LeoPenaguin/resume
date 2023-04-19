@@ -10,7 +10,7 @@ const schoolStore = useSchoolStore();
 </script>
 
 <template>
-  <SectionWrapper>
+  <section-wrapper>
     <template #header>
       <h1>{{ t("school.title") }}</h1>
     </template>
@@ -21,5 +21,5 @@ const schoolStore = useSchoolStore();
         :school="item"
       />
     </template>
-  </SectionWrapper>
+  </section-wrapper>
 </template>

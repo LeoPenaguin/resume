@@ -35,7 +35,7 @@ const networks = [
 </script>
 
 <template>
-  <SectionWrapper>
+  <section-wrapper>
     <template #content>
       <div id="presentation">
         <h1>
@@ -66,12 +66,12 @@ const networks = [
             <p>
               {{ t("description.presentation.introduction") }}
             </p>
-            <SkillsSection />
+            <skills-section />
           </div>
         </div>
       </div>
     </template>
-  </SectionWrapper>
+  </section-wrapper>
 </template>
 
 <style lang="scss" scoped>

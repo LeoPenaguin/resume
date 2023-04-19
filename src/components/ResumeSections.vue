@@ -6,9 +6,9 @@ import School from "@/components/sections/SchoolSection.vue";
 
 <template>
   <div class="sections">
-    <Description />
-    <Experience />
-    <School />
+    <description />
+    <experience />
+    <school />
   </div>
 </template>
 

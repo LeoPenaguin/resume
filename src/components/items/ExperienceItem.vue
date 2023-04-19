@@ -16,7 +16,7 @@ defineProps({
 </script>
 
 <template>
-  <ItemWrapper
+  <item-wrapper
     v-if="experience.primary"
     class="large"
   >
@@ -51,9 +51,9 @@ defineProps({
         />
       </div>
     </template>
-  </ItemWrapper>
+  </item-wrapper>
 
-  <ItemWrapper v-else>
+  <item-wrapper v-else>
     <template #header>
       <div class="experience-header">
         <img
@@ -80,7 +80,7 @@ defineProps({
         />
       </div>
     </template>
-  </ItemWrapper>
+  </item-wrapper>
 </template>
 
 <style scoped lang="scss">

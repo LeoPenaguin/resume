@@ -14,7 +14,7 @@ defineProps({
 </script>
 
 <template>
-  <ItemWrapper>
+  <item-wrapper>
     <template #header>
       <div class="shoot-item-header">
         <date-tag :date="school.date" />
@@ -30,7 +30,7 @@ defineProps({
         <location-tag :location="school.location" />
       </div>
     </template>
-  </ItemWrapper>
+  </item-wrapper>
 </template>
 
 <style lang="scss" scoped>

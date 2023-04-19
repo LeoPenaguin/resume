@@ -10,7 +10,7 @@ const experienceStore = useExperienceStore();
 </script>
 
 <template>
-  <SectionWrapper>
+  <section-wrapper>
     <template #header>
       <h1>
         {{ t("experience.title") }}
@@ -23,5 +23,5 @@ const experienceStore = useExperienceStore();
         :experience="item"
       />
     </template>
-  </SectionWrapper>
+  </section-wrapper>
 </template>

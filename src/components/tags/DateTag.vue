@@ -14,7 +14,7 @@ const text = `${props.date.from} ${props.date.to ? 'to ' + props.date.to : ''} $
 </script>
 
 <template>
-  <BaseTag
+  <base-tag
     class="date-tag"
     :text="text"
     icon="Calendar"

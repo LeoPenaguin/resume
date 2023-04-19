@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <BaseTag
+  <base-tag
     v-if="skill"
     :class="`skill-tag_${skill.type} skill-tag`"
     :icon="skill.key"
