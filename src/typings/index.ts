@@ -1,14 +1,12 @@
-import type { Locations } from "./enums/locations";
-
 export interface Social {
-  name: string;
   link: string;
+  svgIconPath: string;
+  color: string;
 }
 
-export interface Skill {
-  key: string;
+export interface Tag {
   label: string;
-  type: string;
+  svgIconPath: string;
 }
 
 export interface ItemDate {
@@ -19,13 +17,12 @@ export interface ItemDate {
 
 export interface Experience {
   primary: boolean;
-  image: string;
-  title: string;
+  title?: string;
   date: ItemDate;
   company: string;
-  location: Locations;
+  location: string;
   context: string;
-  skills?: Skill[];
+  skills?: Tag[];
   type: string;
   link?: undefined;
 }
@@ -34,11 +31,6 @@ export interface School {
   date: ItemDate;
   degree: string;
   description: string;
-  location: Locations;
+  location: string;
   image: string;
-}
-
-export interface SkillGroup {
-  title: string;
-  skills: Skill[];
 }
