@@ -53,6 +53,7 @@
 import SectionWrapper from "@/components/SectionWrapper.vue";
 import type { Social } from "@/typings";
 import { useI18n } from 'vue-i18n'
+// @ts-ignore
 import SvgIcon from '@jamescoyle/vue-icon';
 import { ref } from "vue";
 import skills from "@/services/skills";

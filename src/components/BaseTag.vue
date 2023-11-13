@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import type { ItemDate } from "@/typings/index";
 import { computed } from 'vue';
+// @ts-ignore
 import SvgIcon from '@jamescoyle/vue-icon';
 
 const props = defineProps<
