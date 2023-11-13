@@ -1,28 +1,18 @@
 :root {
-  --border-radius-1: 5px;
-  --border-radius-2: 10px;
   --space0: 0.5rem;
   --space1: 1rem;
   --space2: 2rem;
   --space3: 2.5rem;
 
-  color-scheme: light dark;
   --border-radius-1: 0.5rem;
-  --border-radius-2: 1rem;
 
-  --text-color: #ffffff;
-  --items-bgc: #001e30;
-  --background-color: #00101a;
-  --primary: #09f;
-  --secondary: #00ffbf;
+  $primary-color: #ffffff;
+  $accent-color: rgb(85, 207, 255);
+  $background-color: rgb(8, 36, 47);
 
-  --tag-skill-bgc: #00293f;
-  --tag-skill-backend-color: rgb(0, 145, 255);
-  --tag-skill-frontend-color: rgb(0, 255, 30);
-  --tag-skill-general-color: rgb(255, 204, 0);
+  --primary-color: #{$primary-color};
+  --accent-color: #{$accent-color};
+  --background-color: #{$background-color};
 
-  --tag-date-color: #ffae00;
-  --tag-company-color: #67ff4c;
-  --tag-location-color: #ff72fd;
-  --tag-skill-color: #ffffff;
+  --lighten-primary-color: #{rgba($primary-color, 0.1)};
 }

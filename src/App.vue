@@ -1,17 +1,16 @@
-<script setup lang="ts">
-import ResumeSections from "@/components/ResumeSections.vue";
-import { onMounted } from "vue";
-
-onMounted(() => {
-  if (localStorage.colorScheme) {
-    document.documentElement.dataset.userColorScheme = localStorage.colorScheme;
-  }
-});
-</script>
-
 <template>
-  <resume-sections />
+  <div class="sections">
+    <description-section />
+    <experience-section />
+    <school-section />
+  </div>
 </template>
+
+<script setup lang="ts">
+import DescriptionSection from "@/components/sections/DescriptionSection.vue";
+import ExperienceSection from "@/components/sections/ExperienceSection.vue";
+import SchoolSection from "@/components/sections/SchoolSection.vue";
+</script>
 
 <style lang="scss">
 @import '../node_modules/typeface-roboto/index.css';
@@ -23,32 +22,61 @@ onMounted(() => {
 @import "./styles/reset.css";
 @import "./styles/themes";
 
+#app {
+  font-family: Roboto;
+}
+
 body {
   background: var(--background-color);
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 h1 {
-  text-align: center;
-  width: fit-content;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -o-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-size: 4em;
+  font-weight: 700;
 }
 
 h2 {
-  color: var(--primary);
-  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 p {
   margin: 0;
+  padding: 0;
+  font-size: 1rem;
 }
 
-#app {
-  font-family: Roboto;
+a {
+  color: var(--primary-color);
+  &:visited {
+    color: var(--primary-color);
+  }
+  &:active {
+    color: var(--primary-color);
+  }
+}
+
+.title-icon {
+  color: var(--accent-color);
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space2);
+  margin-bottom: 20vh;
+  padding: var(--space2);
 }
 </style>

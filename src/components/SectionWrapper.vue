@@ -1,12 +1,7 @@
-<script setup lang="ts">
-import { useSlots } from "vue";
-const slots = useSlots();
-</script>
-
 <template>
   <div class="section">
     <header>
-      <slot name="header" />
+      <h2><span class="title-icon">#</span> {{ title }}</h2>
     </header>
     <main v-if="!!slots.content">
       <slot name="content" />
@@ -20,31 +15,30 @@ const slots = useSlots();
   </div>
 </template>
 
+<script setup lang="ts">
+import { useSlots } from "vue";
+const slots = useSlots();
+
+defineProps<{
+  title: string;
+}>();
+</script>
+
 <style lang="scss" scoped>
 .section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-size: cover;
-  padding-top: 3rem;
-  main {
+  width: 100%;
+  max-width: 760px;
+  header {
     width: 100%;
-    max-width: 1000px;
   }
   .grid {
     width: 100%;
-    max-width: 1000px;
+    max-width: 760px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: var(--space2);
-  }
-
-  @media screen and (max-width: 1040px) {
-    .grid {
-      display: flex;
-      flex-direction: column;
-      padding: var(--space2);
-    }
   }
 }
 </style>
