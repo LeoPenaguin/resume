@@ -2,7 +2,7 @@
   <div class="item">
     <header>
       <h3 v-if="title">
-        <span class="title-icon">##</span> {{ title }}
+        {{ title }}
       </h3>
       <div class="tags">
         <base-tag
@@ -70,13 +70,15 @@ defineProps<{
     display: flex;
     flex-direction: column;
     h3 {
-      margin: 0 0 var(--space0) 0;
-      font-weight: 500;
+      margin: 0 0 var(--space1) 0;
     }
     .tags {
-      display: inline-flex;
+      display: flex;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: var(--space0);
+      @media screen and (max-width: 720px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
   }
   main {
@@ -86,13 +88,15 @@ defineProps<{
     }
   }
   footer {
-    width: 80%;
+    width: 100%;
     .tags {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      flex-wrap: wrap;
-      gap: 4px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space0);
       width: 100%;
+      @media screen and (max-width: 720px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 }

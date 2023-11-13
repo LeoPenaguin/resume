@@ -33,12 +33,13 @@ defineProps<{
   max-width: 760px;
   header {
     width: 100%;
+    margin-bottom: var(--space2);
   }
   .grid {
     width: 100%;
     max-width: 760px;
     display: grid;
-    gap: var(--space2);
+    gap: var(--space4);
   }
 }
 </style>

@@ -8,6 +8,7 @@
       type="mdi"
       :path="svgIconPath"
       class="icon"
+      :size="20"
     />
     <span>{{ lol }}</span>
   </span>
@@ -43,9 +44,7 @@ const lol = computed(() => {
   justify-content: center;
   display: inline-flex;
   flex-direction: row;
-  font-size: 0.9rem;
   gap: var(--space0);
-  padding: 3px 6px;
   border-radius: var(--border-radius-1);
   cursor: pointer;
 
@@ -53,10 +52,6 @@ const lol = computed(() => {
     padding: 0;
     text-transform: uppercase;
     display: block;
-  }
-
-  &:hover {
-    background: var(--lighten-primary-color);
   }
 
   &-big {

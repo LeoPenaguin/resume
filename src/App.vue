@@ -33,27 +33,19 @@ body {
 
 h1 {
   display: inline-block;
-  font-size: 4em;
-  font-weight: 700;
 }
 
 h2 {
-  font-size: 20px;
-  font-weight: 900;
-  margin-bottom: 16px;
   text-transform: uppercase;
 }
 
 h3 {
-  font-size: 16px;
-  font-weight: 900;
   text-transform: uppercase;
 }
 
 p {
   margin: 0;
   padding: 0;
-  font-size: 1rem;
 }
 
 a {
