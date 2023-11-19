@@ -17,12 +17,12 @@ p {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--accent-color);
   &:visited {
-    color: var(--primary-color);
+    color: var(--accent-color);
   }
   &:active {
-    color: var(--primary-color);
+    color: var(--accent-color);
   }
 }
 

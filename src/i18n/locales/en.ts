@@ -1,10 +1,4 @@
 export default {
-  description: {
-    presentation: {
-      introduction:
-        "Hello there! I am a French front-end web developer. I work full time at Bedrock, a company that creates streaming platforms for companies like M6, Salto and RTL. I specialized myself in the VueJS framework and Typescript after working a few years as a back-end developer.",
-    },
-  },
   school: {
     title: "ACADEMIC BACKGROUND",
     degrees: {
