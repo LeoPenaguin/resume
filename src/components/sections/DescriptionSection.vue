@@ -1,5 +1,7 @@
 <template>
-  <section-wrapper title="Léo Penaguin">
+  <section-wrapper
+    :title="`${firstName} ${lastName}`"
+  >
     <template #content>
       <div id="presentation">
         <div id="presentation-content">
@@ -27,7 +29,7 @@
             </div>
 
             <p>
-              {{ t("description.presentation.introduction") }}
+              {{ aboutMe }}
             </p>
             <div class="skills">
               <div
@@ -63,8 +65,13 @@ import {
   mdiLinkedin,
 } from '@mdi/js';
 import BaseTag from "../BaseTag.vue";
+import { usePersonStore } from "@/stores/person";
+import { storeToRefs } from "pinia";
 
-const { t } = useI18n({ useScope: 'global' })
+const personStore = usePersonStore()
+const { firstName,
+lastName,
+aboutMe } = storeToRefs(personStore)
 
 const networks = [
   {
