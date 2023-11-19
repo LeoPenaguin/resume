@@ -63,7 +63,7 @@ defineProps<{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space0);
+  gap: var(--space1);
   min-height: 100%;
 
   header {
@@ -84,7 +84,7 @@ defineProps<{
   main {
     flex: 1;
     p {
-      color: var(--accent-color);
+      font-size: 0.9rem;
     }
   }
   footer {

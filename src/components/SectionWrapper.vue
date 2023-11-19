@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <header>
-      <h2><span class="title-icon">#</span> {{ title }}</h2>
+      <h1><span class="title-icon">#</span> {{ title }}</h1>
     </header>
     <main v-if="!!slots.content">
       <slot name="content" />
