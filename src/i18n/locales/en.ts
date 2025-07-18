@@ -3,20 +3,20 @@ export default {
     title: "ACADEMIC BACKGROUND",
     degrees: {
       master: {
-        title: "Master's degree in Computer Science",
-        description: "Expert in Computer Science and IT",
+        title: "Master's in Computer Science & Information Systems",
+        description: "Information system strategy • Project management • Business intelligence & big data • Mobile & embedded solutions • Cloud infrastructure & security",
       },
       toeic: {
-        title: "TOEIC",
-        description: "English for International Communication Test : 895 points / 990",
+        title: "TOEIC 895 / 990",
+        description: "English proficiency test - Score: 895/990",
       },
       bachelor: {
-        title: "Bachelor",
-        description: "Bachelor's degree in computer science and coding",
+        title: "Bachelor's in Computer Science",
+        description: "Object-oriented programming (Java, Python) • Continuous integration & delivery • Database design & optimization • Client-server architecture",
       },
       deust: {
-        title: "French scientific and technical university diploma",
-        description: "Webmaster and Internet professions",
+        title: "University Diploma in Web Development",
+        description: "Web development • Digital project management • E-reputation • Community management • Mobile services development",
       },
       bts: {
         title: "Advanced technician's certificate",
@@ -35,12 +35,12 @@ export default {
       sandwichcourse: "Sandwich course",
     },
     context: {
-      bedrock: "Bedrock delivers cutting-edge video streaming platforms to broadcasters and media companies in Europe for more than 45 million users. Founded by M6 Group and formed as a joint venture with RTL Group (Bertelsmann) in 2020, Bedrock relies on more than 12 years' experience and 400+ team members.",
-      ubitransport: "Complete digital solutions to manage your urban, school and intercity transport for transport actors: geolocation, operating assistance assistance, ridership monitoring, ticket management ticket management, passenger information and other services.",
-      smf: "Fullstack developer within an agency developing mobile applications. (iOS, Android, MacOS).",
-      cats:  "JAVA developer in the IT department of a major French bank.",
-      hmclause:  "C# developer within a French company specialised in field seeds.",
-      mediacraft:  "Front-end web development",
+      bedrock: "Vue 2 to Vue 3 migration, Vuex to Pinia refactoring • Design system development with PrimeVue • TypeScript, SCSS, Tailwind implementation • E2E testing with Cypress & Playwright • UI/UX prototyping with Figma • CI/CD with GitHub Actions • Code quality with ESLint",
+      ubitransport: "Vue.js interface development • Automated testing with Jest • CI/CD with Jenkins & GitLab • Agile methodology (Scrum, Jira) • Git collaboration",
+      smf: "Symfony REST API development • Vue.js & Angular frontend • Golang backend services • Client project management • WordPress maintenance • Parse Server for mobile apps • CI with Jenkins • Code quality with PHPUnit & PHPStan",
+      cats: "SOAP API development with Java • System integration • Redis caching implementation",
+      hmclause: "C# Windows Forms development • PostgreSQL database management",
+      mediacraft: "Frontend web development",
       smf2014: "Symfony API development for mobile applications",
       cats2013:  "Crédit Agricole IT maintenance",
       webfox: "Web front-end development and web design",

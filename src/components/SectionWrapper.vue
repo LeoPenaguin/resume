@@ -1,8 +1,9 @@
 <template>
-  <div class="section flex flex-col items-center w-full max-w-3xl">
-    <header class="w-full mb-8">
-      <h1 class="text-4xl font-bold text-gray-800 mb-2 border-b-2 border-accent-color pb-2 flex items-center gap-3">
-        <span class="text-accent-color text-3xl font-mono">#</span>
+  <div class="section w-full max-w-4xl">
+    <!-- Section Header -->
+    <header class="mb-4">
+      <h1 class="text-3xl font-bold text-black mb-4 flex items-center gap-2 font-mono">
+        <span class="text-green-500 text-xl">#</span>
         {{ title }}
       </h1>
     </header>
@@ -11,7 +12,7 @@
     </main>
     <div
       v-if="!!slots.grid"
-      class="grid w-full max-w-3xl gap-16"
+      class="grid w-full gap-6"
     >
       <slot name="grid" />
     </div>

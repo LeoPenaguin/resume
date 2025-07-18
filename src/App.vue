@@ -1,5 +1,5 @@
 <template>
-  <div class="sections flex flex-col items-center justify-center gap-8 mb-56 p-8 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="flex flex-col gap-6 max-w-4xl mx-auto p-4">
     <description-section />
     <experience-section />
     <school-section />

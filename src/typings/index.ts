@@ -7,6 +7,7 @@ export interface Social {
 export interface Tag {
   label: string;
   svgIconPath: string;
+  category?: 'frontend' | 'backend' | 'database' | 'devops' | 'mobile' | 'design' | 'other';
 }
 
 export interface ItemDate {

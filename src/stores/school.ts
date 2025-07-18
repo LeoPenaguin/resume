@@ -7,7 +7,7 @@ const { t } = i18n.global;
 
 // School factory
 const createSchool = (
-  date: { from: string; duration?: string },
+  date: { from: string; to?: string; duration?: string },
   degreeKey: string,
   descriptionKey: string,
   location: string,
@@ -23,40 +23,28 @@ const createSchool = (
 export const useSchoolStore = defineStore("school", () => {
   const schools = ref<School[]>([
     createSchool(
-      { from: "January 2019", duration: "2 years" },
+      { from: "2018", to: "2019" },
       "master",
       "master",
       "EPSI Grenoble, France",
     ),
     createSchool(
-      { from: "October 2018" },
+      { from: "2018" },
       "toeic",
       "toeic",
       "EPSI Grenoble, France",
     ),
     createSchool(
-      { from: "January 2016", duration: "3 years" },
+      { from: "2016", to: "2018" },
       "bachelor",
       "bachelor",
       "EPSI Grenoble, France",
     ),
     createSchool(
-      { from: "October 2013", duration: "2 years" },
+      { from: "2015", to: "2016" },
       "deust",
       "deust",
-      "Limoges, France",
-    ),
-    createSchool(
-      { from: "January 2013", duration: "2 years" },
-      "bts",
-      "bts",
-      "Valence, France",
-    ),
-    createSchool(
-      { from: "January 2011" },
-      "bac",
-      "bac",
-      "Valence, France",
+      "Université de Limoges, France",
     ),
   ]);
 

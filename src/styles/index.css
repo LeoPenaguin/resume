@@ -1,18 +1,1 @@
 @import "tailwindcss";
-
-/* Classes custom pour les couleurs du thème */
-.text-accent-color {
-  color: rgb(0, 182, 91);
-}
-
-.border-accent-color {
-  border-color: rgb(0, 182, 91);
-}
-
-.bg-accent-color {
-  background-color: rgb(0, 182, 91);
-}
-
-.hover\:text-accent-color:hover {
-  color: rgb(0, 182, 91);
-}
