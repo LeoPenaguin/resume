@@ -23,7 +23,7 @@ export interface Experience {
   location: string;
   context: string;
   skills?: Tag[];
-  type: string;
+  type?: string;
   link?: undefined;
 }
 

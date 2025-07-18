@@ -3,47 +3,35 @@
     :title="`${firstName} ${lastName}`"
   >
     <template #content>
-      <div id="presentation">
-        <div id="presentation-content">
-          <div id="presentation-content-left">
+      <div id="presentation" class="max-lg:flex max-lg:flex-col max-lg:items-center">
+        <div id="presentation-content" class="flex gap-4 max-lg:flex-col max-lg:items-center">
+          <div id="presentation-content-left" class="flex-shrink-0">
             <img
-              class="photo"
+              class="photo rounded-xl mx-auto block w-32 h-32 min-w-32 min-h-32 object-cover shadow-lg border-2 border-gray-200"
               src="@/assets/me.jpg"
-              alt=""
+              alt="Photo de profil"
             >
           </div>
-          <div id="presentation-content-right">
-            <div class="social-grid">
+          <div id="presentation-content-right" class="flex flex-col gap-8 flex-grow min-w-0">
+            <div class="social-grid max-lg:inline max-lg:text-center">
               <a
                 v-for="item in networks"
                 :key="item.link"
-                class="grid-item"
+                class="grid-item inline-block mx-2"
                 target="_blank"
                 :href="item.link"
               >
                 <svg-icon
                   type="mdi"
                   :path="item.svgIconPath"
+                  class="w-8 h-8 text-gray-600 hover:text-blue-600 transition-colors duration-200"
                 />
               </a>
             </div>
 
-            <p>
+            <p class="text-base text-gray-700 leading-relaxed font-medium">
               {{ aboutMe }}
             </p>
-            <div class="skills">
-              <div
-                v-for="skill in skillsList"
-                :key="skill.label"
-                class="skill"
-              >
-                <base-tag
-                  :text="skill.label"
-                  big
-                  :svg-icon-path="skill.svgIconPath"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -54,17 +42,12 @@
 <script setup lang="ts">
 import SectionWrapper from "@/components/SectionWrapper.vue";
 import type { Social } from "@/typings";
-import { useI18n } from 'vue-i18n'
-// @ts-ignore
 import SvgIcon from '@jamescoyle/vue-icon';
-import { ref } from "vue";
-import skills from "@/services/skills";
 import {
   mdiEmail,
   mdiGithub,
   mdiLinkedin,
 } from '@mdi/js';
-import BaseTag from "../BaseTag.vue";
 import { usePersonStore } from "@/stores/person";
 import { storeToRefs } from "pinia";
 
@@ -88,86 +71,4 @@ const networks = [
     svgIconPath: mdiGithub,
   },
 ] as Social[]
-
-const skillsList = ref([
-  skills.vue,
-  skills.github,
-  skills.typescript,
-  skills.vscode,
-  skills.jest,
-  skills.cypress,
-  skills.eslint,
-  skills.storybook
-])
 </script>
-
-<style lang="scss" scoped>
-#presentation {
-  @media screen and (max-width: 1040px) {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  #presentation-content {
-    display: flex;
-    gap: var(--space1);
-    @media screen and (max-width: 1040px) {
-        flex-direction: column;
-    }
-    &-left {
-      .photo {
-        border-radius: var(--border-radius-1);
-        margin: 0 auto;
-        display: block;
-        width: 130px;
-      }
-    }
-    &-right {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space2);
-      .social-grid {
-        @media screen and (max-width: 1040px) {
-          display: inline;
-          text-align: center;
-        }
-        .grid-item {
-          display: inline-block;
-          border-radius: var(--border-radius-1);
-          margin: 0 var(--space0);
-          span {
-            line-height: 0;
-          }
-          &:hover {
-            transform: scale(1.1);
-          }
-          ::v-deep(svg) {
-            width: 30px;
-            height: 30px;
-          }
-        }
-      }
-    }
-  }
-
-  .skills {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space1);
-  @media screen and (max-width: 720px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .skill {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: var(--space1);
-    border-radius: var(--border-radius-1);
-    p {
-      margin: 0;
-      flex: 1;
-    }
-  }
-}
-}
-</style>

@@ -1,14 +1,17 @@
 <template>
-  <div class="section">
-    <header>
-      <h1><span class="title-icon">#</span> {{ title }}</h1>
+  <div class="section flex flex-col items-center w-full max-w-3xl">
+    <header class="w-full mb-8">
+      <h1 class="text-4xl font-bold text-gray-800 mb-2 border-b-2 border-accent-color pb-2 flex items-center gap-3">
+        <span class="text-accent-color text-3xl font-mono">#</span>
+        {{ title }}
+      </h1>
     </header>
     <main v-if="!!slots.content">
       <slot name="content" />
     </main>
     <div
       v-if="!!slots.grid"
-      class="grid"
+      class="grid w-full max-w-3xl gap-16"
     >
       <slot name="grid" />
     </div>
@@ -23,23 +26,3 @@ defineProps<{
   title: string;
 }>();
 </script>
-
-<style lang="scss" scoped>
-.section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 760px;
-  header {
-    width: 100%;
-    margin-bottom: var(--space2);
-  }
-  .grid {
-    width: 100%;
-    max-width: 760px;
-    display: grid;
-    gap: var(--space4);
-  }
-}
-</style>

@@ -4,27 +4,27 @@ export default {
     degrees: {
       master: {
         title: "Master's degree in Computer Science",
-        description: "Expert in Computer Science and IT"
+        description: "Expert in Computer Science and IT",
       },
       toeic: {
         title: "TOEIC",
-        description: "English for International Communication Test : 895 points / 990"
+        description: "English for International Communication Test : 895 points / 990",
       },
       bachelor: {
         title: "Bachelor",
-        description: "Bachelor's degree in computer science and coding"
+        description: "Bachelor's degree in computer science and coding",
       },
       deust: {
         title: "French scientific and technical university diploma",
-        description: "Webmaster and Internet professions"
+        description: "Webmaster and Internet professions",
       },
       bts: {
         title: "Advanced technician's certificate",
-        description: "BTS Service Informatique aux Organisations Option réseaux et télécommunications"
+        description: "BTS Service Informatique aux Organisations Option réseaux et télécommunications",
       },
       bac: {
         title: "High school diploma",
-        description: "Computer science high school diploma"
+        description: "Computer science high school diploma",
       },
     },
   },
@@ -45,18 +45,18 @@ export default {
       cats2013:  "Crédit Agricole IT maintenance",
       webfox: "Web front-end development and web design",
       svd: "Design in an advertising agency / web design agency",
-      bymicro: "IT maintenance in a specialized company"
-    }
+      bymicro: "IT maintenance in a specialized company",
+    },
   },
   backend: "Backend",
   frontend: "Frontend",
   general: "General",
   wip: "Work in progress",
   date: {
-    month: 'Month',
-    january: 'January',
-    march: 'March',
-    may: 'May',
-    december: 'December',
-  }
+    month: "Month",
+    january: "January",
+    march: "March",
+    may: "May",
+    december: "December",
+  },
 };

@@ -1,10 +1,10 @@
 <template>
-  <div class="item">
-    <header>
-      <h3 v-if="title">
+  <div class="item overflow-hidden h-fit flex flex-col items-start gap-4 min-h-full">
+    <header class="flex flex-col">
+      <h3 v-if="title" class="text-2xl font-semibold text-gray-800 mb-4 leading-tight">
         {{ title }}
       </h3>
-      <div class="tags">
+      <div class="tags flex flex-wrap gap-2 max-md:grid max-md:grid-cols-1">
         <base-tag
           v-if="date"
           :text="date"
@@ -22,11 +22,11 @@
         />
       </div>
     </header>
-    <main>
-      <p>{{ text }}</p>
+    <main class="flex-1">
+      <p class="text-base text-gray-700 leading-relaxed">{{ text }}</p>
     </main>
-    <footer v-if="tags">
-      <div class="tags">
+    <footer v-if="tags" class="w-full">
+      <div class="tags grid grid-cols-4 gap-2 w-full max-md:grid-cols-2">
         <div
           v-for="tag in tags"
           :key="tag.label"
@@ -55,49 +55,3 @@ defineProps<{
   tags?: Tag[];
 }>()
 </script>
-
-<style lang="scss" scoped>
-.item {
-  overflow: hidden;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space1);
-  min-height: 100%;
-
-  header {
-    display: flex;
-    flex-direction: column;
-    h3 {
-      margin: 0 0 var(--space1) 0;
-    }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space0);
-      @media screen and (max-width: 720px) {
-        grid-template-columns: repeat(1, 1fr);
-      }
-    }
-  }
-  main {
-    flex: 1;
-    p {
-      font-size: 0.9rem;
-    }
-  }
-  footer {
-    width: 100%;
-    .tags {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--space0);
-      width: 100%;
-      @media screen and (max-width: 720px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  }
-}
-</style>

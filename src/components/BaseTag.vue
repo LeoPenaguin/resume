@@ -1,23 +1,23 @@
 <template>
   <span
-    class="tag"
-    :class="{'tag-big': big}"
+    class="tag inline-flex items-center justify-center flex-row cursor-pointer rounded-md"
+    :class="{ 'text-lg': big }"
   >
     <svg-icon
       v-if="svgIconPath"
       type="mdi"
       :path="svgIconPath"
-      class="icon"
-      :size="20"
+      class="icon w-5 h-5"
     />
-    <span>{{ lol }}</span>
+    <span class="p-0 uppercase block">
+      {{ lol }}
+    </span>
   </span>
 </template>
 
 <script setup lang="ts">
 import type { ItemDate } from "@/typings/index";
 import { computed } from 'vue';
-// @ts-ignore
 import SvgIcon from '@jamescoyle/vue-icon';
 
 const props = defineProps<
@@ -36,27 +36,3 @@ const lol = computed(() => {
   }
 })
 </script>
-
-<style scoped lang="scss">
-.tag {
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  display: inline-flex;
-  flex-direction: row;
-  gap: var(--space0);
-  border-radius: var(--border-radius-1);
-  cursor: pointer;
-
-  span {
-    padding: 0;
-    text-transform: uppercase;
-    display: block;
-  }
-
-  &-big {
-    font-size: 1.1rem;
-  }
-}
-</style>

@@ -16,12 +16,12 @@
 </template>
 
 <script setup lang="ts">
-import useExperienceStore from "@/stores/experience";
+import {useExperienceStore} from "@/stores/experience";
 import ItemWrapper from "@/components/ItemWrapper.vue";
 import SectionWrapper from "@/components/SectionWrapper.vue";
-import { useI18n } from 'vue-i18n'
+import { useI18n } from "vue-i18n";
 
-const { t } = useI18n({ useScope: 'global' })
+const { t } = useI18n({ useScope: "global" });
 
 const experienceStore = useExperienceStore();
 </script>

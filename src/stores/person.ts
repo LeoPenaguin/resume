@@ -1,10 +1,25 @@
-import { defineStore } from "pinia"
-import { ref } from "vue"
+import { defineStore } from "pinia";
+import { ref, computed } from "vue";
 
-export const usePersonStore = defineStore('person', () => {
-  const firstName = ref('Léo')
-  const lastName = ref('Penaguin')
-  const aboutMe = ref('Greetings! I am a skilled front-end web developer based in France, currently employed full-time at Bedrock—a dynamic company renowned for crafting cutting-edge streaming platforms for esteemed clients such as M6, Salto, and RTL. My professional journey includes transitioning from a background as a back-end developer, and I have honed my expertise in the VueJS framework and Typescript. With a passion for creating seamless and visually engaging user experiences, I am dedicated to delivering high-quality web development solutions.')
+export const usePersonStore = defineStore("person", () => {
+  const firstName = ref<string>("Léo");
+  const lastName = ref<string>("Penaguin");
+  const aboutMe = ref<string>(
+    "I'm a front-end web developer in France, working full-time at Bedrock, " +
+    "where we build great streaming platforms for clients like M6, Salto, and RTL. " +
+    "My background in back-end development gives me a more complete understanding " +
+    "of how web applications work, which really helps my front-end solutions. " +
+    "I specialize in Vue.js and TypeScript, and I love creating seamless, " +
+    "visually appealing user experiences.",
+  );
 
-  return { firstName, lastName, aboutMe }
-})
+  // Computed property for full name
+  const fullName = computed(() => `${firstName.value} ${lastName.value}`);
+
+  return {
+    firstName,
+    lastName,
+    aboutMe,
+    fullName,
+  };
+});

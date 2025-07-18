@@ -1,4 +1,4 @@
-import type { Tag } from '@/typings';
+import type { Tag } from "@/typings";
 import {
   mdiFruitPineapple,
   mdiGithub,
@@ -26,8 +26,8 @@ import {
   mdiPageLayoutBody,
   mdiMicrosoftVisualStudioCode,
   mdiEslint,
-  mdiBook
-} from '@mdi/js';
+  mdiBook,
+} from "@mdi/js";
 
 export default {
   cypress : { label: "Cypress", svgIconPath: mdiTestTube },
@@ -65,5 +65,5 @@ export default {
   windowsForm : { label: "Windows form", svgIconPath: mdiMicrosoftWindows },
   vscode : { label: "VSCode", svgIconPath: mdiMicrosoftVisualStudioCode },
   eslint : { label: "esLint", svgIconPath: mdiEslint },
-  storybook : { label: "Storybook", svgIconPath: mdiBook }
+  storybook : { label: "Storybook", svgIconPath: mdiBook },
 } as Record<string, Tag>;
