@@ -1,1 +1,98 @@
 @import "tailwindcss";
+
+@theme {
+  --font-heading: "Poppins", system-ui, sans-serif;
+
+  /* Semantic colors - WCAG AA compliant */
+  --color-foreground: #000000;
+  --color-foreground-muted: #4b5563; /* Darkened for 7:1 contrast */
+  --color-foreground-subtle: #6b7280; /* 4.5:1 contrast */
+  --color-background: #ffffff;
+  --color-background-muted: #f3f4f6;
+  --color-border: #e5e7eb;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Focus visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Print styles */
+@media print {
+  /* Hide print button */
+  .print-button {
+    display: none !important;
+  }
+
+  /* Reset page margins */
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+
+  /* Optimize layout for print */
+  body {
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  #main-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+    gap: 1rem !important;
+  }
+
+  /* Ensure links show URL */
+  a[href^="http"]::after {
+    content: none; /* Keep it clean for CV */
+  }
+
+  /* Avoid page breaks inside individual items, not sections */
+  article {
+    break-inside: avoid;
+  }
+
+  /* Keep description section connected to next section */
+  #presentation {
+    break-after: avoid;
+  }
+
+  /* Ensure backgrounds print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

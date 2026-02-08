@@ -1,26 +1,21 @@
 <template>
-  <section-wrapper :title="t('school.title')">
+  <section-wrapper title="Education">
     <template #grid>
       <item-wrapper
-        v-for="school in schoolStore.schools"
-        :key="school.degree"
-        :title="school.degree"
-        :text="school.description"
-        :image="school.image"
-        :location="school.location"
-        :date="school.date"
+        v-for="edu in resume.education"
+        :key="edu.degree"
+        :title="edu.degree"
+        :text="edu.description"
+        :location="edu.location"
+        :from="edu.from"
+        :to="edu.to"
       />
     </template>
   </section-wrapper>
 </template>
 
 <script setup lang="ts">
-import {useSchoolStore} from "@/stores/school";
 import ItemWrapper from "@/components/ItemWrapper.vue";
 import SectionWrapper from "@/components/SectionWrapper.vue";
-import { useI18n } from "vue-i18n";
-
-const { t } = useI18n({ useScope: "global" });
-
-const schoolStore = useSchoolStore();
+import resume from "@/data/resume";
 </script>

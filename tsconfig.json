@@ -1,12 +1,18 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
     "baseUrl": ".",
-    "forceConsistentCasingInFileNames": true,
-    "strictNullChecks": true,
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"]
 }

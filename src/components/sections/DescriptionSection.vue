@@ -1,7 +1,5 @@
 <template>
-  <section-wrapper
-    :title="`${firstName} ${lastName}`"
-  >
+  <section-wrapper :title="resume.name">
     <template #content>
       <div id="presentation">
         <div id="presentation-content" class="flex gap-6 items-start">
@@ -9,30 +7,35 @@
             <img
               class="photo block w-32 h-32 object-cover rounded-lg"
               src="@/assets/me.jpg"
-              alt="Photo de profil"
-            >
+              alt="Léo Penaguin profile photo"
+            />
           </div>
 
           <div id="presentation-content-right" class="flex-1">
-            <div class="social-grid mb-4">
+            <nav class="social-grid flex gap-2 mb-4" aria-label="Social links">
               <a
                 v-for="item in networks"
                 :key="item.link"
-                class="inline-block mr-4"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:outline-offset-2"
+                :class="item.class"
                 target="_blank"
+                rel="noopener noreferrer"
                 :href="item.link"
+                :aria-label="`${item.label}${item.link.startsWith('http') ? ' (opens in new tab)' : ''}`"
               >
                 <svg-icon
                   type="mdi"
-                  :path="item.svgIconPath"
-                  class="w-8 h-8 text-gray-600 hover:text-green-500 transition-colors duration-200"
+                  :path="item.icon"
+                  class="w-4 h-4"
+                  aria-hidden="true"
                 />
+                <span>{{ item.label }}</span>
               </a>
-            </div>
+            </nav>
 
             <div id="presentation-content-text" class="text-left">
-              <p class="text-base text-black leading-relaxed">
-                {{ aboutMe }}
+              <p class="text-sm text-foreground-muted leading-relaxed">
+                {{ resume.about }}
               </p>
             </div>
           </div>
@@ -44,34 +47,29 @@
 
 <script setup lang="ts">
 import SectionWrapper from "@/components/SectionWrapper.vue";
-import type { Social } from "@/typings";
-import SvgIcon from '@jamescoyle/vue-icon';
-import {
-  mdiEmail,
-  mdiGithub,
-  mdiLinkedin,
-} from '@mdi/js';
-import { usePersonStore } from "@/stores/person";
-import { storeToRefs } from "pinia";
-
-const personStore = usePersonStore()
-const { firstName,
-lastName,
-aboutMe } = storeToRefs(personStore)
+import SvgIcon from "@jamescoyle/vue-icon";
+import { mdiEmail, mdiGithub, mdiLinkedin } from "@mdi/js";
+import resume from "@/data/resume";
 
 const networks = [
   {
     link: "mailto:PenaguinLeo@gmail.com",
-    svgIconPath: mdiEmail,
+    icon: mdiEmail,
+    label: "Email",
+    class:
+      "bg-background-muted text-foreground border-border hover:bg-gray-200",
   },
   {
     link: "https://www.linkedin.com/in/leo-penaguin",
-    svgIconPath: mdiLinkedin,
+    icon: mdiLinkedin,
+    label: "LinkedIn",
+    class: "bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100",
   },
   {
-
     link: "https://github.com/LeoPenaguin",
-    svgIconPath: mdiGithub,
+    icon: mdiGithub,
+    label: "GitHub",
+    class: "bg-gray-900 text-white border-gray-900 hover:bg-gray-800",
   },
-] as Social[]
+];
 </script>
