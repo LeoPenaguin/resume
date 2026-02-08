@@ -5,7 +5,7 @@
         <div id="presentation-content" class="flex gap-6 items-start">
           <div id="presentation-content-left" class="flex-shrink-0">
             <img
-              class="photo block w-32 h-32 object-cover rounded-lg"
+              class="photo block w-32 h-32 object-cover rounded-full ring-2 ring-border shadow-sm"
               src="@/assets/me.jpg"
               alt="Léo Penaguin profile photo"
             />

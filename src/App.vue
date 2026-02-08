@@ -1,10 +1,11 @@
 <template>
   <button
     @click="handlePrint"
-    class="print-button fixed top-4 right-4 flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-lg hover:bg-foreground/90 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-    aria-label="Download CV as PDF"
+    type="button"
+    class="print-button fixed top-4 right-4 flex items-center gap-2 px-4 py-2 bg-foreground text-background rounded-lg cursor-pointer select-none shadow-md hover:bg-foreground/85 hover:shadow-lg hover:scale-105 active:scale-100 active:shadow-md transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+    aria-label="Télécharger le CV au format PDF"
   >
-    <svg-icon type="mdi" :path="mdiDownload" :size="20" />
+    <svg-icon type="mdi" :path="mdiDownload" :size="20" aria-hidden="true" />
     <span class="text-sm font-medium">PDF</span>
   </button>
 
