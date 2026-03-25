@@ -15,9 +15,184 @@
   color-scheme: light;
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-foreground: #f8fafc;
+  --color-foreground-muted: #cbd5e1;
+  --color-foreground-subtle: #94a3b8;
+  --color-background: #0f172a;
+  --color-background-muted: #1e293b;
+  --color-border: #334155;
+}
+
 body {
   font-family: "Inter", system-ui, sans-serif;
   line-height: 1.5;
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.action-button {
+  border-color: transparent;
+}
+
+.action-button--surface {
+  border-color: var(--color-border);
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.action-button--surface:hover {
+  background: var(--color-background-muted);
+}
+
+.action-button--email {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.action-button--email:hover {
+  background: #f1f5f9;
+}
+
+.action-button--linkedin {
+  border-color: #bae6fd;
+  background: #f0f9ff;
+  color: #075985;
+}
+
+.action-button--linkedin:hover {
+  background: #e0f2fe;
+}
+
+.action-button--github {
+  border-color: #0f172a;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.action-button--github:hover {
+  background: #1e293b;
+}
+
+:root[data-theme="dark"] .action-button--surface {
+  border-color: #334155;
+  background: #162033;
+  color: #f8fafc;
+}
+
+:root[data-theme="dark"] .action-button--surface:hover {
+  background: #1e293b;
+}
+
+:root[data-theme="dark"] .action-button--email {
+  border-color: #334155;
+  background: #1b2533;
+  color: #e2e8f0;
+}
+
+:root[data-theme="dark"] .action-button--email:hover {
+  background: #243041;
+}
+
+:root[data-theme="dark"] .action-button--linkedin {
+  border-color: #1d4ed8;
+  background: #082f49;
+  color: #bfdbfe;
+}
+
+:root[data-theme="dark"] .action-button--linkedin:hover {
+  background: #0c4a6e;
+}
+
+:root[data-theme="dark"] .action-button--github {
+  border-color: #475569;
+  background: #111827;
+  color: #f8fafc;
+}
+
+:root[data-theme="dark"] .action-button--github:hover {
+  background: #1f2937;
+}
+
+.skill-tag {
+  border-color: transparent;
+}
+
+.skill-tag--frontend {
+  border-color: #7dd3fc;
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.skill-tag--backend {
+  border-color: #86efac;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.skill-tag--database {
+  border-color: #c4b5fd;
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.skill-tag--devops {
+  border-color: #fdba74;
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.skill-tag--design {
+  border-color: #fda4af;
+  background: #ffe4e6;
+  color: #be123c;
+}
+
+.skill-tag--other {
+  border-color: #fcd34d;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+:root[data-theme="dark"] .skill-tag--frontend {
+  border-color: #38bdf8;
+  background: #0c4a6e;
+  color: #bae6fd;
+}
+
+:root[data-theme="dark"] .skill-tag--backend {
+  border-color: #4ade80;
+  background: #14532d;
+  color: #bbf7d0;
+}
+
+:root[data-theme="dark"] .skill-tag--database {
+  border-color: #a78bfa;
+  background: #4c1d95;
+  color: #ddd6fe;
+}
+
+:root[data-theme="dark"] .skill-tag--devops {
+  border-color: #fb923c;
+  background: #7c2d12;
+  color: #fed7aa;
+}
+
+:root[data-theme="dark"] .skill-tag--design {
+  border-color: #fb7185;
+  background: #881337;
+  color: #ffe4e6;
+}
+
+:root[data-theme="dark"] .skill-tag--other {
+  border-color: #facc15;
+  background: #713f12;
+  color: #fef08a;
 }
 
 .skip-link,
@@ -69,7 +244,8 @@ button:focus-visible {
 }
 
 @media print {
-  .print-button,
+  .app-toolbar,
+  .back-to-top,
   .skip-link {
     display: none !important;
   }

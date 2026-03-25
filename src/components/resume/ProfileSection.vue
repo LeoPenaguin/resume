@@ -29,26 +29,15 @@
             class="social-grid mb-5 flex flex-wrap gap-3"
             aria-label="Contact and social links"
           >
-            <a
+            <action-button
               v-for="item in socialLinks"
               :key="item.href"
-              class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-base font-medium transition-colors duration-200"
-              :class="linkToneClasses[item.tone]"
-              :target="item.external ? '_blank' : undefined"
-              :rel="item.external ? 'me noopener noreferrer' : undefined"
+              :label="item.label"
+              :icon="item.icon"
+              :tone="item.tone"
               :href="item.href"
-            >
-              <svg-icon
-                type="mdi"
-                :path="item.icon"
-                class="h-[18px] w-[18px]"
-                aria-hidden="true"
-              />
-              <span>{{ item.label }}</span>
-              <span v-if="item.external" class="sr-only">
-                (opens in new tab)</span
-              >
-            </a>
+              :external="item.external"
+            />
           </nav>
 
           <p
@@ -63,22 +52,13 @@
 </template>
 
 <script setup lang="ts">
-import SvgIcon from "@jamescoyle/vue-icon";
 import profilePhoto from "@/assets/me-256.webp";
-import type { SocialLink, SocialLinkTone } from "@/data/resume";
+import type { SocialLink } from "@/data/resume";
+import ActionButton from "@/components/ui/ActionButton.vue";
 
 defineProps<{
   name: string;
   about: string;
   socialLinks: SocialLink[];
 }>();
-
-const linkToneClasses: Record<SocialLinkTone, string> = {
-  email:
-    "border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100 focus-visible:outline-slate-600",
-  linkedin:
-    "border-sky-200 bg-sky-50 text-sky-800 hover:bg-sky-100 focus-visible:outline-sky-600",
-  github:
-    "border-slate-900 bg-slate-900 text-white hover:bg-slate-800 focus-visible:outline-slate-600",
-};
 </script>

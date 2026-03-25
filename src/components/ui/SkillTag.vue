@@ -1,6 +1,6 @@
 <template>
   <span
-    class="tag inline-flex items-center justify-center rounded-md px-2.5 py-1 text-sm"
+    class="skill-tag inline-flex items-center justify-center rounded-md border px-2.5 py-1 text-sm"
     :class="categoryClass"
   >
     <svg-icon
@@ -27,12 +27,12 @@ const props = defineProps<{
 
 const categoryClass = computed(() => {
   const colors: Record<SkillCategory, string> = {
-    frontend: "bg-blue-50 text-blue-700",
-    backend: "bg-green-50 text-green-700",
-    database: "bg-purple-50 text-purple-700",
-    devops: "bg-amber-50 text-amber-800",
-    design: "bg-pink-50 text-pink-700",
-    other: "bg-background-muted text-foreground-muted",
+    frontend: "skill-tag--frontend",
+    backend: "skill-tag--backend",
+    database: "skill-tag--database",
+    devops: "skill-tag--devops",
+    design: "skill-tag--design",
+    other: "skill-tag--other",
   };
 
   return colors[props.category || "other"];
