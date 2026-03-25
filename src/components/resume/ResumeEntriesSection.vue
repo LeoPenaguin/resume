@@ -9,7 +9,14 @@
 
       <ol class="m-0 grid list-none gap-8 p-0">
         <li v-for="entry in entries" :key="entry.id" class="list-none">
-          <resume-entry :entry="entry" :layout="layout" />
+          <resume-entry
+            :entry="entry"
+            :layout="layout"
+            :locale="locale"
+            :details-label="detailsLabel"
+            :present-label="presentLabel"
+            :skills-label="skillsLabel"
+          />
         </li>
       </ol>
     </div>
@@ -18,7 +25,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import type { ResumeEntry as ResumeEntryData } from "@/data/resume";
+import type { Locale, ResumeEntry as ResumeEntryData } from "@/data/resume";
 import ResumeEntry from "./ResumeEntry.vue";
 import ResumeSection from "./ResumeSection.vue";
 
@@ -26,6 +33,10 @@ const props = withDefaults(
   defineProps<{
     title: string;
     entries: ResumeEntryData[];
+    locale: Locale;
+    detailsLabel: string;
+    presentLabel: string;
+    skillsLabel: string;
     layout?: "default" | "timeline";
   }>(),
   {

@@ -9,7 +9,7 @@
           <img
             class="photo block h-36 w-36 rounded-full object-cover ring-2 ring-border shadow-sm"
             :src="profilePhoto"
-            :alt="`Portrait of ${name}`"
+            :alt="portraitAlt"
             width="256"
             height="256"
             fetchpriority="high"
@@ -27,7 +27,7 @@
 
           <nav
             class="social-grid mb-5 flex flex-wrap gap-3"
-            aria-label="Contact and social links"
+            :aria-label="socialNavLabel"
           >
             <action-button
               v-for="item in socialLinks"
@@ -37,6 +37,7 @@
               :tone="item.tone"
               :href="item.href"
               :external="item.external"
+              :external-label="externalLinkLabel"
             />
           </nav>
 
@@ -60,5 +61,8 @@ defineProps<{
   name: string;
   about: string;
   socialLinks: SocialLink[];
+  portraitAlt: string;
+  socialNavLabel: string;
+  externalLinkLabel: string;
 }>();
 </script>

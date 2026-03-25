@@ -21,7 +21,7 @@
 
       <ul
         class="info-details mb-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-base text-foreground-muted"
-        aria-label="Resume entry details"
+        :aria-label="detailsLabel"
       >
         <li
           v-for="item in metaItems"
@@ -46,17 +46,17 @@
           />
           <span class="flex flex-wrap items-center gap-1">
             <time :datetime="getDateTimeValue(entry.period.start)">
-              {{ formatResumeDate(entry.period.start) }}
+              {{ formatResumeDate(entry.period.start, locale) }}
             </time>
             <template v-if="entry.period.end">
               <span aria-hidden="true">-</span>
               <time :datetime="getDateTimeValue(entry.period.end)">
-                {{ formatResumeDate(entry.period.end) }}
+                {{ formatResumeDate(entry.period.end, locale) }}
               </time>
             </template>
             <template v-else-if="entry.period.current">
               <span aria-hidden="true">-</span>
-              <span>Present</span>
+              <span>{{ presentLabel }}</span>
             </template>
             <span
               v-if="entry.period.durationLabel"
@@ -76,7 +76,7 @@
     <footer v-if="sortedSkills.length">
       <ul
         class="tags-by-category flex flex-wrap gap-2"
-        aria-label="Skills and technologies"
+        :aria-label="skillsLabel"
       >
         <li v-for="skill in sortedSkills" :key="skill.label" class="list-none">
           <skill-tag
@@ -94,7 +94,7 @@
 import { mdiCalendar, mdiMapMarker, mdiOfficeBuilding } from "@mdi/js";
 import SvgIcon from "@jamescoyle/vue-icon";
 import { computed } from "vue";
-import type { ResumeEntry } from "@/data/resume";
+import type { Locale, ResumeEntry } from "@/data/resume";
 import {
   formatResumeDate,
   formatResumeType,
@@ -105,6 +105,10 @@ import SkillTag from "@/components/ui/SkillTag.vue";
 
 const props = defineProps<{
   entry: ResumeEntry;
+  locale: Locale;
+  detailsLabel: string;
+  presentLabel: string;
+  skillsLabel: string;
   layout?: "default" | "timeline";
 }>();
 
@@ -132,9 +136,11 @@ const metaItems = computed(() => {
   return items;
 });
 
-const entryTypeLabel = computed(() => formatResumeType(props.entry.type));
+const entryTypeLabel = computed(() =>
+  formatResumeType(props.entry.type, props.locale),
+);
 
 const sortedSkills = computed(() =>
-  sortSkillsByCategory(props.entry.skills ?? []),
+  sortSkillsByCategory(props.entry.skills ?? [], props.locale),
 );
 </script>

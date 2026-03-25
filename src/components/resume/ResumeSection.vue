@@ -26,6 +26,8 @@ const titleId = computed(
   () =>
     `section-${props.title
       .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
       .trim()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "")}`,

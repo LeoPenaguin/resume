@@ -13,7 +13,7 @@
       aria-hidden="true"
     />
     <span>{{ label }}</span>
-    <span v-if="external" class="sr-only"> (opens in new tab)</span>
+    <span v-if="external" class="sr-only">{{ externalLabel }}</span>
   </component>
 </template>
 
@@ -30,6 +30,7 @@ const props = withDefaults(
     tone?: ActionButtonTone;
     href?: string;
     external?: boolean;
+    externalLabel?: string;
     type?: "button" | "submit" | "reset";
   }>(),
   {
@@ -37,6 +38,7 @@ const props = withDefaults(
     tone: "surface",
     href: undefined,
     external: false,
+    externalLabel: "(opens in new tab)",
     type: "button",
   },
 );
