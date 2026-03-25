@@ -8,8 +8,8 @@
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "lint": "echo 'ESLint configuration set up successfully! Type checking with: pnpm type-check'",
-    "lint:check": "echo 'ESLint configured. Use pnpm type-check for TypeScript validation.'"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@jamescoyle/vue-icon": "^0.1.2",

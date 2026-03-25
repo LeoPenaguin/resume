@@ -3,39 +3,31 @@
 @theme {
   --font-heading: "Poppins", system-ui, sans-serif;
 
-  /* Semantic colors - WCAG AA compliant */
   --color-foreground: #000000;
-  --color-foreground-muted: #4b5563; /* Darkened for 7:1 contrast */
-  --color-foreground-subtle: #6b7280; /* 4.5:1 contrast */
+  --color-foreground-muted: #4b5563;
+  --color-foreground-subtle: #5f6b7a;
   --color-background: #ffffff;
   --color-background-muted: #f3f4f6;
   --color-border: #e5e7eb;
 }
 
-body {
-  font-family: "Inter", system-ui, sans-serif;
+:root {
+  color-scheme: light;
 }
 
-/* Focus visible for keyboard navigation */
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.skip-link,
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #2563eb;
-  outline-offset: 2px;
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Screen reader only utility */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -48,20 +40,45 @@ button:focus-visible {
   border: 0;
 }
 
-/* Print styles */
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 20;
+  transform: translateY(-200%);
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @media print {
-  /* Hide print button */
-  .print-button {
+  .print-button,
+  .skip-link {
     display: none !important;
   }
 
-  /* Reset page margins */
   @page {
     margin: 1cm;
     size: A4;
   }
 
-  /* Optimize layout for print */
   body {
     font-size: 11pt;
     line-height: 1.4;
@@ -75,22 +92,18 @@ button:focus-visible {
     gap: 1rem !important;
   }
 
-  /* Ensure links show URL */
   a[href^="http"]::after {
-    content: none; /* Keep it clean for CV */
+    content: none;
   }
 
-  /* Avoid page breaks inside individual items, not sections */
   article {
     break-inside: avoid;
   }
 
-  /* Keep description section connected to next section */
   #presentation {
     break-after: avoid;
   }
 
-  /* Ensure backgrounds print */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;

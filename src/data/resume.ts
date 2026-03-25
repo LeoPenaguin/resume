@@ -3,6 +3,8 @@ import {
   mdiAws,
   mdiCodeBlockTags,
   mdiDatabaseSearch,
+  mdiEmail,
+  mdiEslint,
   mdiFruitPineapple,
   mdiGit,
   mdiGithub,
@@ -14,6 +16,7 @@ import {
   mdiLanguageJava,
   mdiLanguagePhp,
   mdiLanguageTypescript,
+  mdiLinkedin,
   mdiMicrosoftWindows,
   mdiPageLayoutBody,
   mdiQueueFirstInLastOut,
@@ -25,14 +28,9 @@ import {
   mdiTestTube,
   mdiVuejs,
   mdiWordpress,
-  mdiEslint,
 } from "@mdi/js";
 
-// ============================================================================
-// TYPES
-// ============================================================================
-
-type SkillCategory =
+export type SkillCategory =
   | "frontend"
   | "backend"
   | "database"
@@ -40,38 +38,74 @@ type SkillCategory =
   | "design"
   | "other";
 
+export type ResumeEntryType = "internship" | "work-study";
+export type SocialLinkTone = "email" | "linkedin" | "github";
+
 export interface Skill {
   label: string;
   icon: string;
   category: SkillCategory;
 }
 
-export interface Experience {
+export interface ResumeDate {
+  value: string;
+  precision: "year" | "month";
+}
+
+export interface ResumePeriod {
+  start: ResumeDate;
+  end?: ResumeDate;
+  current?: boolean;
+  durationLabel?: string;
+}
+
+export interface SocialLink {
+  label: string;
+  href: string;
+  icon: string;
+  tone: SocialLinkTone;
+  external?: boolean;
+}
+
+export interface ResumeEntry {
+  id: string;
   title: string;
-  company: string;
+  organization?: string;
   location: string;
-  from: string;
-  to?: string;
-  duration?: string;
+  period: ResumePeriod;
   description: string;
-  skills: Skill[];
-  type?: "internship" | "work-study";
+  skills?: Skill[];
+  type?: ResumeEntryType;
 }
 
-export interface Education {
-  degree: string;
-  description: string;
-  location: string;
-  from: string;
-  to?: string;
+export interface ResumeData {
+  name: string;
+  about: string;
+  socialLinks: SocialLink[];
+  experiences: ResumeEntry[];
+  education: ResumeEntry[];
 }
 
-// ============================================================================
-// SKILLS (reusable)
-// ============================================================================
+export const SKILL_CATEGORY_ORDER: SkillCategory[] = [
+  "frontend",
+  "backend",
+  "database",
+  "devops",
+  "design",
+  "other",
+];
+
+const year = (value: `${number}`): ResumeDate => ({
+  value,
+  precision: "year",
+});
+
+const month = (value: `${number}-${number}`): ResumeDate => ({
+  value,
+  precision: "month",
+});
 
 const skill = {
-  // Frontend
   angular: { label: "Angular", icon: mdiAngular, category: "frontend" },
   vue: { label: "Vue", icon: mdiVuejs, category: "frontend" },
   nuxt: { label: "Nuxt", icon: mdiVuejs, category: "frontend" },
@@ -87,8 +121,6 @@ const skill = {
   jest: { label: "Jest", icon: mdiTestTube, category: "frontend" },
   vitest: { label: "Vitest", icon: mdiTestTube, category: "frontend" },
   eslint: { label: "ESLint", icon: mdiEslint, category: "frontend" },
-
-  // Backend
   php: { label: "PHP", icon: mdiLanguagePhp, category: "backend" },
   symfony: { label: "Symfony", icon: mdiSymfony, category: "backend" },
   go: { label: "Go", icon: mdiLanguageGo, category: "backend" },
@@ -97,8 +129,6 @@ const skill = {
   soap: { label: "SOAP", icon: mdiCodeBlockTags, category: "backend" },
   phpUnit: { label: "PHPUnit", icon: mdiTestTube, category: "backend" },
   wordpress: { label: "WordPress", icon: mdiWordpress, category: "backend" },
-
-  // Database
   postgresql: {
     label: "PostgreSQL",
     icon: mdiDatabaseSearch,
@@ -106,8 +136,6 @@ const skill = {
   },
   sql: { label: "SQL", icon: mdiDatabaseSearch, category: "database" },
   redis: { label: "Redis", icon: mdiQueueFirstInLastOut, category: "database" },
-
-  // DevOps
   docker: { label: "Docker", icon: mdiRocket, category: "devops" },
   azureDevops: { label: "Azure DevOps", icon: mdiRocket, category: "devops" },
   aws: { label: "AWS", icon: mdiAws, category: "devops" },
@@ -122,11 +150,7 @@ const skill = {
   github: { label: "GitHub", icon: mdiGithub, category: "devops" },
   gitlab: { label: "GitLab", icon: mdiGitlab, category: "devops" },
   git: { label: "Git", icon: mdiGit, category: "devops" },
-
-  // Design
   figma: { label: "Figma", icon: mdiPageLayoutBody, category: "design" },
-
-  // Other
   pinia: { label: "Pinia", icon: mdiFruitPineapple, category: "other" },
   scrum: { label: "Scrum", icon: mdiJira, category: "other" },
   windowsForm: {
@@ -136,26 +160,44 @@ const skill = {
   },
 } as const satisfies Record<string, Skill>;
 
-// ============================================================================
-// RESUME DATA
-// ============================================================================
-
 export const resume = {
-  // Personal info
   name: "Léo Penaguin",
   about:
     "Full stack developer with 8+ years of experience, specialized in frontend and UX. " +
     "Strong expertise in Angular, Vue.js, and TypeScript. Passionate about clean code, " +
     "design systems, and agile collaboration.",
-
-  // Work experience
+  socialLinks: [
+    {
+      label: "Email",
+      href: "mailto:PenaguinLeo@gmail.com",
+      icon: mdiEmail,
+      tone: "email",
+    },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/leo-penaguin",
+      icon: mdiLinkedin,
+      tone: "linkedin",
+      external: true,
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/LeoPenaguin",
+      icon: mdiGithub,
+      tone: "github",
+      external: true,
+    },
+  ],
   experiences: [
     {
+      id: "exxact-robotics",
       title: "Full Stack Developer",
-      company: "Exxact Robotics",
+      organization: "Exxact Robotics",
       location: "France",
-      from: "2024",
-      to: "Present",
+      period: {
+        start: year("2025"),
+        current: true,
+      },
       description:
         "Full stack development on Angular 21 with a strong focus on frontend and UX. " +
         "Building modern interfaces with TypeScript, Vite, and Tailwind. " +
@@ -174,15 +216,18 @@ export const resume = {
       ],
     },
     {
+      id: "bedrock",
       title: "Frontend Developer",
-      company: "Bedrock",
+      organization: "Bedrock",
       location: "Lyon, France",
-      from: "2022",
-      to: "2024",
+      period: {
+        start: year("2022"),
+        end: year("2025"),
+      },
       description:
         "Led Vue 2 to Vue 3 migration and Vuex to Pinia refactoring. " +
         "Built design system components with PrimeVue. " +
-        "Implemented E2E testing with Cypress & Playwright.",
+        "Implemented E2E testing with Cypress and Playwright.",
       skills: [
         skill.vue,
         skill.nuxt,
@@ -204,11 +249,14 @@ export const resume = {
       ],
     },
     {
+      id: "ubitransport",
       title: "Frontend Developer",
-      company: "Ubitransport",
+      organization: "Ubitransport",
       location: "Lyon, France",
-      from: "2021",
-      to: "2022",
+      period: {
+        start: year("2021"),
+        end: year("2022"),
+      },
       description:
         "Developed Vue.js interfaces for transport management solutions. " +
         "Set up automated testing with Jest. Worked with CI/CD pipelines.",
@@ -222,11 +270,14 @@ export const resume = {
       ],
     },
     {
+      id: "smart-mobile-factory-fullstack",
       title: "Full Stack Developer",
-      company: "Smart Mobile Factory",
+      organization: "Smart Mobile Factory",
       location: "Berlin, Germany",
-      from: "2018",
-      to: "2021",
+      period: {
+        start: year("2018"),
+        end: year("2021"),
+      },
       description:
         "Built full-stack applications with Symfony APIs and Vue.js/Angular frontends. " +
         "Developed Golang microservices. Managed client projects.",
@@ -245,22 +296,28 @@ export const resume = {
       ],
     },
     {
+      id: "credit-agricole",
       title: "Java Developer",
-      company: "Crédit Agricole",
+      organization: "Crédit Agricole",
       location: "Grenoble, France",
-      from: "2016",
-      to: "2018",
+      period: {
+        start: year("2016"),
+        end: year("2018"),
+      },
       type: "work-study",
       description:
         "Developed SOAP APIs in Java for banking systems. Implemented Redis caching.",
       skills: [skill.java, skill.soap, skill.redis],
     },
     {
+      id: "hm-clause",
       title: "C# Developer",
-      company: "HM Clause",
+      organization: "HM Clause",
       location: "Valence, France",
-      from: "2015",
-      to: "2016",
+      period: {
+        start: year("2015"),
+        end: year("2016"),
+      },
       type: "work-study",
       description:
         "Built Windows Forms applications in C# for agricultural data management. " +
@@ -268,60 +325,80 @@ export const resume = {
       skills: [skill.csharp, skill.windowsForm, skill.postgresql, skill.sql],
     },
     {
+      id: "mediacraft",
       title: "Frontend Developer",
-      company: "Mediacraft",
+      organization: "Mediacraft",
       location: "Grenoble, France",
-      from: "2015",
-      duration: "6 months",
+      period: {
+        start: year("2015"),
+        durationLabel: "6 months",
+      },
       type: "internship",
       description: "Developed responsive web interfaces for client projects.",
       skills: [],
     },
     {
+      id: "smart-mobile-factory-internship",
       title: "Backend Developer",
-      company: "Smart Mobile Factory",
+      organization: "Smart Mobile Factory",
       location: "Berlin, Germany",
-      from: "March 2014",
-      duration: "6 months",
+      period: {
+        start: month("2014-03"),
+        durationLabel: "6 months",
+      },
       type: "internship",
       description: "Built Symfony REST APIs for mobile applications.",
       skills: [skill.php, skill.symfony],
     },
-  ] as Experience[],
-
-  // Education
+  ],
   education: [
     {
-      degree: "Master's in Computer Science & Information Systems",
+      id: "epsi-masters",
+      title: "Master's in Computer Science & Information Systems",
+      organization: "EPSI Grenoble",
+      location: "Grenoble, France",
+      period: {
+        start: year("2018"),
+        end: year("2019"),
+      },
       description:
         "Information system strategy, project management, business intelligence, cloud infrastructure & security.",
-      location: "EPSI Grenoble, France",
-      from: "2018",
-      to: "2019",
     },
     {
-      degree: "TOEIC 895/990",
+      id: "toeic",
+      title: "TOEIC 895/990",
+      organization: "EPSI Grenoble",
+      location: "Grenoble, France",
+      period: {
+        start: year("2018"),
+      },
       description: "English proficiency certification.",
-      location: "EPSI Grenoble, France",
-      from: "2018",
     },
     {
-      degree: "Bachelor's in Computer Science",
+      id: "epsi-bachelors",
+      title: "Bachelor's in Computer Science",
+      organization: "EPSI Grenoble",
+      location: "Grenoble, France",
+      period: {
+        start: year("2016"),
+        end: year("2018"),
+      },
       description:
         "Object-oriented programming, continuous integration, database design, client-server architecture.",
-      location: "EPSI Grenoble, France",
-      from: "2016",
-      to: "2018",
     },
     {
-      degree: "University Diploma in Web Development",
+      id: "limoges-diploma",
+      title: "University Diploma in Web Development",
+      organization: "Université de Limoges",
+      location: "Limoges, France",
+      period: {
+        start: year("2015"),
+        end: year("2016"),
+      },
       description:
         "Web development, digital project management, mobile services.",
-      location: "Université de Limoges, France",
-      from: "2015",
-      to: "2016",
     },
-  ] as Education[],
-};
+  ],
+} satisfies ResumeData;
 
 export default resume;

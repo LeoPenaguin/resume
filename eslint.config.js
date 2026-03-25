@@ -1,44 +1,37 @@
-// eslint.config.js
 import pluginVue from "eslint-plugin-vue";
+import skipFormatting from "@vue/eslint-config-prettier/skip-formatting";
+import {
+  configureVueProject,
+  defineConfigWithVueTs,
+  vueTsConfigs,
+} from "@vue/eslint-config-typescript";
 
-export default [
+configureVueProject({
+  tsSyntaxInTemplates: true,
+});
+
+export default defineConfigWithVueTs(
   {
-    files: ["**/*.vue"],
-    languageOptions: {
-      parser: pluginVue.parser || "vue-eslint-parser",
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-      },
-    },
-    plugins: {
-      vue: pluginVue,
-    },
+    name: "resume/ignores",
+    ignores: ["**/dist/**", "**/node_modules/**", "**/coverage/**"],
+  },
+  {
+    name: "resume/files",
+    files: ["**/*.{ts,vue}"],
+  },
+  pluginVue.configs["flat/recommended"],
+  vueTsConfigs.recommended,
+  {
+    name: "resume/rules",
     rules: {
-      // Vue 3 règles de base
-      "vue/component-name-in-template-casing": ["error", "kebab-case"],
-      "vue/html-button-has-type": "error",
-      "vue/no-duplicate-attr-inheritance": "error",
-      "vue/no-empty-component-block": "error",
-      "vue/no-multiple-objects-in-class": "error",
-      "vue/no-template-target-blank": "error",
-      "vue/no-unused-refs": "error",
-      "vue/no-useless-mustaches": "error",
-      "vue/no-useless-v-bind": "error",
-      "vue/padding-line-between-blocks": "error",
-      "vue/prefer-separate-static-class": "error",
-      "vue/prefer-true-attribute-shorthand": "error",
-
-      // Règles générales
+      "no-alert": "error",
       "no-console": "warn",
       "no-debugger": "error",
-      "no-alert": "error",
-      "no-var": "error",
       "prefer-const": "error",
-      "no-undef": "off",
+      "vue/component-name-in-template-casing": ["error", "kebab-case"],
+      "vue/html-button-has-type": "error",
+      "vue/no-template-target-blank": "error",
     },
   },
-  {
-    ignores: ["dist/", "node_modules/", "*.config.*"],
-  },
-];
+  skipFormatting,
+);

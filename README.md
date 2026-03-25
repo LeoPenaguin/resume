@@ -1,46 +1,37 @@
-# resume
-Hello
-This template should help get you started developing with Vue 3 in Vite.
+# Resume
 
-## Recommended IDE Setup
+Personal resume built with Vue 3, TypeScript, Vite, and Tailwind CSS v4.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Stack
 
-## Type Support for `.vue` Imports in TS
+- Vue 3 with `<script setup>` and strict TypeScript
+- Vite for local development and production builds
+- Tailwind CSS v4 for styling
+- ESLint with the official Vue + TypeScript flat config
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Commands
 
 ```sh
-npm install
+pnpm install
+pnpm dev
+pnpm lint
+pnpm type-check
+pnpm build
 ```
 
-### Compile and Hot-Reload for Development
+## Project Structure
 
-```sh
-npm run dev
-```
+- `src/data/resume.ts`: typed content source for profile, sections, and links
+- `src/components/resume/`: resume-specific sections and entry rendering
+- `src/components/ui/`: small reusable UI primitives
+- `src/styles/index.css`: global theme, layout, print, and accessibility styles
 
-### Type-Check, Compile and Minify for Production
+## Quality Gates
 
-```sh
-npm run build
-```
+- `pnpm lint` validates Vue and TypeScript files
+- `pnpm type-check` runs `vue-tsc --noEmit`
+- GitHub Actions runs lint, type-check, and production build before deploy
 
-### Lint with [ESLint](https://eslint.org/)
+## Deployment
 
-```sh
-npm run lint
-```
+The site is deployed to GitHub Pages from the `main` branch. Pull requests run the quality checks and build, but deployment only happens outside PR events.
