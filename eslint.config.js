@@ -1,37 +1,39 @@
-import pluginVue from "eslint-plugin-vue";
-import skipFormatting from "@vue/eslint-config-prettier/skip-formatting";
-import {
-  configureVueProject,
-  defineConfigWithVueTs,
-  vueTsConfigs,
-} from "@vue/eslint-config-typescript";
+import js from "@eslint/js";
 
-configureVueProject({
-  tsSyntaxInTemplates: true,
-});
-
-export default defineConfigWithVueTs(
+export default [
   {
     name: "resume/ignores",
-    ignores: ["**/dist/**", "**/node_modules/**", "**/coverage/**"],
+    ignores: ["**/dist/**", "**/node_modules/**", "**/styles.css"],
   },
   {
     name: "resume/files",
-    files: ["**/*.{ts,vue}"],
-  },
-  pluginVue.configs["flat/recommended"],
-  vueTsConfigs.recommended,
-  {
-    name: "resume/rules",
+    files: ["**/*.js", "**/*.mjs"],
+    ...js.configs.recommended,
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        window: "readonly",
+        document: "readonly",
+        console: "readonly",
+        localStorage: "readonly",
+        getComputedStyle: "readonly",
+        process: "readonly",
+      },
+    },
     rules: {
+      ...js.configs.recommended.rules,
       "no-alert": "error",
       "no-console": "warn",
       "no-debugger": "error",
       "prefer-const": "error",
-      "vue/component-name-in-template-casing": ["error", "kebab-case"],
-      "vue/html-button-has-type": "error",
-      "vue/no-template-target-blank": "error",
     },
   },
-  skipFormatting,
-);
+  {
+    name: "resume/scripts",
+    files: ["scripts/**/*.mjs"],
+    rules: {
+      "no-console": "off",
+    },
+  },
+];

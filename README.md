@@ -1,37 +1,34 @@
 # Resume
 
-Personal resume built with Vue 3, TypeScript, Vite, and Tailwind CSS v4.
+Personal resume: static HTML, vanilla JavaScript, and Tailwind CSS v4. No framework, no bundler.
 
 ## Stack
 
-- Vue 3 with `<script setup>` and strict TypeScript
-- Vite for local development and production builds
-- Tailwind CSS v4 for styling
-- ESLint with the official Vue + TypeScript flat config
+- Hand-written `index.html` and `app.js` (theme toggle, print, back-to-top)
+- Tailwind CSS v4, compiled with the standalone Tailwind CLI
+- ESLint for `app.js` and the build scripts
 
 ## Commands
 
 ```sh
 pnpm install
-pnpm dev
+pnpm dev      # serves the project root at http://localhost:4173, rebuilds styles.css on change
 pnpm lint
-pnpm type-check
-pnpm build
+pnpm build    # assembles the deployable site into dist/
+pnpm preview  # serves dist/ at http://localhost:4173
 ```
 
 ## Project Structure
 
-- `src/data/resume.ts`: typed content source for profile, sections, and links
-- `src/components/resume/`: resume-specific sections and entry rendering
-- `src/components/ui/`: small reusable UI primitives
-- `src/styles/index.css`: global theme, layout, print, and accessibility styles
+- `index.html`: the entire resume content, in place
+- `app.js`: the only script, handles theme/print/back-to-top interactions
+- `src/styles.css`: Tailwind entry point and custom theme/print/accessibility rules
+- Root-level static assets (`favicon.*`, `robots.txt`, `sitemap.xml`, `CNAME`, images): copied as-is by the build
 
-## Quality Gates
+## Updating the resume content
 
-- `pnpm lint` validates Vue and TypeScript files
-- `pnpm type-check` runs `vue-tsc --noEmit`
-- GitHub Actions runs lint, type-check, and production build before deploy
+Edit `index.html` directly — there is no data file or template step generating it.
 
 ## Deployment
 
-The site is deployed to GitHub Pages from the `main` branch. Pull requests run the quality checks and build, but deployment only happens outside PR events.
+The site is deployed to GitHub Pages from the `main` branch. Pull requests run lint and build, but deployment only happens outside PR events.

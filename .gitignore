@@ -10,20 +10,16 @@ lerna-debug.log*
 node_modules
 .DS_Store
 dist
-dist-ssr
 coverage
 *.local
+
+# Generated Tailwind output (built by `pnpm dev` / `pnpm build`)
+/styles.css
 
 # Lock files (using pnpm)
 package-lock.json
 yarn.lock
 
-/cypress/videos/
-/cypress/screenshots/
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
 .idea
 *.suo
 *.ntvs*
