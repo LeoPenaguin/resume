@@ -18,11 +18,16 @@ const MIME_TYPES = {
 };
 
 createServer(async (req, res) => {
-  const requestPath = normalize(req.url === "/" ? "/index.html" : req.url).replace(/^(\.\.[/\\])+/, "");
+  const requestPath = normalize(req.url === "/" ? "/index.html" : req.url).replace(
+    /^(\.\.[/\\])+/,
+    "",
+  );
 
   try {
     const data = await readFile(join(ROOT, requestPath));
-    res.writeHead(200, { "Content-Type": MIME_TYPES[extname(requestPath)] ?? "application/octet-stream" });
+    res.writeHead(200, {
+      "Content-Type": MIME_TYPES[extname(requestPath)] ?? "application/octet-stream",
+    });
     res.end(data);
   } catch {
     res.writeHead(404, { "Content-Type": "text/plain" });

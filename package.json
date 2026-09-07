@@ -7,12 +7,30 @@
     "build": "node scripts/build.mjs",
     "preview": "node scripts/serve.mjs",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@eslint/js": "9.28.0",
+    "@html-eslint/eslint-plugin": "^0.65.0",
+    "@html-eslint/parser": "^0.65.0",
     "@tailwindcss/cli": "^4.1.11",
     "eslint": "9.28.0",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.0",
+    "prettier": "^3.9.6",
     "tailwindcss": "^4.1.11"
+  },
+  "lint-staged": {
+    "*.{js,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{html,css,json,md}": [
+      "prettier --write"
+    ]
   }
 }

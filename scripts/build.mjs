@@ -4,6 +4,7 @@ import { cpSync, mkdirSync, rmSync } from "node:fs";
 const STATIC_FILES = [
   "index.html",
   "app.js",
+  "icons.svg",
   "CNAME",
   "favicon.svg",
   "me-256.webp",
